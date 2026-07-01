@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* ---- 设计令牌：主色沿用 rdvcc 主站的品牌蓝，保持视觉延续 ---- */
+@theme {
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #d9e6ff;
+  --color-brand-200: #bcd3ff;
+  --color-brand-300: #8eb6ff;
+  --color-brand-400: #598dff;
+  --color-brand-500: #3366ff;
+  --color-brand-600: #1f4ff0;
+  --color-brand-700: #173dcc;
+  --color-brand-800: #1834a6;
+  --color-brand-900: #1a3283;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+
+  --font-sans:
+    'Inter', system-ui, -apple-system, 'Segoe UI', 'PingFang SC',
+    'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+  font-family: var(--font-sans);
+}
+
+/* 文章正文排版：基于 typography 插件微调，让中文阅读更舒适 */
+.prose {
+  --tw-prose-links: var(--color-brand-600);
+  max-width: none;
+}
+.prose :where(h2):not(:where([class~='not-prose'] *)) {
+  @apply mt-12 scroll-mt-24 border-l-4 border-brand-500 pl-3 text-2xl;
+}
+.prose :where(h3):not(:where([class~='not-prose'] *)) {
+  @apply mt-8 scroll-mt-24 text-xl;
+}
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  @apply font-medium no-underline decoration-brand-300 underline-offset-4 hover:underline;
+}
+.prose :where(table):not(:where([class~='not-prose'] *)) {
+  @apply text-sm;
+}
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  @apply rounded-r-lg border-brand-400 bg-brand-50/60 py-1 not-italic;
+}

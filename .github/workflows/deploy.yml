@@ -1,0 +1,42 @@
+# 可选：不用 Cloudflare Pages，改为「提交后自动构建并部署到你自己的服务器」。
+# 用法：在 GitHub 仓库 Settings → Secrets and variables → Actions 里配置下面 4 个 Secret：
+#   SSH_HOST      服务器 IP 或域名
+#   SSH_USER      登录用户名
+#   SSH_KEY       私钥内容（对应公钥已加到服务器 ~/.ssh/authorized_keys）
+#   DEPLOY_PATH   服务器上博客根目录，例如 /var/www/ibve/dist
+# 若使用 Cloudflare Pages 自动部署，可删除本文件。
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - name: Deploy dist/ to server via rsync
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}

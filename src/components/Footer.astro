@@ -1,0 +1,39 @@
+---
+import { SITE_TITLE } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-slate-100 bg-slate-50">
+  <div class="mx-auto grid max-w-5xl gap-8 px-4 py-12 md:grid-cols-3">
+    <div>
+      <div class="mb-2 text-base font-bold text-ink">{SITE_TITLE}</div>
+      <p class="text-sm leading-relaxed text-muted">
+        关于 AI 的学习笔记与技术分享。记录提示词工程、大模型原理与 AI 工具实测，
+        希望对同样在学习 AI 的你有帮助。
+      </p>
+    </div>
+
+    <div>
+      <div class="mb-3 text-sm font-semibold text-ink">热门主题</div>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a class="hover:text-brand-600" href="/tags/提示词">提示词工程</a></li>
+        <li><a class="hover:text-brand-600" href="/tags/大模型">大模型</a></li>
+        <li><a class="hover:text-brand-600" href="/tags/AI工具">AI 工具</a></li>
+        <li><a class="hover:text-brand-600" href="/tags/AI订阅">AI 订阅</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="mb-3 text-sm font-semibold text-ink">站点</div>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a class="hover:text-brand-600" href="/blog">全部文章</a></li>
+        <li><a class="hover:text-brand-600" href="/about">关于本站</a></li>
+        <li><a class="hover:text-brand-600" href="/rss.xml">RSS 订阅</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-100 py-6 text-center text-xs text-muted">
+    © {year} {SITE_TITLE} · 内容仅供学习参考
+  </div>
+</footer>

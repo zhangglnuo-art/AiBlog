@@ -1,0 +1,94 @@
+# ─────────────────────────────────────────────────────────────
+# Sveltia CMS 配置。字段与 src/content.config.ts 的 frontmatter 一一对应。
+# 后台上传/发布 → 自动 commit 到 GitHub → 触发构建上线。
+# ⚠️ 上线前把下面两处占位改成你自己的值（见 CMS-SETUP.md）。
+# ─────────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/ibve # ← 改成你的 GitHub 用户名/仓库名
+  branch: main
+  # 登录用的 OAuth 中转（一次性部署的 Cloudflare Worker，见 CMS-SETUP.md）。
+  # 如果改用 Pages CMS 托管方案，则删掉这一行。
+  base_url: https://YOUR_OAUTH_WORKER.workers.dev
+
+# 后台界面语言
+locale: zh_Hans
+
+# 封面等图片：上传到 public/covers，页面里以 /covers/xxx 引用
+media_folder: public/covers
+public_folder: /covers
+
+collections:
+  - name: blog
+    label: 博客文章
+    label_singular: 文章
+    description: 在这里新建 / 编辑文章，点「发布」即自动上线
+    folder: src/content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    # 文件名（也是 URL）取自下面的「英文短链」字段，避免中文标题生成乱码 URL
+    slug: '{{fields.slug}}'
+    identifier_field: title
+    summary: '{{title}}  ·  {{pubDate}}'
+    sortable_fields: [pubDate, title]
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - {
+          name: slug,
+          label: 英文短链（URL）,
+          widget: string,
+          hint: '只用小写字母、数字、连字符，例如 chatgpt-guide；这会成为文章网址',
+        }
+      - {
+          name: description,
+          label: 摘要,
+          widget: text,
+          hint: '20–160 字，作为搜索结果与列表里的描述，影响点击率',
+        }
+      - {
+          name: pubDate,
+          label: 发布日期,
+          widget: datetime,
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+          format: 'YYYY-MM-DD',
+        }
+      - {
+          name: updatedDate,
+          label: 更新日期（可选）,
+          widget: datetime,
+          required: false,
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+          format: 'YYYY-MM-DD',
+        }
+      - {
+          name: tags,
+          label: 标签,
+          widget: list,
+          default: ['AI订阅'],
+          hint: '第一个作为主关键词，会自动生成对应标签页',
+        }
+      - {
+          name: cover,
+          label: 封面图（可选）,
+          widget: image,
+          required: false,
+          hint: '建议 1200×630；不传会用默认蓝色占位',
+        }
+      - { name: author, label: 作者, widget: string, default: 编辑部 }
+      - {
+          name: featured,
+          label: 首页置顶,
+          widget: boolean,
+          default: false,
+        }
+      - {
+          name: draft,
+          label: 存为草稿（不发布）,
+          widget: boolean,
+          default: false,
+        }
+      - { name: body, label: 正文, widget: markdown }

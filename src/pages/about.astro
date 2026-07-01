@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<BaseLayout
+  title="关于本站"
+  description={`${SITE_TITLE}：一个关于 AI 的学习笔记与技术分享博客。`}
+>
+  <div class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-3xl font-extrabold text-ink">关于本站</h1>
+    <div class="prose prose-slate prose-lg mt-6">
+      <p>
+        这里是我学习 AI 过程中的笔记与总结。内容主要围绕：
+      </p>
+      <ul>
+        <li><strong>提示词工程</strong>：怎么把话说清楚，让模型给出更好的结果</li>
+        <li><strong>大模型原理</strong>：Transformer、RAG、上下文窗口这些概念到底在讲什么</li>
+        <li><strong>AI 工具实测</strong>：ChatGPT、Claude、Cursor、Midjourney 等的真实使用体验</li>
+        <li><strong>海外 AI 使用经验</strong>：注册、订阅、付款过程中踩过的坑</li>
+      </ul>
+      <p>
+        写这些一半是为了整理自己的思路，一半是希望能帮到同样在入门的人。如果某篇文章对你有用，
+        那就是它最大的价值。
+      </p>
+      <p class="text-sm text-muted">
+        说明：文章里偶尔会提到我实际用过的第三方服务或工具，部分链接可能带有合作/返佣性质，
+        但是否使用完全由你决定，教程本身不依赖任何特定服务也能照做。
+      </p>
+    </div>
+  </div>
+</BaseLayout>
