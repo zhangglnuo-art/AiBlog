@@ -1,0 +1,68 @@
+# Pages CMS 配置（https://pagescms.org）。
+# 字段与 src/content.config.ts 的 frontmatter 一一对应。
+# 在 app.pagescms.org 里写文/发布 → 提交到本仓库 → GitHub Actions 自动构建部署。
+
+media:
+  input: public/covers # 封面等图片存放目录
+  output: /covers # 页面里引用的路径前缀
+
+content:
+  - name: posts
+    label: 博客文章
+    type: collection
+    path: src/content/blog
+    filename: '{fields.slug}.md' # 新文件名取自「英文短链」字段
+    view:
+      fields: [title, pubDate, draft, featured]
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: slug
+        label: 英文短链（URL）
+        type: string
+        description: 只用小写字母、数字、连字符，如 chatgpt-guide；这会成为文章网址
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: 只能包含小写字母、数字和连字符
+      - name: description
+        label: 摘要
+        type: text
+        description: 20–160 字，作为搜索结果与列表里的描述
+      - name: pubDate
+        label: 发布日期
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: updatedDate
+        label: 更新日期（可选）
+        type: date
+        required: false
+        options:
+          format: yyyy-MM-dd
+      - name: tags
+        label: 标签
+        type: string
+        list: true
+        default: [AI订阅]
+        description: 第一个作为主关键词，会自动生成对应标签页
+      - name: cover
+        label: 封面图（可选）
+        type: image
+        required: false
+        description: 建议 1200×630；不传会用默认蓝色占位
+      - name: author
+        label: 作者
+        type: string
+        default: 编辑部
+      - name: featured
+        label: 首页置顶
+        type: boolean
+        default: false
+      - name: draft
+        label: 存为草稿（不发布）
+        type: boolean
+        default: false
+      - name: body
+        label: 正文
+        type: rich-text
