@@ -6,9 +6,11 @@ import { glob } from 'astro/loaders';
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
-    title: z.string().max(70, 'title 建议 ≤70 字符，利于搜索结果完整展示'),
+    // 长度只是 SEO 建议（标题≤70、摘要 20–160 字），不做硬性校验，
+    // 以免网页发文时写短了就阻断整站构建部署。
+    title: z.string(),
     // 用作 <meta description> 和列表摘要，直接影响点击率。
-    description: z.string().min(20).max(160),
+    description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     // 目标关键词，用于分类页与内链。第一个通常是主关键词。
