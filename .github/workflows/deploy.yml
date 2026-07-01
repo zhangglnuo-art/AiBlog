@@ -1,12 +1,16 @@
-# 可选：不用 Cloudflare Pages，改为「提交后自动构建并部署到你自己的服务器」。
-# 用法：在 GitHub 仓库 Settings → Secrets and variables → Actions 里配置下面 4 个 Secret：
-#   SSH_HOST      服务器 IP 或域名
-#   SSH_USER      登录用户名
-#   SSH_KEY       私钥内容（对应公钥已加到服务器 ~/.ssh/authorized_keys）
-#   DEPLOY_PATH   服务器上博客根目录，例如 /var/www/ibve/dist
-# 若使用 Cloudflare Pages 自动部署，可删除本文件。
+# 云端自动部署：GitHub Actions 在美国机房跑，能正常连上你的服务器（不受本地被墙影响）。
+# 触发：每次 push 到 main（包括 CMS 网页发文提交）→ 自动构建 + 部署到你的服务器。
+#
+# 需要在 GitHub 仓库配置 Secrets（Settings → Secrets and variables → Actions → New repository secret）：
+#   SSH_HOST      45.8.114.204
+#   SSH_USER      root
+#   SSH_PASSWORD  服务器密码
+#   DEPLOY_PATH   /var/www/ibve
+#   DOMAIN        ibve.org
+#
+# 若改用 Cloudflare Pages，删除本文件即可。
 
-name: Build & Deploy
+name: Build & Deploy to Server
 
 on:
   push:
@@ -31,12 +35,54 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
 
-      - name: Deploy dist/ to server via rsync
-        uses: burnett01/rsync-deployments@7.0.2
+      # 1) 确保服务器已装 nginx 并配好站点（幂等，兼容 apt/dnf/yum）
+      - name: Prepare server (nginx + site config)
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          switches: -avzr --delete
-          path: dist/
-          remote_path: ${{ secrets.DEPLOY_PATH }}
-          remote_host: ${{ secrets.SSH_HOST }}
-          remote_user: ${{ secrets.SSH_USER }}
-          remote_key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            set -e
+            DOMAIN="${{ secrets.DOMAIN }}"
+            ROOT="${{ secrets.DEPLOY_PATH }}"
+            mkdir -p "$ROOT"
+            if ! command -v nginx >/dev/null 2>&1; then
+              if command -v apt-get >/dev/null 2>&1; then
+                export DEBIAN_FRONTEND=noninteractive
+                apt-get update -y && apt-get install -y nginx
+              elif command -v dnf >/dev/null 2>&1; then
+                dnf install -y nginx
+              elif command -v yum >/dev/null 2>&1; then
+                yum install -y nginx
+              fi
+            fi
+            if [ -d /etc/nginx/conf.d ]; then CONF=/etc/nginx/conf.d/ibve.conf; else CONF=/etc/nginx/sites-enabled/ibve.conf; fi
+            cat > "$CONF" <<EOF
+            server {
+                listen 80;
+                listen [::]:80;
+                server_name $DOMAIN www.$DOMAIN;
+                root $ROOT;
+                index index.html;
+                location / { try_files \$uri \$uri/ \$uri.html =404; }
+                error_page 404 /404.html;
+            }
+            EOF
+            nginx -t
+            systemctl enable nginx >/dev/null 2>&1 || true
+            systemctl restart nginx || service nginx restart
+
+      # 2) 上传构建产物到站点目录
+      - name: Upload dist to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          source: "dist/*"
+          target: ${{ secrets.DEPLOY_PATH }}
+          strip_components: 1
+          overwrite: true
