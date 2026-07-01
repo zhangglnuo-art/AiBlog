@@ -18,6 +18,10 @@ content:
       - name: title
         label: 标题
         type: string
+        description: 建议 ≤70 字，含主关键词，利于搜索结果完整展示
+        pattern:
+          regex: '^[\s\S]{1,70}$'
+          message: 标题需 ≤70 字
       - name: slug
         label: 英文短链（URL）
         type: string
@@ -28,7 +32,10 @@ content:
       - name: description
         label: 摘要
         type: text
-        description: 20–160 字，作为搜索结果与列表里的描述
+        description: 20–160 字，作为搜索结果与列表里的描述，直接影响点击率
+        pattern:
+          regex: '^[\s\S]{20,160}$'
+          message: 摘要需 20–160 字（利于 SEO）
       - name: pubDate
         label: 发布日期
         type: date
