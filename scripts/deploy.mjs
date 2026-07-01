@@ -28,9 +28,9 @@ const exec = async (cmd, label) => {
 
 // nginx 站点配置（$uri 用 \$ 转义，避免被本地 shell 解析）
 const nginxConf = `server {
-    listen 80;
-    listen [::]:80;
-    server_name ${domain} www.${domain};
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name ${domain} www.${domain} _;
     root ${remotePath};
     index index.html;
     location / { try_files \\$uri \\$uri/ \\$uri.html =404; }
@@ -60,6 +60,7 @@ try {
   // 2) 建站点目录 + 写 nginx 配置
   console.log('🗂  准备目录与 nginx 配置 ...');
   await exec(`mkdir -p ${remotePath}`, 'mkdir');
+  await ssh.execCommand('rm -f /etc/nginx/sites-enabled/default /etc/nginx/conf.d/default.conf');
   const confDir = (await ssh.execCommand('test -d /etc/nginx/conf.d && echo yes')).stdout.trim();
   const confPath = confDir === 'yes' ? '/etc/nginx/conf.d/ibve.conf' : '/etc/nginx/sites-enabled/ibve.conf';
   await exec(`cat > ${confPath} <<'NGINXEOF'\n${nginxConf}\nNGINXEOF`, '写 nginx 配置');
