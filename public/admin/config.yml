@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/ibve # ← 改成你的 GitHub 用户名/仓库名
+  repo: zhangglnuo-art/AiBlog # ← 你的 GitHub 仓库
   branch: main
   # 登录用的 OAuth 中转（一次性部署的 Cloudflare Worker，见 CMS-SETUP.md）。
   # 如果改用 Pages CMS 托管方案，则删掉这一行。
