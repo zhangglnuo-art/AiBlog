@@ -1,12 +1,18 @@
 # 云端自动部署：GitHub Actions 在美国机房跑，能正常连上你的服务器（不受本地被墙影响）。
 # 触发：每次 push 到 main（包括 CMS 网页发文提交）→ 自动构建 + 部署到你的服务器。
 #
+# nginx 配置由本工作流「每次都完整写入」，因此配置可从 Git 复现：
+#   - 始终写 80 server（含尾斜杠 301：无扩展名且缺尾斜杠 → 301 到带斜杠版）
+#   - 首次无证书时用 certbot certonly --webroot 申请（不让 certbot 改 nginx 配置）
+#   - 有证书则追加 443 server（同样含尾斜杠 301），并自动续期
+#
 # 需要在 GitHub 仓库配置 Secrets（Settings → Secrets and variables → Actions → New repository secret）：
 #   SSH_HOST      45.8.114.204
 #   SSH_USER      root
 #   SSH_PASSWORD  服务器密码
 #   DEPLOY_PATH   /var/www/ibve
 #   DOMAIN        ibve.org
+#   LE_EMAIL      （可选）Let's Encrypt 通知邮箱，如 gl@valotrade.ai
 #
 # 若改用 Cloudflare Pages，删除本文件即可。
 
@@ -35,8 +41,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
 
-      # 1) 确保服务器已装 nginx 并配好站点（幂等，兼容 apt/dnf/yum）
-      - name: Prepare server (nginx + site config)
+      # 1) 确保服务器已装 nginx、写入站点配置、（首次）申请 HTTPS 证书
+      - name: Prepare server (nginx + site config + HTTPS)
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -61,8 +67,8 @@ jobs:
             # 移除自带默认站点，避免抢占 80 端口显示 Welcome 页
             rm -f /etc/nginx/sites-enabled/default /etc/nginx/conf.d/default.conf
             if [ -d /etc/nginx/conf.d ]; then CONF=/etc/nginx/conf.d/ibve.conf; else CONF=/etc/nginx/sites-enabled/ibve.conf; fi
-            # 仅当配置不存在时写入，避免覆盖 certbot 添加的 HTTPS 配置
-            if [ ! -f "$CONF" ]; then
+
+            # 1) 始终写入 80 配置（含尾斜杠 301）——保证配置可从 Git 完整复现
             cat > "$CONF" <<EOF
             server {
                 listen 80 default_server;
@@ -70,23 +76,55 @@ jobs:
                 server_name $DOMAIN www.$DOMAIN _;
                 root $ROOT;
                 index index.html;
+
+                if (\$uri ~ "^[^.]*[^/]\$") {
+                    return 301 \$uri/\$is_args\$args;
+                }
+
+                location / { try_files \$uri \$uri/ \$uri.html =404; }
+                error_page 404 /404.html;
+            }
+            EOF
+            nginx -t
+            systemctl enable nginx >/dev/null 2>&1 || true
+            systemctl reload nginx || systemctl restart nginx || service nginx restart
+
+            # 2) 首次无证书则用 webroot 申请（ACME 挑战走 80；路径含「.」不触发 301）
+            if command -v apt-get >/dev/null 2>&1 && ! command -v certbot >/dev/null 2>&1; then
+              apt-get install -y certbot
+            fi
+            if command -v certbot >/dev/null 2>&1 && [ ! -d "/etc/letsencrypt/live/$DOMAIN" ]; then
+              EMAIL="${{ secrets.LE_EMAIL }}"
+              if [ -n "$EMAIL" ]; then EMAILARG="-m $EMAIL"; else EMAILARG="--register-unsafely-without-email"; fi
+              certbot certonly --webroot -w "$ROOT" -d "$DOMAIN" -d "www.$DOMAIN" --non-interactive --agree-tos $EMAILARG || echo "certbot 失败：请确认 DNS 已指向本机且 80 端口开放"
+            fi
+
+            # 3) 有证书则追加 443 配置（同样含尾斜杠 301）
+            if [ -f "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" ] && [ -f "/etc/letsencrypt/live/$DOMAIN/privkey.pem" ]; then
+            cat >> "$CONF" <<EOF
+
+            server {
+                listen 443 ssl default_server;
+                listen [::]:443 ssl default_server;
+                server_name $DOMAIN www.$DOMAIN _;
+                ssl_certificate /etc/letsencrypt/live/$DOMAIN/fullchain.pem;
+                ssl_certificate_key /etc/letsencrypt/live/$DOMAIN/privkey.pem;
+                root $ROOT;
+                index index.html;
+
+                if (\$uri ~ "^[^.]*[^/]\$") {
+                    return 301 \$uri/\$is_args\$args;
+                }
+
                 location / { try_files \$uri \$uri/ \$uri.html =404; }
                 error_page 404 /404.html;
             }
             EOF
             fi
+
+            # 4) 最终校验并重载（证书续期后 nginx 会自动使用新证书）
             nginx -t
-            systemctl enable nginx >/dev/null 2>&1 || true
             systemctl reload nginx || systemctl restart nginx || service nginx restart
-            # 申请 HTTPS 证书（仅首次；certbot 自动改 nginx 加 443+跳转，并配置自动续期）
-            if command -v apt-get >/dev/null 2>&1 && ! command -v certbot >/dev/null 2>&1; then
-              apt-get install -y certbot python3-certbot-nginx
-            fi
-            if command -v certbot >/dev/null 2>&1 && [ ! -d "/etc/letsencrypt/live/$DOMAIN" ]; then
-              EMAIL="${{ secrets.LE_EMAIL }}"
-              if [ -n "$EMAIL" ]; then EMAILARG="-m $EMAIL"; else EMAILARG="--register-unsafely-without-email"; fi
-              certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos $EMAILARG --redirect || echo "certbot 失败：请确认 DNS 已指向本机且 80 端口开放"
-            fi
 
       # 2) 上传构建产物到站点目录
       - name: Upload dist to server
