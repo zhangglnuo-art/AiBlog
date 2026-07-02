@@ -14,7 +14,17 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
-const { host, port = 22, username, password, remotePath, domain } = cfg;
+const {
+  host,
+  port = 22,
+  username,
+  password,
+  remotePath,
+  domain,
+  // Cloudflare Origin 证书路径（放到服务器这两个路径即自动启用 HTTPS/443）。可在 deploy.config.cjs 覆盖。
+  sslCert = '/etc/nginx/ssl/ibve.pem',
+  sslKey = '/etc/nginx/ssl/ibve.key',
+} = cfg;
 const ssh = new NodeSSH();
 
 const exec = async (cmd, label) => {
@@ -30,11 +40,7 @@ const exec = async (cmd, label) => {
 // 站点使用 Astro trailingSlash:'always'，页面只有 /path/ 形式。
 // 下面的 if 把「无扩展名且缺尾斜杠」的路径 301 到带斜杠版，保证 URL 唯一（避免重复内容）；
 // 带扩展名的静态资源(.png/.svg/.xml/.txt 等)因含「.」不会被匹配，正常直出。
-const nginxConf = `server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name ${domain} www.${domain} _;
-    root ${remotePath};
+const siteBody = `    root ${remotePath};
     index index.html;
 
     if ($uri ~ "^[^.]*[^/]$") {
@@ -42,8 +48,30 @@ const nginxConf = `server {
     }
 
     location / { try_files $uri $uri/ $uri.html =404; }
-    error_page 404 /404.html;
+    error_page 404 /404.html;`;
+
+// 站点在 Cloudflare 后面：
+// - 80 与 443 都直出同样内容，不在源站强制 80→443 跳转（否则 Cloudflare「Flexible」模式回源会成环）。
+//   访客的 http→https 升级交给 Cloudflare 的「Always Use HTTPS」在边缘完成。
+// - 443 块仅在服务器存在证书时才生成，避免没证书时 nginx -t 失败。
+const buildNginxConf = (ssl) => {
+  const httpServer = `server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name ${domain} www.${domain} _;
+${siteBody}
 }`;
+  if (!ssl) return httpServer;
+  const httpsServer = `server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name ${domain} www.${domain} _;
+    ssl_certificate ${ssl.cert};
+    ssl_certificate_key ${ssl.key};
+${siteBody}
+}`;
+  return `${httpServer}\n\n${httpsServer}`;
+};
 
 try {
   console.log(`🔌 连接 ${username}@${host}:${port} ...`);
@@ -69,6 +97,21 @@ try {
   console.log('🗂  准备目录与 nginx 配置 ...');
   await exec(`mkdir -p ${remotePath}`, 'mkdir');
   await ssh.execCommand('rm -f /etc/nginx/sites-enabled/default /etc/nginx/conf.d/default.conf');
+
+  // 探测证书：两个文件都在 → 启用 HTTPS(443)；否则仅 HTTP(80)
+  const hasSsl =
+    (await ssh.execCommand(`test -f ${sslCert} && test -f ${sslKey} && echo yes`)).stdout.trim() ===
+    'yes';
+  if (hasSsl) {
+    console.log(`🔐 检测到证书 → 启用 HTTPS(443)：${sslCert}`);
+  } else {
+    console.log(
+      `ℹ️  未检测到证书(${sslCert})，仅配置 HTTP(80)。\n` +
+        `   放好 Cloudflare Origin 证书到该路径后重跑本命令即可启用 443（配合 Cloudflare 切 Full(strict)）。`,
+    );
+  }
+  const nginxConf = buildNginxConf(hasSsl ? { cert: sslCert, key: sslKey } : null);
+
   const confDir = (await ssh.execCommand('test -d /etc/nginx/conf.d && echo yes')).stdout.trim();
   const confPath = confDir === 'yes' ? '/etc/nginx/conf.d/ibve.conf' : '/etc/nginx/sites-enabled/ibve.conf';
   await exec(`cat > ${confPath} <<'NGINXEOF'\n${nginxConf}\nNGINXEOF`, '写 nginx 配置');
@@ -88,8 +131,13 @@ try {
 
   console.log('\n✅ 部署完成！');
   console.log(`   服务器目录: ${remotePath}`);
-  console.log(`   访问(按 IP): http://${host}/`);
-  console.log(`   访问(按域名): http://${domain}/  （需 DNS 已指向 ${host}）`);
+  console.log(`   源站直连(按 IP): http://${host}/`);
+  console.log(`   访问(按域名): ${hasSsl ? 'https' : 'http'}://${domain}/  （经 Cloudflare）`);
+  if (hasSsl) {
+    console.log('   已启用源站 443 → 现在可把 Cloudflare SSL/TLS 模式切到 Full (strict)。');
+  } else {
+    console.log('   源站暂无 443 → Cloudflare SSL/TLS 请用 Flexible，否则 https 会 521。');
+  }
 } catch (e) {
   console.error('\n部署中断:', e.message);
   process.exitCode = 1;
