@@ -72,4 +72,4 @@ cover: /covers/payment.jpg
 
 ## 结论
 
-如果你只是想订一次、之后不再用，代充或许够用；但只要你打算**长期使用、订阅不止一个 AI 工具**，一张自己掌控的虚拟信用卡是最省心的选择。具体到某个工具的订阅步骤，可以看我们的 [ChatGPT Plus 订阅教程](/blog/chatgpt-plus-subscription-guide)和 [Claude Pro 订阅流程](/blog/claude-pro-subscribe-china)。
+如果你只是想订一次、之后不再用，代充或许够用；但只要你打算**长期使用、订阅不止一个 AI 工具**，一张自己掌控的虚拟信用卡是最省心的选择。具体到某个工具的订阅步骤，可以看我们的 [ChatGPT Plus 订阅教程](/blog/chatgpt-plus-subscription-guide/)和 [Claude Pro 订阅流程](/blog/claude-pro-subscribe-china/)。

@@ -27,12 +27,20 @@ const exec = async (cmd, label) => {
 };
 
 // nginx 站点配置（$uri 用 \$ 转义，避免被本地 shell 解析）
+// 站点使用 Astro trailingSlash:'always'，页面只有 /path/ 形式。
+// 下面的 if 把「无扩展名且缺尾斜杠」的路径 301 到带斜杠版，保证 URL 唯一（避免重复内容）；
+// 带扩展名的静态资源(.png/.svg/.xml/.txt 等)因含「.」不会被匹配，正常直出。
 const nginxConf = `server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name ${domain} www.${domain} _;
     root ${remotePath};
     index index.html;
+
+    if (\\$uri ~ "^[^.]*[^/]\\$") {
+        return 301 \\$uri/\\$is_args\\$args;
+    }
+
     location / { try_files \\$uri \\$uri/ \\$uri.html =404; }
     error_page 404 /404.html;
 }`;

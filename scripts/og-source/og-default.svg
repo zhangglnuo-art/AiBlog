@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="ogTitle" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#38e8ff"/>
+      <stop offset="0.5" stop-color="#6f9bff"/>
+      <stop offset="1" stop-color="#b06bff"/>
+    </linearGradient>
+    <linearGradient id="ogBadge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38e8ff"/>
+      <stop offset="1" stop-color="#3366ff"/>
+    </linearGradient>
+    <radialGradient id="ogA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38e8ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#38e8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ogB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b06bff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#b06bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ogC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3366ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#3366ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="ogGrid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#78a0ff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#05070f"/>
+  <circle cx="180" cy="130" r="340" fill="url(#ogA)"/>
+  <circle cx="1040" cy="220" r="320" fill="url(#ogB)"/>
+  <circle cx="620" cy="600" r="300" fill="url(#ogC)"/>
+  <rect width="1200" height="630" fill="url(#ogGrid)"/>
+
+  <!-- 品牌徽标 -->
+  <g transform="translate(80 96)">
+    <rect width="76" height="76" rx="20" fill="url(#ogBadge)"/>
+    <text x="38" y="53" font-family="Inter, sans-serif" font-size="40" font-weight="900" fill="#05070f" text-anchor="middle" letter-spacing="-1">ib</text>
+  </g>
+  <text x="176" y="148" font-family="Inter, 'PingFang SC', sans-serif" font-size="34" font-weight="700" fill="#e8edfb">ibve · AI 笔记</text>
+
+  <text x="80" y="330" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" letter-spacing="6" font-weight="600" fill="#38e8ff">// AI · Notes · Lab</text>
+  <text x="76" y="440" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="76" font-weight="800" fill="url(#ogTitle)">探索人工智能的原理与实践</text>
+  <text x="80" y="510" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="500" fill="#8b97b4">提示词工程 · 大模型原理 · RAG · AI Agent · 工具实测</text>
+
+  <g stroke="#38e8ff" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M80 560 h140"/>
+    <circle cx="235" cy="560" r="5" fill="#38e8ff" stroke="none"/>
+  </g>
+</svg>

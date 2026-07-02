@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { MarkdownHeading } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import { SITE_URL, SITE_TITLE } from '../consts';
+import { SITE_URL, SITE_TITLE, SITE_NAME, SITE_LOGO } from '../consts';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -16,7 +16,7 @@ const { title, description, pubDate, updatedDate, tags, author, cover } =
 // 只取 h2/h3 做目录，太深的层级对读者没意义
 const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 
-const url = new URL(`/blog/${post.id}`, SITE_URL).toString();
+const url = new URL(`/blog/${post.id}/`, SITE_URL).toString();
 
 // Article 结构化数据 —— 让 Google 更好地理解并可能给富摘要
 const jsonLd = [
@@ -28,17 +28,35 @@ const jsonLd = [
     datePublished: pubDate.toISOString(),
     dateModified: (updatedDate ?? pubDate).toISOString(),
     author: { '@type': 'Organization', name: author },
-    publisher: { '@type': 'Organization', name: SITE_TITLE },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL(SITE_LOGO, SITE_URL).toString(),
+        width: 512,
+        height: 512,
+      },
+    },
     mainEntityOfPage: url,
-    ...(cover ? { image: new URL(cover, SITE_URL).toString() } : {}),
+    ...(cover
+      ? {
+          image: {
+            '@type': 'ImageObject',
+            url: new URL(cover, SITE_URL).toString(),
+            width: 1200,
+            height: 675,
+          },
+        }
+      : {}),
     keywords: tags.join(', '),
   },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '首页', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: '博客', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: '博客', item: `${SITE_URL}/blog/` },
       { '@type': 'ListItem', position: 3, name: title, item: url },
     ],
   },
@@ -57,21 +75,18 @@ const jsonLd = [
   <article class="mx-auto max-w-6xl px-4 py-10">
     <!-- 面包屑 -->
     <nav class="mb-6 text-sm text-muted" aria-label="面包屑">
-      <a href="/" class="hover:text-brand-600">首页</a>
+      <a href="/" class="hover:text-neon-cyan">首页</a>
       <span class="mx-1.5">/</span>
-      <a href="/blog" class="hover:text-brand-600">博客</a>
+      <a href="/blog/" class="hover:text-neon-cyan">博客</a>
       <span class="mx-1.5">/</span>
-      <span class="text-slate-400">{title}</span>
+      <span class="text-slate-500">{title}</span>
     </nav>
 
     <header class="mb-8">
       <div class="mb-3 flex flex-wrap gap-2">
         {
           tags.map((tag) => (
-            <a
-              href={`/tags/${tag}`}
-              class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 hover:bg-brand-100"
-            >
+            <a href={`/tags/${tag}/`} class="chip">
               {tag}
             </a>
           ))
@@ -86,11 +101,16 @@ const jsonLd = [
           <img
             src={cover}
             alt={title}
-            class="mt-6 aspect-[2/1] w-full rounded-2xl object-cover"
+            width="1200"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="mt-6 aspect-[2/1] w-full rounded-2xl border border-white/10 object-cover shadow-[0_20px_60px_-20px_rgba(56,232,255,0.25)]"
           />
         )
       }
-      <div class="mt-5 flex items-center gap-3 text-sm text-slate-400">
+      <div class="mt-5 flex items-center gap-3 text-sm text-slate-500">
         <span>{author}</span>
         <span>·</span>
         <FormattedDate date={pubDate} />
@@ -100,7 +120,7 @@ const jsonLd = [
 
     <div class="gap-10 lg:grid lg:grid-cols-[1fr_260px]">
       <!-- 正文 -->
-      <div class="prose prose-slate prose-lg min-w-0">
+      <div class="prose prose-lg min-w-0">
         <slot />
       </div>
 
@@ -109,15 +129,13 @@ const jsonLd = [
         toc.length > 0 && (
           <aside class="hidden lg:block">
             <div class="sticky top-24">
-              <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
-                本文目录
-              </p>
-              <ul class="space-y-2 border-l border-slate-100 text-sm">
+              <p class="eyebrow mb-3">本文目录</p>
+              <ul class="space-y-2 border-l border-white/10 text-sm">
                 {toc.map((h) => (
                   <li class={h.depth === 3 ? 'pl-4' : ''}>
                     <a
                       href={`#${h.slug}`}
-                      class="-ml-px block border-l-2 border-transparent pl-3 text-muted hover:border-brand-500 hover:text-brand-600"
+                      class="-ml-px block border-l-2 border-transparent pl-3 text-muted transition-colors hover:border-neon-cyan hover:text-neon-cyan"
                     >
                       {h.text}
                     </a>

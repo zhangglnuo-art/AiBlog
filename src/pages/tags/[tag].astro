@@ -25,10 +25,10 @@ const { tag, posts } = Astro.props;
   description={`与「${tag}」相关的海外 AI 订阅与跨境支付实操教程，共 ${posts.length} 篇。`}
 >
   <div class="mx-auto max-w-6xl px-4 py-12">
-    <header class="mb-8">
-      <a href="/blog" class="text-sm text-brand-600 hover:underline">← 全部文章</a>
+    <header class="reveal mb-8">
+      <a href="/blog/" class="text-sm text-neon-cyan hover:underline">← 全部文章</a>
       <h1 class="mt-2 text-3xl font-extrabold text-ink">
-        标签：<span class="text-brand-600">{tag}</span>
+        标签：<span class="gradient-text">{tag}</span>
       </h1>
       <p class="mt-2 text-muted">共 {posts.length} 篇</p>
     </header>

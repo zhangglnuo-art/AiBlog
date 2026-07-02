@@ -64,7 +64,7 @@ featured: true
 
 ## 想练手，先有个能用的模型
 
-上面这些技巧，在越新的模型上效果越明显。GPT-5、Claude Opus 这类最新模型目前基本都要订阅付费版才能用——如果你还卡在国内订阅、付款这一步，可以看我另一篇 [ChatGPT Plus 订阅教程](/blog/chatgpt-plus-subscription-guide)，里面顺带讲了怎么解决付款问题。
+上面这些技巧，在越新的模型上效果越明显。GPT-5、Claude Opus 这类最新模型目前基本都要订阅付费版才能用——如果你还卡在国内订阅、付款这一步，可以看我另一篇 [ChatGPT Plus 订阅教程](/blog/chatgpt-plus-subscription-guide/)，里面顺带讲了怎么解决付款问题。
 
 ## 小结
 

@@ -3,17 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="页面未找到">
-  <div class="mx-auto max-w-xl px-4 py-24 text-center">
-    <p class="text-6xl font-extrabold text-brand-600">404</p>
+  <div class="mx-auto max-w-xl px-4 py-28 text-center">
+    <p class="text-7xl font-extrabold gradient-text">404</p>
     <h1 class="mt-4 text-2xl font-bold text-ink">这个页面走丢了</h1>
     <p class="mt-2 text-muted">链接可能已失效，或文章尚未发布。</p>
     <div class="mt-8 flex justify-center gap-3">
-      <a href="/" class="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
-        回首页
-      </a>
-      <a href="/blog" class="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-600 hover:border-brand-400">
-        看全部文章
-      </a>
+      <a href="/" class="btn-glow">回首页</a>
+      <a href="/blog/" class="btn-ghost">看全部文章</a>
     </div>
   </div>
 </BaseLayout>

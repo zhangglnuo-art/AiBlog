@@ -12,10 +12,10 @@ cover: /covers/ai-tools.jpg
 ## 通用对话助手
 
 ### 1. ChatGPT Plus（$20/月）
-最全能的选择，GPT-5 + 联网 + 图像 + 数据分析，插件生态最丰富。适合绝大多数人。订阅细节见 [ChatGPT Plus 教程](/blog/chatgpt-plus-subscription-guide)。
+最全能的选择，GPT-5 + 联网 + 图像 + 数据分析，插件生态最丰富。适合绝大多数人。订阅细节见 [ChatGPT Plus 教程](/blog/chatgpt-plus-subscription-guide/)。
 
 ### 2. Claude Pro（$20/月）
-长上下文与写作、代码能力突出，适合处理长文档和严肃创作。见 [Claude Pro 订阅流程](/blog/claude-pro-subscribe-china)。
+长上下文与写作、代码能力突出，适合处理长文档和严肃创作。见 [Claude Pro 订阅流程](/blog/claude-pro-subscribe-china/)。
 
 ### 3. Perplexity Pro（$20/月）
 「AI 搜索引擎」，带来源引用，适合做研究、查资料，减少幻觉。
@@ -57,7 +57,7 @@ AI 视频生成与编辑，短视频、广告创意的利器。
 - 一张 Visa/Mastercard 覆盖上面 100+ 平台
 - 几分钟出卡，续费、取消自己掌控
 
-关于各种支付方式的详细优劣，可以看 [海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods)。
+关于各种支付方式的详细优劣，可以看 [海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
 
 ## 选购建议
 

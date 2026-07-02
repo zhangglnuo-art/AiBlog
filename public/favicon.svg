@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#1f4ff0"/>
-  <text x="16" y="22" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
+  <defs>
+    <linearGradient id="ibLogo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38e8ff"/>
+      <stop offset="1" stop-color="#3366ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#ibLogo)"/>
+  <text x="16" y="22" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="900" fill="#05070f" text-anchor="middle" letter-spacing="-0.5">ib</text>
 </svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="mjTitle" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0" stop-color="#ffd6a0"/>
+      <stop offset="0.5" stop-color="#ff7eb3"/>
+      <stop offset="1" stop-color="#b06bff"/>
+    </linearGradient>
+    <radialGradient id="mjBlobA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff5da2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ff5da2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mjBlobB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff9d5c" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ff9d5c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mjBlobC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mjBlobD" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mjVign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0512" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#0a0512" stop-opacity="0.72"/>
+    </linearGradient>
+    <filter id="mjBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- 暖调深底：像一块待生成的画布 -->
+  <rect width="1200" height="675" fill="#150a1e"/>
+
+  <!-- 柔和融合的色彩块，营造「生成艺术」质感 -->
+  <g filter="url(#mjBlur)">
+    <circle cx="330" cy="230" r="300" fill="url(#mjBlobA)"/>
+    <circle cx="720" cy="150" r="260" fill="url(#mjBlobB)"/>
+    <circle cx="980" cy="470" r="300" fill="url(#mjBlobD)"/>
+    <circle cx="540" cy="520" r="260" fill="url(#mjBlobC)"/>
+    <circle cx="1080" cy="180" r="200" fill="url(#mjBlobA)"/>
+  </g>
+  <rect width="1200" height="675" fill="url(#mjVign)"/>
+
+  <!-- 光圈 / 取景框：图像生成的意象 -->
+  <g transform="translate(980 210)" stroke="#ffffff" stroke-opacity="0.85" fill="none" stroke-width="4">
+    <circle r="78"/>
+    <g stroke-opacity="0.6" stroke-width="3">
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(0)"/>
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(60)"/>
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(120)"/>
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(180)"/>
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(240)"/>
+      <path d="M0 -78 L38 -20 L-38 -20 Z" transform="rotate(300)"/>
+    </g>
+  </g>
+
+  <text x="80" y="250" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" letter-spacing="6" font-weight="600" fill="#ffd6a0">// AI 订阅指南</text>
+  <text x="76" y="380" font-family="Inter, 'Segoe UI', sans-serif" font-size="120" font-weight="800" fill="url(#mjTitle)">Midjourney</text>
+  <text x="80" y="450" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="600" fill="#f3e6f7">国内付款开通全流程</text>
+
+  <g stroke="#ff7eb3" stroke-opacity="0.7" stroke-width="2" fill="none">
+    <path d="M80 500 h120"/>
+    <circle cx="215" cy="500" r="5" fill="#ff7eb3" stroke="none"/>
+  </g>
+</svg>
