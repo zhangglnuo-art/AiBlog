@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="csTitle" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#38e8ff"/>
+      <stop offset="0.5" stop-color="#6f9bff"/>
+      <stop offset="1" stop-color="#7dffc4"/>
+    </linearGradient>
+    <radialGradient id="csA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38e8ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#38e8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="csB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="csC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3366ff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3366ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="csVign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05070f" stop-opacity="0.5"/>
+    </linearGradient>
+    <pattern id="csGrid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#78a0ff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="#05070f"/>
+  <circle cx="200" cy="160" r="340" fill="url(#csA)"/>
+  <circle cx="1010" cy="470" r="320" fill="url(#csB)"/>
+  <circle cx="640" cy="620" r="300" fill="url(#csC)"/>
+  <rect width="1200" height="675" fill="url(#csGrid)"/>
+  <rect width="1200" height="675" fill="url(#csVign)"/>
+
+  <!-- 代码编辑器窗口 -->
+  <g transform="translate(830 165)">
+    <rect x="0" y="0" width="300" height="200" rx="14" fill="#0b1220" stroke="#ffffff" stroke-opacity="0.12"/>
+    <circle cx="22" cy="22" r="5" fill="#ff6b6b"/>
+    <circle cx="42" cy="22" r="5" fill="#ffd166"/>
+    <circle cx="62" cy="22" r="5" fill="#7dffc4"/>
+    <g stroke-width="6" stroke-linecap="round">
+      <line x1="24" y1="62" x2="120" y2="62" stroke="#6f9bff"/>
+      <line x1="140" y1="62" x2="200" y2="62" stroke="#7dffc4"/>
+      <line x1="44" y1="92" x2="180" y2="92" stroke="#38e8ff"/>
+      <line x1="44" y1="122" x2="120" y2="122" stroke="#b06bff"/>
+      <line x1="140" y1="122" x2="250" y2="122" stroke="#6f9bff"/>
+      <line x1="24" y1="152" x2="90" y2="152" stroke="#7dffc4"/>
+    </g>
+    <!-- 光标 caret -->
+    <rect x="100" y="140" width="4" height="24" fill="#38e8ff"/>
+  </g>
+
+  <text x="80" y="250" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" letter-spacing="6" font-weight="600" fill="#38e8ff">// AI 订阅指南</text>
+  <text x="76" y="380" font-family="Inter, 'Segoe UI', sans-serif" font-size="120" font-weight="800" fill="url(#csTitle)">Cursor</text>
+  <text x="80" y="450" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="600" fill="#c3ccdf">国内开通 AI 编程神器全流程</text>
+
+  <g stroke="#38e8ff" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M80 500 h120"/>
+    <circle cx="215" cy="500" r="5" fill="#38e8ff" stroke="none"/>
+  </g>
+</svg>

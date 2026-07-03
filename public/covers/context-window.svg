@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="cwTitle" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#38e8ff"/>
+      <stop offset="0.5" stop-color="#6f9bff"/>
+      <stop offset="1" stop-color="#b06bff"/>
+    </linearGradient>
+    <radialGradient id="cwA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f9bff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#6f9bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cwB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b06bff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#b06bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cwC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38e8ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#38e8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cwVign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05070f" stop-opacity="0.5"/>
+    </linearGradient>
+    <pattern id="cwGrid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#78a0ff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="#05070f"/>
+  <circle cx="240" cy="170" r="340" fill="url(#cwA)"/>
+  <circle cx="1000" cy="240" r="320" fill="url(#cwB)"/>
+  <circle cx="620" cy="630" r="300" fill="url(#cwC)"/>
+  <rect width="1200" height="675" fill="url(#cwGrid)"/>
+  <rect width="1200" height="675" fill="url(#cwVign)"/>
+
+  <!-- 一排 token 方块，中间一段被「窗口」框住（高亮），两端变暗表示被挤出窗口 -->
+  <g transform="translate(770 150)">
+    <g>
+      <rect x="0"   y="0" width="30" height="30" rx="6" fill="#334166"/>
+      <rect x="40"  y="0" width="30" height="30" rx="6" fill="#3a4a72"/>
+      <rect x="80"  y="0" width="30" height="30" rx="6" fill="#38e8ff" opacity="0.9"/>
+      <rect x="120" y="0" width="30" height="30" rx="6" fill="#6f9bff"/>
+      <rect x="160" y="0" width="30" height="30" rx="6" fill="#b06bff"/>
+      <rect x="200" y="0" width="30" height="30" rx="6" fill="#38e8ff" opacity="0.9"/>
+      <rect x="240" y="0" width="30" height="30" rx="6" fill="#3a4a72"/>
+      <rect x="280" y="0" width="30" height="30" rx="6" fill="#334166"/>
+    </g>
+    <!-- 上下文窗口框 -->
+    <rect x="68" y="-16" width="176" height="62" rx="10" fill="none" stroke="#38e8ff" stroke-width="3"/>
+    <text x="156" y="78" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#8be9ff" text-anchor="middle" letter-spacing="1">context window</text>
+  </g>
+
+  <text x="80" y="250" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" letter-spacing="6" font-weight="600" fill="#38e8ff">// AI 原理</text>
+  <text x="76" y="372" font-family="Inter, 'Segoe UI', sans-serif" font-size="92" font-weight="800" fill="url(#cwTitle)">Context Window</text>
+  <text x="80" y="442" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="600" fill="#c3ccdf">上下文窗口 · AI 的记忆边界</text>
+
+  <g stroke="#38e8ff" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M80 492 h120"/>
+    <circle cx="215" cy="492" r="5" fill="#38e8ff" stroke="none"/>
+  </g>
+</svg>
