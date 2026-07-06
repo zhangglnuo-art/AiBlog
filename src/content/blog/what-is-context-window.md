@@ -4,7 +4,7 @@ description: 为什么 AI 聊着聊着就「忘」了前面说的话？上下文
 pubDate: 2026-07-03
 tags: ['大模型', '上下文窗口', 'AI原理']
 author: 编辑部
-cover: /covers/context-window.png
+cover: /covers/context-window.png?v=2
 ---
 
 用大模型久了你可能发现：聊到后面，它好像「忘」了开头说过的话；或者你贴一篇超长文档进去，它读到一半就开始答非所问。这背后的关键概念，就是**上下文窗口（Context Window）**。这篇用最直白的方式讲清楚它是什么、为什么重要。

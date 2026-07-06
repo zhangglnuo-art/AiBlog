@@ -4,7 +4,7 @@ description: 想让 AI 懂你的专业领域或私有数据，该选提示词、
 pubDate: 2026-07-06
 tags: ['大模型', 'RAG', 'AI原理']
 author: 编辑部
-cover: /covers/customize-llm.png
+cover: /covers/customize-llm.png?v=2
 ---
 
 大模型很聪明，但它**不知道你公司的文档、你的产品细节、你行业里的最新规定**——这些都不在它的训练数据里。想让 AI「懂你的东西」，主流有三条路：**提示词、RAG、微调**。这篇用最直白的方式讲清它们的区别，以及什么时候该用哪个。
