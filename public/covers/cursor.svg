@@ -1,62 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
   <defs>
-    <linearGradient id="csTitle" x1="0" y1="0" x2="1" y2="0.4">
-      <stop offset="0" stop-color="#38e8ff"/>
-      <stop offset="0.5" stop-color="#6f9bff"/>
-      <stop offset="1" stop-color="#7dffc4"/>
+    <linearGradient id="cuBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f18"/>
+      <stop offset="1" stop-color="#0d141f"/>
     </linearGradient>
-    <radialGradient id="csA" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#38e8ff" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#38e8ff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="csB" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="csC" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#3366ff" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#3366ff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="csVign" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#05070f" stop-opacity="0"/>
-      <stop offset="1" stop-color="#05070f" stop-opacity="0.5"/>
+    <linearGradient id="cuCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dffc4"/>
+      <stop offset="1" stop-color="#38e8ff"/>
     </linearGradient>
-    <pattern id="csGrid" width="46" height="46" patternUnits="userSpaceOnUse">
-      <path d="M46 0H0V46" fill="none" stroke="#78a0ff" stroke-opacity="0.08" stroke-width="1"/>
-    </pattern>
   </defs>
 
-  <rect width="1200" height="675" fill="#05070f"/>
-  <circle cx="200" cy="160" r="340" fill="url(#csA)"/>
-  <circle cx="1010" cy="470" r="320" fill="url(#csB)"/>
-  <circle cx="640" cy="620" r="300" fill="url(#csC)"/>
-  <rect width="1200" height="675" fill="url(#csGrid)"/>
-  <rect width="1200" height="675" fill="url(#csVign)"/>
+  <rect width="1200" height="675" fill="url(#cuBg)"/>
 
-  <!-- 代码编辑器窗口 -->
-  <g transform="translate(830 165)">
-    <rect x="0" y="0" width="300" height="200" rx="14" fill="#0b1220" stroke="#ffffff" stroke-opacity="0.12"/>
-    <circle cx="22" cy="22" r="5" fill="#ff6b6b"/>
-    <circle cx="42" cy="22" r="5" fill="#ffd166"/>
-    <circle cx="62" cy="22" r="5" fill="#7dffc4"/>
-    <g stroke-width="6" stroke-linecap="round">
-      <line x1="24" y1="62" x2="120" y2="62" stroke="#6f9bff"/>
-      <line x1="140" y1="62" x2="200" y2="62" stroke="#7dffc4"/>
-      <line x1="44" y1="92" x2="180" y2="92" stroke="#38e8ff"/>
-      <line x1="44" y1="122" x2="120" y2="122" stroke="#b06bff"/>
-      <line x1="140" y1="122" x2="250" y2="122" stroke="#6f9bff"/>
-      <line x1="24" y1="152" x2="90" y2="152" stroke="#7dffc4"/>
+  <!-- 代码编辑器窗口（近全幅，像一张代码截图） -->
+  <g transform="translate(70 66)">
+    <rect x="0" y="0" width="1060" height="452" rx="18" fill="#0c1422" stroke="#ffffff" stroke-opacity="0.10"/>
+    <!-- 标题栏 -->
+    <rect x="0" y="0" width="1060" height="52" rx="18" fill="#111b2c"/>
+    <rect x="0" y="34" width="1060" height="18" fill="#111b2c"/>
+    <circle cx="30" cy="26" r="7" fill="#ff6b6b"/>
+    <circle cx="54" cy="26" r="7" fill="#ffd166"/>
+    <circle cx="78" cy="26" r="7" fill="#7dffc4"/>
+    <text x="530" y="32" font-family="'JetBrains Mono', Consolas, monospace" font-size="18" fill="#7c8aa6" text-anchor="middle">app.tsx — cursor</text>
+    <rect x="946" y="12" width="92" height="28" rx="8" fill="rgba(125,255,196,0.14)" stroke="#7dffc4" stroke-opacity="0.5"/>
+    <text x="992" y="31" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#7dffc4" text-anchor="middle">AI</text>
+
+    <!-- 行号 -->
+    <g font-family="Consolas, monospace" font-size="18" fill="#3a4761" text-anchor="end">
+      <text x="58" y="100">1</text><text x="58" y="134">2</text><text x="58" y="168">3</text>
+      <text x="58" y="202">4</text><text x="58" y="236">5</text><text x="58" y="270">6</text>
+      <text x="58" y="304">7</text><text x="58" y="338">8</text><text x="58" y="372">9</text>
     </g>
-    <!-- 光标 caret -->
-    <rect x="100" y="140" width="4" height="24" fill="#38e8ff"/>
+    <!-- 代码色块 -->
+    <g rx="4">
+      <rect x="86" y="88"  width="90"  height="14" rx="4" fill="#c586ff"/>
+      <rect x="188" y="88" width="150" height="14" rx="4" fill="#7dffc4"/>
+      <rect x="350" y="88" width="70"  height="14" rx="4" fill="#7c8aa6"/>
+
+      <rect x="120" y="122" width="120" height="14" rx="4" fill="#38e8ff"/>
+      <rect x="252" y="122" width="220" height="14" rx="4" fill="#ffd166"/>
+
+      <rect x="120" y="156" width="80"  height="14" rx="4" fill="#c586ff"/>
+      <rect x="212" y="156" width="260" height="14" rx="4" fill="#8fa0bf"/>
+
+      <!-- 当前行高亮 + 光标 + AI 幽灵建议 -->
+      <rect x="80" y="182" width="900" height="26" rx="6" fill="rgba(56,232,255,0.08)"/>
+      <rect x="120" y="190" width="150" height="14" rx="4" fill="#6f9bff"/>
+      <rect x="284" y="190" width="4"  height="18" fill="#7dffc4"/>
+      <rect x="300" y="190" width="330" height="14" rx="4" fill="#41527a"/>
+      <text x="642" y="203" font-family="Inter, sans-serif" font-size="14" fill="#5a6b8f" font-style="italic">AI 建议 · Tab 接受</text>
+
+      <rect x="120" y="224" width="180" height="14" rx="4" fill="#ffd166"/>
+      <rect x="312" y="224" width="110" height="14" rx="4" fill="#7dffc4"/>
+      <rect x="86" y="258"  width="70"  height="14" rx="4" fill="#c586ff"/>
+      <rect x="168" y="258" width="200" height="14" rx="4" fill="#8fa0bf"/>
+      <rect x="120" y="292" width="240" height="14" rx="4" fill="#38e8ff"/>
+      <rect x="86" y="326"  width="40"  height="14" rx="4" fill="#7c8aa6"/>
+    </g>
   </g>
 
-  <text x="80" y="250" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" letter-spacing="6" font-weight="600" fill="#38e8ff">// AI 订阅指南</text>
-  <text x="76" y="380" font-family="Inter, 'Segoe UI', sans-serif" font-size="120" font-weight="800" fill="url(#csTitle)">Cursor</text>
-  <text x="80" y="450" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="600" fill="#c3ccdf">国内开通 AI 编程神器全流程</text>
-
-  <g stroke="#38e8ff" stroke-opacity="0.5" stroke-width="2" fill="none">
-    <path d="M80 500 h120"/>
-    <circle cx="215" cy="500" r="5" fill="#38e8ff" stroke="none"/>
-  </g>
+  <!-- 底部说明条 -->
+  <text x="72" y="586" font-family="Inter, 'Segoe UI', sans-serif" font-size="52" font-weight="800" fill="url(#cuCap)">Cursor</text>
+  <text x="240" y="586" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#8fa0bf">国内开通 AI 编程神器全流程</text>
 </svg>
