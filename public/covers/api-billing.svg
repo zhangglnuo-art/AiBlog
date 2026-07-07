@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="apBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#120c05"/>
+      <stop offset="1" stop-color="#0e0a08"/>
+    </linearGradient>
+    <radialGradient id="apGlow" cx="0.8" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#a35a12" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#a35a12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="apCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#ff8a3c"/>
+    </linearGradient>
+    <linearGradient id="apBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8a3c"/>
+      <stop offset="1" stop-color="#ffd166"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#apBg)"/>
+  <rect width="1200" height="675" fill="url(#apGlow)"/>
+
+  <!-- 请求面板 -->
+  <g transform="translate(90 80)">
+    <rect x="0" y="0" width="1020" height="272" rx="16" fill="#16110a" stroke="#ffffff" stroke-opacity="0.08"/>
+    <!-- 请求行 -->
+    <rect x="28" y="30" width="78" height="34" rx="8" fill="rgba(255,138,60,0.18)" stroke="#ff8a3c" stroke-opacity="0.6"/>
+    <text x="67" y="53" font-family="Inter, sans-serif" font-size="17" font-weight="800" fill="#ffb060" text-anchor="middle">POST</text>
+    <text x="122" y="53" font-family="Consolas, monospace" font-size="21" fill="#d8c9a8">api.openai.com/v1/chat/completions</text>
+    <!-- body 行 -->
+    <g font-family="Consolas, monospace" font-size="18">
+      <text x="28" y="104" fill="#7c715a">{</text>
+      <text x="52" y="134" fill="#9fb0d6">"model"</text><text x="150" y="134" fill="#7c715a">:</text><text x="168" y="134" fill="#7dffc4">"gpt-5"</text><text x="238" y="134" fill="#7c715a">,</text>
+      <text x="52" y="164" fill="#9fb0d6">"messages"</text><text x="180" y="164" fill="#7c715a">: [ … ]</text>
+      <text x="28" y="194" fill="#7c715a">}</text>
+    </g>
+    <!-- 响应 -->
+    <line x1="28" y1="216" x2="992" y2="216" stroke="#ffffff" stroke-opacity="0.06"/>
+    <circle cx="40" cy="244" r="7" fill="#7dffc4"/>
+    <text x="58" y="250" font-family="Consolas, monospace" font-size="18" fill="#8fe6c0">200 OK</text>
+    <text x="180" y="250" font-family="Consolas, monospace" font-size="18" fill="#8a7d63">usage: 1,240 tokens · $0.006</text>
+  </g>
+
+  <!-- 余额条 -->
+  <g transform="translate(90 380)">
+    <text x="0" y="20" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="700" fill="#d8c9a8">余额 Credits</text>
+    <text x="1020" y="20" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#ffd166" text-anchor="end">$ 25.00</text>
+    <rect x="0" y="34" width="1020" height="16" rx="8" fill="#2a2013"/>
+    <rect x="0" y="34" width="680" height="16" rx="8" fill="url(#apBar)"/>
+  </g>
+
+  <text x="90" y="540" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800" fill="url(#apCap)">API 充值</text>
+  <text x="94" y="586" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#9c8e70">OpenAI / Claude · 国内开发者付款全攻略</text>
+</svg>
