@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="cmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e17"/>
+      <stop offset="1" stop-color="#0c1018"/>
+    </linearGradient>
+    <linearGradient id="cmCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dffc4"/>
+      <stop offset="0.5" stop-color="#ff9d5c"/>
+      <stop offset="1" stop-color="#6f9bff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#cmBg)"/>
+  <text x="80" y="90" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#8ea6d6">// AI 对比</text>
+
+  <!-- 三列对比卡 -->
+  <!-- GPT-5 (绿) -->
+  <g transform="translate(100 120)" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="0" y="0" width="300" height="316" rx="16" fill="rgba(125,255,196,0.06)" stroke="#7dffc4" stroke-opacity="0.4"/>
+    <rect x="0" y="0" width="300" height="62" rx="16" fill="rgba(125,255,196,0.16)"/>
+    <rect x="0" y="46" width="300" height="16" fill="rgba(125,255,196,0.16)"/>
+    <text x="150" y="40" font-size="26" font-weight="800" fill="#a7f5d5" text-anchor="middle">GPT-5</text>
+    <g font-size="18" font-weight="600" fill="#8fa0bf">
+      <text x="28" y="118">综合</text><text x="28" y="164">写作</text><text x="28" y="210">代码</text>
+    </g>
+    <g fill="#7dffc4"><circle cx="150" cy="112" r="7"/><circle cx="180" cy="112" r="7"/><circle cx="210" cy="112" r="7"/><circle cx="240" cy="112" r="7"/></g>
+    <g fill="#7dffc4"><circle cx="150" cy="158" r="7"/><circle cx="180" cy="158" r="7"/><circle cx="210" cy="158" r="7"/><circle cx="240" cy="158" r="7"/></g>
+    <g fill="#7dffc4"><circle cx="150" cy="204" r="7"/><circle cx="180" cy="204" r="7"/><circle cx="210" cy="204" r="7"/><circle cx="240" cy="204" r="7"/></g>
+    <rect x="28" y="248" width="244" height="40" rx="10" fill="rgba(125,255,196,0.10)"/>
+    <text x="150" y="274" font-size="17" font-weight="700" fill="#a7f5d5" text-anchor="middle">招牌 · 全能生态</text>
+  </g>
+
+  <!-- Claude (橙) -->
+  <g transform="translate(450 120)" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="0" y="0" width="300" height="316" rx="16" fill="rgba(255,157,92,0.06)" stroke="#ff9d5c" stroke-opacity="0.4"/>
+    <rect x="0" y="0" width="300" height="62" rx="16" fill="rgba(255,157,92,0.16)"/>
+    <rect x="0" y="46" width="300" height="16" fill="rgba(255,157,92,0.16)"/>
+    <text x="150" y="40" font-size="26" font-weight="800" fill="#ffc39a" text-anchor="middle">Claude</text>
+    <g font-size="18" font-weight="600" fill="#8fa0bf">
+      <text x="28" y="118">综合</text><text x="28" y="164">写作</text><text x="28" y="210">长文</text>
+    </g>
+    <g><circle cx="150" cy="112" r="7" fill="#ff9d5c"/><circle cx="180" cy="112" r="7" fill="#ff9d5c"/><circle cx="210" cy="112" r="7" fill="#ff9d5c"/><circle cx="240" cy="112" r="7" fill="#3a3527"/></g>
+    <g fill="#ff9d5c"><circle cx="150" cy="158" r="7"/><circle cx="180" cy="158" r="7"/><circle cx="210" cy="158" r="7"/><circle cx="240" cy="158" r="7"/></g>
+    <g fill="#ff9d5c"><circle cx="150" cy="204" r="7"/><circle cx="180" cy="204" r="7"/><circle cx="210" cy="204" r="7"/><circle cx="240" cy="204" r="7"/></g>
+    <rect x="28" y="248" width="244" height="40" rx="10" fill="rgba(255,157,92,0.10)"/>
+    <text x="150" y="274" font-size="17" font-weight="700" fill="#ffc39a" text-anchor="middle">招牌 · 长文档/写作</text>
+  </g>
+
+  <!-- Gemini (蓝) -->
+  <g transform="translate(800 120)" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="0" y="0" width="300" height="316" rx="16" fill="rgba(111,155,255,0.06)" stroke="#6f9bff" stroke-opacity="0.4"/>
+    <rect x="0" y="0" width="300" height="62" rx="16" fill="rgba(111,155,255,0.16)"/>
+    <rect x="0" y="46" width="300" height="16" fill="rgba(111,155,255,0.16)"/>
+    <text x="150" y="40" font-size="26" font-weight="800" fill="#b9c8ff" text-anchor="middle">Gemini</text>
+    <g font-size="18" font-weight="600" fill="#8fa0bf">
+      <text x="28" y="118">综合</text><text x="28" y="164">联网</text><text x="28" y="210">生态</text>
+    </g>
+    <g><circle cx="150" cy="112" r="7" fill="#6f9bff"/><circle cx="180" cy="112" r="7" fill="#6f9bff"/><circle cx="210" cy="112" r="7" fill="#6f9bff"/><circle cx="240" cy="112" r="7" fill="#26304a"/></g>
+    <g fill="#6f9bff"><circle cx="150" cy="158" r="7"/><circle cx="180" cy="158" r="7"/><circle cx="210" cy="158" r="7"/><circle cx="240" cy="158" r="7"/></g>
+    <g fill="#6f9bff"><circle cx="150" cy="204" r="7"/><circle cx="180" cy="204" r="7"/><circle cx="210" cy="204" r="7"/><circle cx="240" cy="204" r="7"/></g>
+    <rect x="28" y="248" width="244" height="40" rx="10" fill="rgba(111,155,255,0.10)"/>
+    <text x="150" y="274" font-size="17" font-weight="700" fill="#b9c8ff" text-anchor="middle">招牌 · 联网/谷歌生态</text>
+  </g>
+
+  <text x="100" y="516" font-family="Inter, 'Segoe UI', sans-serif" font-size="50" font-weight="800" fill="url(#cmCap)">GPT · Claude · Gemini</text>
+  <text x="104" y="562" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#8ea6d6">三大 AI 助手怎么选</text>
+</svg>

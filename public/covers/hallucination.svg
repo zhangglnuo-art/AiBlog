@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="haBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#160810"/>
+      <stop offset="1" stop-color="#100812"/>
+    </linearGradient>
+    <radialGradient id="haGlow" cx="0.72" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#8a1f3f" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#8a1f3f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="haCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff8a8a"/>
+      <stop offset="1" stop-color="#ff4d8d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#haBg)"/>
+  <rect width="1200" height="675" fill="url(#haGlow)"/>
+
+  <!-- AI 回答气泡：语气笃定却是错的 -->
+  <g transform="translate(640 130)">
+    <rect x="0" y="0" width="470" height="252" rx="20" fill="#1c0f16" stroke="#ffffff" stroke-opacity="0.08"/>
+    <!-- AI 头像点 -->
+    <circle cx="36" cy="40" r="14" fill="#ff4d8d"/>
+    <text x="60" y="46" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="#c99">AI · 非常确定地回答</text>
+    <!-- 内容行 -->
+    <g stroke-linecap="round" stroke-width="7">
+      <line x1="34" y1="96" x2="420" y2="96" stroke="#5a4650"/>
+      <line x1="34" y1="128" x2="360" y2="128" stroke="#5a4650"/>
+    </g>
+    <!-- 一条"编造的事实" + 警示 -->
+    <rect x="30" y="150" width="410" height="42" rx="10" fill="rgba(255,77,141,0.12)" stroke="#ff4d8d" stroke-opacity="0.5"/>
+    <text x="48" y="177" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" font-weight="700" fill="#ff9db9">「据《不存在的研究》(2023)…」</text>
+    <!-- 底部：看似对号实则错 -->
+    <g transform="translate(34 212)">
+      <circle cx="12" cy="0" r="13" fill="none" stroke="#ff6b6b" stroke-width="3"/>
+      <path d="M6 -6 L18 6 M18 -6 L6 6" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+      <text x="38" y="6" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#b98a97">流畅、笃定，但查无此事</text>
+    </g>
+  </g>
+
+  <!-- 警示三角 -->
+  <g transform="translate(1060 96)">
+    <path d="M0 -34 L30 20 L-30 20 Z" fill="none" stroke="#ffcf5c" stroke-width="4" stroke-linejoin="round"/>
+    <line x1="0" y1="-6" x2="0" y2="6" stroke="#ffcf5c" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="13" r="2.5" fill="#ffcf5c"/>
+  </g>
+
+  <text x="80" y="230" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#ff8aa8">// AI 原理</text>
+  <text x="76" y="356" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="104" font-weight="800" fill="url(#haCap)">AI 幻觉</text>
+  <text x="80" y="420" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="600" fill="#c79aab">为什么大模型会一本正经地胡说</text>
+
+  <g stroke="#ff4d8d" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M80 470 h120"/>
+    <circle cx="215" cy="470" r="5" fill="#ff4d8d" stroke="none"/>
+  </g>
+</svg>
