@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="avBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0a1a"/>
+      <stop offset="1" stop-color="#140a16"/>
+    </linearGradient>
+    <linearGradient id="avThumb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="0.5" stop-color="#b06bff"/>
+      <stop offset="1" stop-color="#ff7eb3"/>
+    </linearGradient>
+    <linearGradient id="avT2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3366ff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+    <linearGradient id="avT3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7a45"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+    <linearGradient id="avT4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ec4899"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="avCap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c4b5ff"/><stop offset="1" stop-color="#ff9d5c"/></linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#avBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#c4b5ff">// AI 工具</text>
+
+  <!-- 主播放器 -->
+  <g transform="translate(88 116)">
+    <rect x="0" y="0" width="744" height="330" rx="18" fill="#160e22" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="16" width="712" height="256" rx="12" fill="url(#avThumb)"/>
+    <!-- 时长徽标 -->
+    <rect x="34" y="238" width="66" height="28" rx="8" fill="rgba(0,0,0,0.45)"/>
+    <text x="67" y="257" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">0:08</text>
+    <!-- 播放按钮 -->
+    <circle cx="372" cy="144" r="52" fill="rgba(0,0,0,0.35)" stroke="#fff" stroke-opacity="0.85" stroke-width="3"/>
+    <path d="M357 118 L400 144 L357 170 Z" fill="#ffffff"/>
+    <!-- 进度条 -->
+    <rect x="34" y="298" width="676" height="6" rx="3" fill="rgba(255,255,255,0.18)"/>
+    <rect x="34" y="298" width="300" height="6" rx="3" fill="#ff9d5c"/>
+    <circle cx="334" cy="301" r="9" fill="#ffd166"/>
+  </g>
+
+  <!-- 右侧：多镜头缩略（图生/文生的不同结果） -->
+  <g transform="translate(868 116)">
+    <rect x="0" y="0"   width="244" height="100" rx="12" fill="url(#avT2)"/>
+    <rect x="0" y="115" width="244" height="100" rx="12" fill="url(#avT3)"/>
+    <rect x="0" y="230" width="244" height="100" rx="12" fill="url(#avT4)"/>
+    <g fill="#ffffff" opacity="0.9">
+      <path d="M112 40 L132 50 L112 60 Z"/>
+      <path d="M112 155 L132 165 L112 175 Z"/>
+      <path d="M112 270 L132 280 L112 290 Z"/>
+    </g>
+  </g>
+
+  <text x="88" y="536" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800" fill="url(#avCap)">AI 视频工具</text>
+  <text x="92" y="582" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#9b8fc0">Runway · Sora · Pika · 可灵 怎么选</text>
+</svg>
