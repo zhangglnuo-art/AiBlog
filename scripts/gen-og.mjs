@@ -25,6 +25,8 @@ const jobs = [
   { in: 'public/covers/hallucination.svg', out: 'public/covers/hallucination.png', w: 1200, h: 675 },
   { in: 'public/covers/ai-video.svg', out: 'public/covers/ai-video.png', w: 1200, h: 675 },
   { in: 'public/covers/embedding.svg', out: 'public/covers/embedding.png', w: 1200, h: 675 },
+  { in: 'public/covers/ai-music.svg', out: 'public/covers/ai-music.png', w: 1200, h: 675 },
+  { in: 'public/covers/how-llm-works.svg', out: 'public/covers/how-llm-works.png', w: 1200, h: 675 },
   // 品牌 logo（Organization 结构化数据用）与 iOS 桌面图标
   { in: 'scripts/og-source/logo.svg', out: 'public/logo.png', w: 512, h: 512 },
   { in: 'scripts/og-source/logo.svg', out: 'public/apple-touch-icon.png', w: 180, h: 180 },
