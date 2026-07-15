@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="vcBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080d0a"/>
+      <stop offset="1" stop-color="#0b1210"/>
+    </linearGradient>
+    <radialGradient id="vcGlow" cx="0.63" cy="0.42" r="0.45">
+      <stop offset="0" stop-color="#4d7c1a" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#4d7c1a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vcMic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9f99d"/>
+      <stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+    <linearGradient id="vcCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9f99d"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#vcBg)"/>
+  <rect width="1200" height="675" fill="url(#vcGlow)"/>
+
+  <text x="80" y="106" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#a3e635">// AI 工具</text>
+
+  <!-- 文本卡片 -->
+  <g transform="translate(330 210)">
+    <rect x="0" y="0" width="210" height="140" rx="14" fill="rgba(163,230,53,0.07)" stroke="#a3e635" stroke-opacity="0.4"/>
+    <g stroke="#a3e635" stroke-opacity="0.75" stroke-width="6" stroke-linecap="round">
+      <line x1="28" y1="44" x2="150" y2="44"/>
+      <line x1="28" y1="72" x2="176" y2="72"/>
+      <line x1="28" y1="100" x2="118" y2="100"/>
+    </g>
+    <text x="105" y="172" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#c9e97a" text-anchor="middle">文本</text>
+  </g>
+
+  <!-- 箭头 -->
+  <g stroke="#84cc16" stroke-width="4" fill="none">
+    <path d="M566 280 H 636"/>
+    <path d="M624 270 L 640 280 L 624 290" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 麦克风 + 声波环 -->
+  <g transform="translate(790 270)">
+    <!-- 声波环 -->
+    <g fill="none" stroke="#84cc16">
+      <path d="M78 -44 A 66 66 0 0 1 78 76" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+      <path d="M108 -70 A 96 96 0 0 1 108 102" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-78 -44 A 66 66 0 0 0 -78 76" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-108 -70 A 96 96 0 0 0 -108 102" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <!-- 麦克风主体 -->
+    <rect x="-24" y="-76" width="48" height="116" rx="24" fill="url(#vcMic)"/>
+    <path d="M-48 12 A 48 48 0 0 0 48 12" fill="none" stroke="#a3e635" stroke-width="7" stroke-linecap="round"/>
+    <line x1="0" y1="60" x2="0" y2="92" stroke="#a3e635" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-26" y1="92" x2="26" y2="92" stroke="#a3e635" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- 语音波形 -->
+  <g fill="#4ade80" transform="translate(986 270)">
+    <rect x="0"  y="-18" width="10" height="36" rx="5"/>
+    <rect x="22" y="-40" width="10" height="80" rx="5"/>
+    <rect x="44" y="-26" width="10" height="52" rx="5"/>
+    <rect x="66" y="-52" width="10" height="104" rx="5"/>
+    <rect x="88" y="-30" width="10" height="60" rx="5"/>
+  </g>
+  <text x="1030" y="392" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#8fe0a0" text-anchor="middle">语音</text>
+
+  <text x="76" y="524" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="56" font-weight="800" fill="url(#vcCap)">ElevenLabs · AI 配音</text>
+  <text x="80" y="570" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#8aa37a">把文字变成自然人声</text>
+</svg>
