@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="gmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="1" stop-color="#0d0a1c"/>
+    </linearGradient>
+    <radialGradient id="gmGlow" cx="0.72" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#3b5bdb" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3b5bdb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gmStar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ab4f8"/>
+      <stop offset="0.5" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#e879a6"/>
+    </linearGradient>
+    <linearGradient id="gmCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8ab4f8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#gmBg)"/>
+  <rect width="1200" height="675" fill="url(#gmGlow)"/>
+
+  <!-- 主星芒 -->
+  <g transform="translate(870 300)">
+    <path d="M 0 -140 C 18 -54 54 -18 140 0 C 54 18 18 54 0 140 C -18 54 -54 18 -140 0 C -54 -18 -18 -54 0 -140 Z" fill="url(#gmStar)"/>
+  </g>
+  <!-- 小星芒点缀 -->
+  <g transform="translate(1058 152)">
+    <path d="M 0 -40 C 5 -15 15 -5 40 0 C 15 5 5 15 0 40 C -5 15 -15 5 -40 0 C -15 -5 -5 -15 0 -40 Z" fill="#8ab4f8" opacity="0.85"/>
+  </g>
+  <g transform="translate(700 470)">
+    <path d="M 0 -26 C 3 -10 10 -3 26 0 C 10 3 3 10 0 26 C -3 10 -10 3 -26 0 C -10 -3 -3 -10 0 -26 Z" fill="#e879a6" opacity="0.75"/>
+  </g>
+
+  <text x="80" y="212" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#8ab4f8">// AI 订阅指南</text>
+
+  <!-- Advanced 徽标 -->
+  <g transform="translate(78 246)">
+    <rect x="0" y="0" width="146" height="38" rx="10" fill="rgba(192,132,252,0.16)" stroke="#c084fc" stroke-opacity="0.6"/>
+    <text x="73" y="26" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#d8b4fe" text-anchor="middle">Advanced</text>
+  </g>
+
+  <text x="76" y="400" font-family="Inter, 'Segoe UI', sans-serif" font-size="104" font-weight="800" fill="url(#gmCap)">Gemini</text>
+  <text x="80" y="462" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="600" fill="#9fb0d6">国内开通全流程</text>
+
+  <g stroke="#8ab4f8" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M80 512 h120"/>
+    <circle cx="215" cy="512" r="5" fill="#8ab4f8" stroke="none"/>
+  </g>
+</svg>

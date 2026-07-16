@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="ocBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#08150f"/>
+      <stop offset="0.5" stop-color="#0a0f18"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="ocCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#7aa2ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#ocBg)"/>
+  <text x="80" y="94" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#8ea6d6">// AI 对比</text>
+
+  <!-- 左：开源 -->
+  <g transform="translate(80 138)" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="0" y="0" width="490" height="292" rx="18" fill="rgba(74,222,128,0.07)" stroke="#4ade80" stroke-opacity="0.45"/>
+    <!-- 开锁 -->
+    <g transform="translate(64 78)" stroke="#4ade80" stroke-width="5" fill="none">
+      <path d="M-16 -14 V -26 A 16 16 0 0 1 16 -26" />
+      <rect x="-22" y="-14" width="44" height="38" rx="6" fill="rgba(74,222,128,0.18)"/>
+      <circle cx="0" cy="5" r="4" fill="#4ade80" stroke="none"/>
+    </g>
+    <text x="120" y="86" font-size="34" font-weight="800" fill="#86efac">开源 Open</text>
+    <g font-size="21" font-weight="600" fill="#8fb69b">
+      <text x="42" y="152">· 权重可下载、可本地部署</text>
+      <text x="42" y="192">· 数据不出门、可微调</text>
+      <text x="42" y="232">· 但要显卡、要运维</text>
+    </g>
+    <rect x="42" y="250" width="230" height="32" rx="8" fill="rgba(74,222,128,0.12)"/>
+    <text x="157" y="272" font-size="16" font-weight="700" fill="#86efac" text-anchor="middle">Llama · Qwen · DeepSeek</text>
+  </g>
+
+  <!-- 右：闭源 -->
+  <g transform="translate(630 138)" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="0" y="0" width="490" height="292" rx="18" fill="rgba(122,162,255,0.07)" stroke="#7aa2ff" stroke-opacity="0.45"/>
+    <!-- 闭锁 -->
+    <g transform="translate(64 78)" stroke="#7aa2ff" stroke-width="5" fill="none">
+      <path d="M-16 -14 V -26 A 16 16 0 0 1 16 -26 V -14" />
+      <rect x="-22" y="-14" width="44" height="38" rx="6" fill="rgba(122,162,255,0.18)"/>
+      <circle cx="0" cy="5" r="4" fill="#7aa2ff" stroke="none"/>
+    </g>
+    <text x="120" y="86" font-size="34" font-weight="800" fill="#b9c8ff">闭源 Closed</text>
+    <g font-size="21" font-weight="600" fill="#8fa0bf">
+      <text x="42" y="152">· 只能用网页 / API</text>
+      <text x="42" y="192">· 开箱即用、能力更强</text>
+      <text x="42" y="232">· 但依赖厂商、按月付费</text>
+    </g>
+    <rect x="42" y="250" width="230" height="32" rx="8" fill="rgba(122,162,255,0.12)"/>
+    <text x="157" y="272" font-size="16" font-weight="700" fill="#b9c8ff" text-anchor="middle">GPT · Claude · Gemini</text>
+  </g>
+
+  <!-- 中间 VS -->
+  <g transform="translate(600 284)">
+    <circle r="40" fill="#0a0f18" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    <text x="0" y="10" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#dbe4f5" text-anchor="middle">VS</text>
+  </g>
+
+  <text x="76" y="528" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800" fill="url(#ocCap)">开源 vs 闭源大模型</text>
+  <text x="80" y="574" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#8ea6d6">Llama、DeepSeek 能替代 ChatGPT 吗</text>
+</svg>
