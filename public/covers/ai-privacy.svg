@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="pvBg" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#070d14"/>
+      <stop offset="1" stop-color="#0a1220"/>
+    </linearGradient>
+    <linearGradient id="pvShield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#1e5fa8"/>
+    </linearGradient>
+    <linearGradient id="pvCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#pvBg)"/>
+  <text x="80" y="96" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#7dd3fc">// AI 安全</text>
+
+  <!-- 左：敏感数据条目 -->
+  <g transform="translate(80 150)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" font-weight="700">
+    <g>
+      <rect x="0" y="0" width="290" height="50" rx="12" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-opacity="0.45"/>
+      <text x="24" y="33" fill="#fca5a5">身份证 · 银行卡</text>
+      <rect x="0" y="66" width="290" height="50" rx="12" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-opacity="0.45"/>
+      <text x="24" y="99" fill="#fca5a5">密码 · API Key</text>
+      <rect x="0" y="132" width="290" height="50" rx="12" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-opacity="0.45"/>
+      <text x="24" y="165" fill="#fca5a5">客户名单 · 合同</text>
+      <rect x="0" y="198" width="290" height="50" rx="12" fill="rgba(94,234,212,0.1)" stroke="#5eead4" stroke-opacity="0.45"/>
+      <text x="24" y="231" fill="#7fe7d4">脱敏后的问题 ✓</text>
+    </g>
+  </g>
+
+  <!-- 拦截线 -->
+  <g stroke-width="3" fill="none">
+    <path d="M382 175 H 500" stroke="#f87171" stroke-opacity="0.6" stroke-dasharray="8 7"/>
+    <path d="M382 241 H 500" stroke="#f87171" stroke-opacity="0.6" stroke-dasharray="8 7"/>
+    <path d="M382 307 H 500" stroke="#f87171" stroke-opacity="0.6" stroke-dasharray="8 7"/>
+    <path d="M382 373 H 560" stroke="#5eead4" stroke-opacity="0.75"/>
+    <path d="M548 365 L 562 373 L 548 381" stroke="#5eead4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 盾牌 -->
+  <g transform="translate(640 292)">
+    <path d="M0 -132 L108 -92 V 10 C 108 78 56 118 0 140 C -56 118 -108 78 -108 10 V -92 Z" fill="url(#pvShield)" opacity="0.22" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="3"/>
+    <!-- 锁 -->
+    <g stroke="#7dd3fc" stroke-width="6" fill="none">
+      <path d="M-26 -18 V -38 A 26 26 0 0 1 26 -38 V -18"/>
+    </g>
+    <rect x="-38" y="-18" width="76" height="62" rx="10" fill="#0d2136" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="0" cy="10" r="7" fill="#7dd3fc"/>
+    <rect x="-3" y="14" width="6" height="16" rx="3" fill="#7dd3fc"/>
+  </g>
+
+  <!-- 右：AI -->
+  <g transform="translate(900 292)">
+    <circle r="66" fill="rgba(94,234,212,0.08)" stroke="#5eead4" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="0" y="10" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#7fe7d4" text-anchor="middle">AI</text>
+  </g>
+  <g stroke="#5eead4" stroke-opacity="0.6" stroke-width="3" fill="none">
+    <path d="M760 373 C 810 373, 830 330, 834 300"/>
+  </g>
+
+  <text x="76" y="546" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="54" font-weight="800" fill="url(#pvCap)">和 AI 聊天，数据安全吗</text>
+  <text x="80" y="592" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#7f96ad">哪些不能贴 · 怎么关训练 · 如何脱敏</text>
+</svg>
