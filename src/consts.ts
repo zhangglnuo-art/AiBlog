@@ -30,6 +30,31 @@ export const RDVCC_BRAND = '融达虚拟信用卡';
 export const rdvccLink = (path = '/', campaign = 'blog') =>
   `${RDVCC_URL}${path}?utm_source=ibve&utm_medium=article&utm_campaign=${campaign}`;
 
+// 友情链接（页脚展示）。名称按各站实际定位来写，便于读者判断要不要点。
+// 增删改只需改这里；主站放最后并单独标注。
+export const FRIEND_LINKS = [
+  {
+    name: 'AI 服务指南',
+    href: 'https://ponr.org/',
+    desc: '海外与国内 AI 的订阅开通与使用指南',
+  },
+  {
+    name: '读懂 AI',
+    href: 'https://forlines.org/',
+    desc: '把复杂的 AI 讲成听得懂的话',
+  },
+  {
+    name: 'IE9 · AI 前沿',
+    href: 'https://ie9.cc/',
+    desc: 'AI 资讯、工具教程与评测对比',
+  },
+  {
+    name: RDVCC_BRAND,
+    href: RDVCC_URL,
+    desc: 'USDT 开卡的海外虚拟信用卡',
+  },
+];
+
 // 导航栏
 export const NAV_LINKS = [
   { label: '首页', href: '/' },
