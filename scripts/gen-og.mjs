@@ -35,6 +35,8 @@ const jobs = [
   { in: 'public/covers/vector-database.svg', out: 'public/covers/vector-database.png', w: 1200, h: 675 },
   { in: 'public/covers/subscription-savings.svg', out: 'public/covers/subscription-savings.png', w: 1200, h: 675 },
   { in: 'public/covers/ai-privacy.svg', out: 'public/covers/ai-privacy.png', w: 1200, h: 675 },
+  { in: 'public/covers/ai-coding-tools.svg', out: 'public/covers/ai-coding-tools.png', w: 1200, h: 675 },
+  { in: 'public/covers/mcp.svg', out: 'public/covers/mcp.png', w: 1200, h: 675 },
   // 品牌 logo（Organization 结构化数据用）与 iOS 桌面图标
   { in: 'scripts/og-source/logo.svg', out: 'public/logo.png', w: 512, h: 512 },
   { in: 'scripts/og-source/logo.svg', out: 'public/apple-touch-icon.png', w: 180, h: 180 },

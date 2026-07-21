@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="ctBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f14"/>
+      <stop offset="1" stop-color="#0c1119"/>
+    </linearGradient>
+    <linearGradient id="ctCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dffc4"/>
+      <stop offset="0.5" stop-color="#38e8ff"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#ctBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#7dffc4">// AI 对比</text>
+
+  <!-- 对比矩阵 -->
+  <g font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="80" y="118" width="1040" height="300" rx="16" fill="rgba(255,255,255,0.03)" stroke="#ffffff" stroke-opacity="0.09"/>
+
+    <!-- 表头 -->
+    <g font-size="22" font-weight="800">
+      <text x="112" y="164" fill="#6f7f95">维度</text>
+      <text x="400" y="164" fill="#7dffc4" text-anchor="middle">Cursor</text>
+      <text x="640" y="164" fill="#38e8ff" text-anchor="middle">Copilot</text>
+      <text x="870" y="164" fill="#c084fc" text-anchor="middle">Windsurf</text>
+      <text x="1060" y="164" fill="#fbbf24" text-anchor="middle">CLI</text>
+    </g>
+    <line x1="104" y1="184" x2="1096" y2="184" stroke="#ffffff" stroke-opacity="0.1"/>
+
+    <!-- 行 -->
+    <g font-size="20" font-weight="600" fill="#8fa0bf">
+      <text x="112" y="232">形态</text>
+      <text x="112" y="292">代码库理解</text>
+      <text x="112" y="352">多文件改动</text>
+    </g>
+    <g font-size="18" font-weight="700" text-anchor="middle">
+      <text x="400" y="232" fill="#a7f5d5">编辑器</text>
+      <text x="640" y="232" fill="#8be9ff">插件</text>
+      <text x="870" y="232" fill="#d8b4fe">编辑器</text>
+      <text x="1060" y="232" fill="#fcd34d">终端</text>
+    </g>
+    <!-- 评分点 -->
+    <g>
+      <g fill="#7dffc4"><circle cx="370" cy="286" r="7"/><circle cx="394" cy="286" r="7"/><circle cx="418" cy="286" r="7"/><circle cx="442" cy="286" r="7" fill="#243a33"/></g>
+      <g fill="#38e8ff"><circle cx="610" cy="286" r="7"/><circle cx="634" cy="286" r="7"/><circle cx="658" cy="286" r="7" fill="#1b3440"/><circle cx="682" cy="286" r="7" fill="#1b3440"/></g>
+      <g fill="#c084fc"><circle cx="840" cy="286" r="7"/><circle cx="864" cy="286" r="7"/><circle cx="888" cy="286" r="7"/><circle cx="912" cy="286" r="7" fill="#33254a"/></g>
+      <g fill="#fbbf24"><circle cx="1030" cy="286" r="7"/><circle cx="1054" cy="286" r="7"/><circle cx="1078" cy="286" r="7"/><circle cx="1102" cy="286" r="7" fill="#3d3320"/></g>
+
+      <g fill="#7dffc4"><circle cx="370" cy="346" r="7"/><circle cx="394" cy="346" r="7"/><circle cx="418" cy="346" r="7"/><circle cx="442" cy="346" r="7" fill="#243a33"/></g>
+      <g fill="#38e8ff"><circle cx="610" cy="346" r="7"/><circle cx="634" cy="346" r="7" fill="#1b3440"/><circle cx="658" cy="346" r="7" fill="#1b3440"/><circle cx="682" cy="346" r="7" fill="#1b3440"/></g>
+      <g fill="#c084fc"><circle cx="840" cy="346" r="7"/><circle cx="864" cy="346" r="7"/><circle cx="888" cy="346" r="7"/><circle cx="912" cy="346" r="7"/></g>
+      <g fill="#fbbf24"><circle cx="1030" cy="346" r="7"/><circle cx="1054" cy="346" r="7"/><circle cx="1078" cy="346" r="7"/><circle cx="1102" cy="346" r="7"/></g>
+    </g>
+  </g>
+
+  <text x="80" y="516" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="56" font-weight="800" fill="url(#ctCap)">AI 编程工具怎么选</text>
+  <text x="84" y="562" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#7f8ba3">编辑器 · 插件 · 终端，三种形态横评</text>
+</svg>
