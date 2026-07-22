@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="dhBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140d0e"/>
+      <stop offset="1" stop-color="#120f14"/>
+    </linearGradient>
+    <linearGradient id="dhAvatar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb4a2"/>
+      <stop offset="1" stop-color="#e5989b"/>
+    </linearGradient>
+    <linearGradient id="dhCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb4a2"/>
+      <stop offset="1" stop-color="#ff8fab"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#dhBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#ffb4a2">// AI 工具</text>
+
+  <!-- 口播视频播放器 -->
+  <g transform="translate(88 118)">
+    <rect x="0" y="0" width="620" height="330" rx="18" fill="#1a1216" stroke="#ffffff" stroke-opacity="0.09"/>
+    <!-- 数字人形象 -->
+    <g transform="translate(310 150)">
+      <circle cx="0" cy="-38" r="52" fill="url(#dhAvatar)"/>
+      <path d="M-92 96 C -92 30 -50 8 0 8 C 50 8 92 30 92 96 Z" fill="url(#dhAvatar)" opacity="0.85"/>
+      <!-- 说话声波 -->
+      <g stroke="#ff8fab" stroke-width="4" fill="none" stroke-linecap="round">
+        <path d="M78 -44 A 30 30 0 0 1 78 -8"/>
+        <path d="M100 -56 A 52 52 0 0 1 100 4" stroke-opacity="0.55"/>
+      </g>
+    </g>
+    <!-- AI 徽标 + 字幕条 -->
+    <rect x="20" y="20" width="64" height="30" rx="8" fill="rgba(255,143,171,0.16)" stroke="#ff8fab" stroke-opacity="0.6"/>
+    <text x="52" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#ffb3c6" text-anchor="middle">AI</text>
+    <rect x="90" y="272" width="440" height="34" rx="9" fill="rgba(0,0,0,0.45)"/>
+    <text x="310" y="295" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#f1d7d4" text-anchor="middle">大家好，这条视频由数字人播报…</text>
+  </g>
+
+  <!-- 右侧流程：文稿 → 口播 + 多语言 -->
+  <g transform="translate(772 118)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="340" height="96" rx="14" fill="rgba(255,180,162,0.08)" stroke="#ffb4a2" stroke-opacity="0.45"/>
+    <text x="26" y="40" font-size="22" font-weight="700" fill="#ffc9bb">① 贴上文字稿</text>
+    <g stroke="#ffb4a2" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"><line x1="26" y1="62" x2="200" y2="62"/><line x1="26" y1="78" x2="150" y2="78"/></g>
+
+    <g stroke="#ff8fab" stroke-width="3" fill="none">
+      <path d="M170 112 V 148"/>
+      <path d="M160 138 L 170 152 L 180 138" stroke-linejoin="round"/>
+    </g>
+
+    <rect x="0" y="164" width="340" height="70" rx="14" fill="rgba(255,143,171,0.1)" stroke="#ff8fab" stroke-opacity="0.55"/>
+    <text x="26" y="208" font-size="22" font-weight="700" fill="#ffb3c6">② 生成口播视频</text>
+
+    <g font-size="18" font-weight="700" text-anchor="middle">
+      <rect x="0" y="262" width="100" height="40" rx="10" fill="rgba(255,255,255,0.05)"/><text x="50" y="288" fill="#e8c8c2">中文</text>
+      <rect x="120" y="262" width="100" height="40" rx="10" fill="rgba(255,255,255,0.05)"/><text x="170" y="288" fill="#e8c8c2">EN</text>
+      <rect x="240" y="262" width="100" height="40" rx="10" fill="rgba(255,255,255,0.05)"/><text x="290" y="288" fill="#e8c8c2">ES</text>
+    </g>
+    <text x="170" y="330" font-size="17" font-weight="600" fill="#b08d90" text-anchor="middle">同一条视频 · 多语言口型同步</text>
+  </g>
+
+  <text x="84" y="546" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="56" font-weight="800" fill="url(#dhCap)">HeyGen · AI 数字人</text>
+  <text x="88" y="592" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#b39396">不出镜、不录音，替你口播</text>
+</svg>
