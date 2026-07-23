@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="ghBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0e1c"/>
+      <stop offset="1" stop-color="#12122a"/>
+    </linearGradient>
+    <linearGradient id="ghCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#ghBg)"/>
+
+  <!-- 编辑器窗口（左） -->
+  <g transform="translate(70 66)">
+    <rect x="0" y="0" width="660" height="440" rx="18" fill="#0d1224" stroke="#ffffff" stroke-opacity="0.10"/>
+    <!-- 标题栏 -->
+    <rect x="0" y="0" width="660" height="52" rx="18" fill="#131a30"/>
+    <rect x="0" y="34" width="660" height="18" fill="#131a30"/>
+    <circle cx="30" cy="26" r="7" fill="#ff6b6b"/>
+    <circle cx="54" cy="26" r="7" fill="#ffd166"/>
+    <circle cx="78" cy="26" r="7" fill="#7dffc4"/>
+    <text x="330" y="32" font-family="'JetBrains Mono', Consolas, monospace" font-size="18" fill="#7c8aa6" text-anchor="middle">main.py — 你现有的编辑器</text>
+
+    <!-- 行号 -->
+    <g font-family="Consolas, monospace" font-size="18" fill="#3a4166" text-anchor="end">
+      <text x="52" y="104">1</text><text x="52" y="140">2</text><text x="52" y="176">3</text>
+      <text x="52" y="212">4</text><text x="52" y="248">5</text><text x="52" y="284">6</text>
+      <text x="52" y="320">7</text><text x="52" y="356">8</text>
+    </g>
+    <!-- 代码色块 -->
+    <g>
+      <rect x="80" y="92"  width="70"  height="14" rx="4" fill="#c586ff"/>
+      <rect x="162" y="92" width="140" height="14" rx="4" fill="#60a5fa"/>
+      <rect x="80" y="128" width="46"  height="14" rx="4" fill="#7c8aa6"/>
+      <rect x="138" y="128" width="200" height="14" rx="4" fill="#ffd166"/>
+
+      <!-- 注释行：需求 -->
+      <rect x="80" y="164" width="330" height="14" rx="4" fill="#3f8a5a"/>
+
+      <!-- 当前行 + 幽灵建议 -->
+      <rect x="74" y="192" width="558" height="28" rx="6" fill="rgba(167,139,250,0.10)"/>
+      <rect x="112" y="200" width="120" height="14" rx="4" fill="#93b4ff"/>
+      <rect x="244" y="200" width="4"  height="18" fill="#a78bfa"/>
+      <rect x="260" y="200" width="270" height="14" rx="4" fill="#414a78"/>
+
+      <rect x="112" y="236" width="180" height="14" rx="4" fill="#ffd166"/>
+      <rect x="304" y="236" width="120" height="14" rx="4" fill="#7dffc4"/>
+      <rect x="112" y="272" width="240" height="14" rx="4" fill="#414a78"/>
+      <rect x="80" y="308" width="60"  height="14" rx="4" fill="#c586ff"/>
+      <rect x="152" y="308" width="180" height="14" rx="4" fill="#414a78"/>
+    </g>
+    <text x="80" y="392" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" font-style="italic" fill="#5a628f">灰色为 Copilot 建议 · Tab 接受</text>
+  </g>
+
+  <!-- Copilot 面板（右） -->
+  <g transform="translate(766 66)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="364" height="440" rx="18" fill="rgba(167,139,250,0.06)" stroke="#a78bfa" stroke-opacity="0.4"/>
+    <!-- 头像 + 名字 -->
+    <circle cx="40" cy="42" r="16" fill="rgba(167,139,250,0.18)" stroke="#a78bfa" stroke-opacity="0.7"/>
+    <!-- 飞行员护目镜示意 -->
+    <g stroke="#c4b5fd" stroke-width="2.5" fill="none">
+      <path d="M28 42 q 0 -8 12 -8 q 12 0 12 8"/>
+      <circle cx="34" cy="44" r="4"/>
+      <circle cx="46" cy="44" r="4"/>
+    </g>
+    <text x="68" y="49" font-size="20" font-weight="700" fill="#c4b5fd">Copilot Chat</text>
+
+    <!-- 用户气泡 -->
+    <rect x="96" y="86" width="240" height="52" rx="14" fill="rgba(96,165,250,0.13)" stroke="#60a5fa" stroke-opacity="0.45"/>
+    <text x="216" y="118" font-size="19" font-weight="600" fill="#a9c7f5" text-anchor="middle">帮我修这个报错</text>
+
+    <!-- Copilot 回复 -->
+    <rect x="28" y="158" width="270" height="150" rx="14" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-opacity="0.4"/>
+    <g>
+      <rect x="48" y="180" width="200" height="12" rx="4" fill="#6f77ad"/>
+      <rect x="48" y="204" width="230" height="12" rx="4" fill="#6f77ad"/>
+      <rect x="48" y="236" width="180" height="12" rx="4" fill="#8b93c9"/>
+      <rect x="48" y="260" width="150" height="12" rx="4" fill="#8b93c9"/>
+    </g>
+    <text x="48" y="292" font-size="15" font-weight="600" fill="#8f86c9">已定位问题 · 建议修复 ↓</text>
+
+    <!-- 应用按钮 -->
+    <rect x="28" y="330" width="150" height="46" rx="12" fill="rgba(125,255,196,0.13)" stroke="#7dffc4" stroke-opacity="0.6"/>
+    <text x="103" y="359" font-size="19" font-weight="700" fill="#7dffc4" text-anchor="middle">应用修改 ✓</text>
+    <text x="28" y="414" font-size="15" fill="#5a628f">$10/月起 · 有免费档 · 学生免费</text>
+  </g>
+
+  <!-- 底部标题 -->
+  <text x="72" y="592" font-family="Inter, 'Segoe UI', sans-serif" font-size="52" font-weight="800" fill="url(#ghCap)">GitHub Copilot</text>
+  <text x="470" y="592" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#8b93b8">国内订阅开通全流程</text>
+</svg>
