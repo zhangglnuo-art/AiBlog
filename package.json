@@ -7,13 +7,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "pnpm run build && wrangler dev",
     "astro": "astro",
     "new": "node scripts/new-post.mjs",
-    "deploy": "astro build && node scripts/deploy.mjs",
-    "inspect-server": "node scripts/inspect-server.mjs"
+    "deploy": "pnpm run build && wrangler deploy",
+    "inspect-server": "node scripts/inspect-server.mjs",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "@astrojs/mdx": "^4.2.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
@@ -23,7 +25,8 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.0",
     "node-ssh": "^13.2.1",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "wrangler": "^4.114.0"
   },
   "engines": {
     "node": ">=20.0.0"
