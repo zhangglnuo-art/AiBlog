@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="rwBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0a12"/>
+      <stop offset="1" stop-color="#160b10"/>
+    </linearGradient>
+    <linearGradient id="rwScene" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="rwCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fdba74"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#rwBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#fdba74">// AI 工具</text>
+
+  <!-- 视频工作站预览窗 -->
+  <g transform="translate(80 116)">
+    <rect x="0" y="0" width="720" height="356" rx="18" fill="#170e14" stroke="#ffffff" stroke-opacity="0.08"/>
+    <rect x="16" y="16" width="688" height="248" rx="12" fill="url(#rwScene)"/>
+
+    <!-- 运动笔刷示意：曲线箭头 + 高亮区域 -->
+    <g opacity="0.92">
+      <ellipse cx="250" cy="150" rx="86" ry="60" fill="rgba(255,255,255,0.14)" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2.5" stroke-dasharray="7 7"/>
+      <path d="M300 120 C 420 70, 520 120, 560 170" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M548 150 L566 172 L540 180 Z" fill="#ffffff"/>
+      <text x="470" y="112" font-family="Inter, 'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" font-weight="700" fill="#ffffff">运动笔刷</text>
+    </g>
+
+    <!-- 播放按钮 -->
+    <circle cx="120" cy="212" r="30" fill="rgba(0,0,0,0.4)" stroke="#fff" stroke-opacity="0.85" stroke-width="2.5"/>
+    <path d="M111 197 L136 212 L111 227 Z" fill="#ffffff"/>
+    <rect x="20" y="238" width="66" height="26" rx="8" fill="rgba(0,0,0,0.45)"/>
+    <text x="53" y="256" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">0:04</text>
+
+    <!-- 时间轴轨道 -->
+    <g transform="translate(16 284)">
+      <rect x="0" y="0" width="688" height="56" rx="10" fill="#0e0912"/>
+      <rect x="10" y="10" width="150" height="16" rx="4" fill="#f97316" opacity="0.85"/>
+      <rect x="168" y="10" width="120" height="16" rx="4" fill="#fb7185" opacity="0.85"/>
+      <rect x="296" y="10" width="200" height="16" rx="4" fill="#a855f7" opacity="0.85"/>
+      <rect x="10" y="32" width="486" height="14" rx="4" fill="#2dd4bf" opacity="0.7"/>
+      <!-- 播放头 -->
+      <rect x="250" y="2" width="3" height="52" fill="#ffd166"/>
+      <circle cx="251" cy="4" r="6" fill="#ffd166"/>
+    </g>
+  </g>
+
+  <!-- 右侧：文生/图生入口卡片 -->
+  <g transform="translate(840 116)" font-family="Inter, 'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="280" height="110" rx="14" fill="rgba(249,115,22,0.10)" stroke="#f97316" stroke-opacity="0.5"/>
+    <text x="24" y="44" font-size="21" font-weight="800" fill="#fdba74">文生视频</text>
+    <text x="24" y="78" font-size="16" font-weight="600" fill="#a68a7e">一句话 → 一段镜头</text>
+
+    <rect x="0" y="123" width="280" height="110" rx="14" fill="rgba(244,114,182,0.10)" stroke="#f472b6" stroke-opacity="0.5"/>
+    <text x="24" y="167" font-size="21" font-weight="800" fill="#f9a8d4">图生视频</text>
+    <text x="24" y="201" font-size="16" font-weight="600" fill="#a68a7e">一张图 → 动起来</text>
+
+    <rect x="0" y="246" width="280" height="110" rx="14" fill="rgba(168,85,247,0.10)" stroke="#a855f7" stroke-opacity="0.5"/>
+    <text x="24" y="290" font-size="21" font-weight="800" fill="#d8b4fe">编辑套件</text>
+    <text x="24" y="324" font-size="16" font-weight="600" fill="#a68a7e">抠像 · 扩展 · 运镜</text>
+  </g>
+
+  <text x="80" y="540" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800" fill="url(#rwCap)">Runway</text>
+  <text x="316" y="540" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#b0899a">AI 视频神器国内订阅全流程</text>
+  <text x="80" y="584" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="600" fill="#7d6470">最全工具链 · 可控运镜 · Standard $12/月起</text>
+</svg>
