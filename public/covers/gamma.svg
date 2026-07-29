@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="gmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0a16"/>
+      <stop offset="1" stop-color="#100a18"/>
+    </linearGradient>
+    <linearGradient id="gmCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f0abfc"/>
+    </linearGradient>
+    <linearGradient id="gmSlide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#c026d3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#gmBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#c4b5fd">// AI 办公</text>
+
+  <!-- 左：提示词输入 -->
+  <g transform="translate(80 214)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="300" height="150" rx="16" fill="#181226" stroke="#a78bfa" stroke-opacity="0.4"/>
+    <text x="24" y="42" font-size="17" font-weight="700" fill="#8b7fb5">你的主题 / 大纲</text>
+    <rect x="24" y="60" width="252" height="14" rx="4" fill="#4a4270"/>
+    <rect x="24" y="86" width="210" height="14" rx="4" fill="#4a4270"/>
+    <rect x="24" y="112" width="176" height="14" rx="4" fill="#4a4270"/>
+  </g>
+
+  <!-- 生成箭头 -->
+  <g stroke="#f0abfc" stroke-opacity="0.8" stroke-width="4" fill="none">
+    <path d="M392 289 H 452"/>
+    <path d="M442 279 L 458 289 L 442 299 Z" fill="#f0abfc" stroke="none"/>
+  </g>
+  <text x="424" y="272" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#c99ad8" text-anchor="middle">AI 生成</text>
+
+  <!-- 右：叠放的幻灯片（一整套演示） -->
+  <g transform="translate(500 130)">
+    <!-- 背后两张 -->
+    <rect x="80" y="44" width="470" height="290" rx="16" fill="#241640" opacity="0.6"/>
+    <rect x="40" y="26" width="470" height="290" rx="16" fill="#2c1a4d" opacity="0.8"/>
+    <!-- 最前一张：完整幻灯片 -->
+    <rect x="0" y="8" width="470" height="300" rx="16" fill="#170f28" stroke="#ffffff" stroke-opacity="0.1"/>
+    <!-- 顶部色带 + 标题 -->
+    <rect x="0" y="8" width="470" height="86" rx="16" fill="url(#gmSlide)"/>
+    <rect x="0" y="60" width="470" height="34" fill="url(#gmSlide)"/>
+    <rect x="28" y="40" width="230" height="22" rx="6" fill="#ffffff" opacity="0.92"/>
+    <rect x="28" y="72" width="150" height="12" rx="4" fill="#ffffff" opacity="0.55"/>
+    <!-- 正文 + 配图 -->
+    <g>
+      <rect x="28" y="122" width="240" height="12" rx="4" fill="#5b4f80"/>
+      <rect x="28" y="148" width="210" height="12" rx="4" fill="#5b4f80"/>
+      <rect x="28" y="174" width="230" height="12" rx="4" fill="#5b4f80"/>
+      <rect x="28" y="200" width="180" height="12" rx="4" fill="#5b4f80"/>
+      <!-- 图表占位 -->
+      <rect x="300" y="120" width="142" height="112" rx="10" fill="rgba(167,139,250,0.14)" stroke="#a78bfa" stroke-opacity="0.4"/>
+      <rect x="316" y="196" width="20" height="24" rx="3" fill="#a78bfa"/>
+      <rect x="344" y="176" width="20" height="44" rx="3" fill="#c084fc"/>
+      <rect x="372" y="156" width="20" height="64" rx="3" fill="#e879f9"/>
+      <rect x="400" y="182" width="20" height="38" rx="3" fill="#f0abfc"/>
+    </g>
+    <!-- 底部页码点 -->
+    <g fill="#6d5f99">
+      <circle cx="210" cy="286" r="5"/><circle cx="228" cy="286" r="5" fill="#a78bfa"/><circle cx="246" cy="286" r="5"/><circle cx="264" cy="286" r="5"/>
+    </g>
+  </g>
+
+  <text x="80" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="800" fill="url(#gmCap)">Gamma</text>
+  <text x="316" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="600" fill="#9385b8">一句话生成一份 PPT · 国内订阅全流程</text>
+  <text x="80" y="600" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="600" fill="#6d6294">改大纲即改稿 · 智能排版 · Plus $10/月起</text>
+</svg>
