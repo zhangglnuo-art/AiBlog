@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="ntBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e0f12"/>
+      <stop offset="1" stop-color="#141519"/>
+    </linearGradient>
+    <linearGradient id="ntCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5f5f4"/>
+      <stop offset="1" stop-color="#a3a3a3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#ntBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#a3a3a3">// AI 办公</text>
+
+  <!-- Notion 文档窗口 -->
+  <g transform="translate(80 122)">
+    <rect x="0" y="0" width="740" height="400" rx="16" fill="#191a1e" stroke="#ffffff" stroke-opacity="0.09"/>
+    <!-- 顶栏 -->
+    <rect x="0" y="0" width="740" height="50" rx="16" fill="#1f2024"/>
+    <rect x="0" y="34" width="740" height="16" fill="#1f2024"/>
+    <circle cx="28" cy="25" r="6" fill="#3f4045"/><circle cx="50" cy="25" r="6" fill="#3f4045"/><circle cx="72" cy="25" r="6" fill="#3f4045"/>
+    <text x="110" y="31" font-family="Inter, sans-serif" font-size="15" fill="#7a7b80">📄 我的知识库 / 项目方案</text>
+
+    <!-- 页面标题（emoji + 标题） -->
+    <text x="40" y="112" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="800" fill="#f5f5f4">📝 周报</text>
+
+    <!-- 已有正文 -->
+    <g fill="#4b4c51">
+      <rect x="40" y="142" width="500" height="14" rx="4"/>
+      <rect x="40" y="170" width="420" height="14" rx="4"/>
+    </g>
+
+    <!-- AI 就地生成区（高亮） -->
+    <rect x="30" y="200" width="680" height="128" rx="12" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-opacity="0.16"/>
+    <g transform="translate(48 220)">
+      <!-- AI 星标 -->
+      <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" fill="#e5e5e5"/>
+      <text x="36" y="18" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="16" font-weight="700" fill="#d4d4d4">Notion AI 正在续写…</text>
+    </g>
+    <g fill="#6b6c72">
+      <rect x="48" y="258" width="620" height="13" rx="4"/>
+      <rect x="48" y="282" width="560" height="13" rx="4"/>
+      <rect x="48" y="306" width="300" height="13" rx="4"/>
+      <rect x="356" y="304" width="3" height="18" fill="#f5f5f4"/>
+    </g>
+
+    <!-- 底部 AI 操作条 -->
+    <g transform="translate(40 350)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="14" font-weight="600">
+      <rect x="0" y="0" width="96" height="34" rx="9" fill="rgba(255,255,255,0.06)" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="48" y="22" fill="#c4c4c4" text-anchor="middle">总结</text>
+      <rect x="108" y="0" width="96" height="34" rx="9" fill="rgba(255,255,255,0.06)" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="156" y="22" fill="#c4c4c4" text-anchor="middle">翻译</text>
+      <rect x="216" y="0" width="124" height="34" rx="9" fill="rgba(255,255,255,0.06)" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="278" y="22" fill="#c4c4c4" text-anchor="middle">抽取待办</text>
+    </g>
+  </g>
+
+  <!-- 右侧：知识库问答 -->
+  <g transform="translate(860 150)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="260" height="344" rx="16" fill="rgba(255,255,255,0.04)" stroke="#ffffff" stroke-opacity="0.09"/>
+    <text x="22" y="42" font-size="17" font-weight="700" fill="#d4d4d4">问你的知识库</text>
+    <rect x="22" y="60" width="216" height="60" rx="12" fill="rgba(255,255,255,0.06)"/>
+    <text x="38" y="86" font-size="14" fill="#9a9b9f">「上月方案的</text>
+    <text x="38" y="108" font-size="14" fill="#9a9b9f">预算是多少？」</text>
+
+    <!-- 答案 -->
+    <rect x="22" y="140" width="216" height="150" rx="12" fill="rgba(255,255,255,0.03)" stroke="#ffffff" stroke-opacity="0.1"/>
+    <g fill="#5b5c62">
+      <rect x="40" y="164" width="150" height="11" rx="4"/>
+      <rect x="40" y="186" width="180" height="11" rx="4"/>
+      <rect x="40" y="208" width="120" height="11" rx="4"/>
+    </g>
+    <rect x="40" y="238" width="120" height="30" rx="8" fill="rgba(255,255,255,0.08)"/>
+    <text x="100" y="258" font-size="13" font-weight="600" fill="#c4c4c4" text-anchor="middle">来自你的笔记</text>
+  </g>
+
+  <text x="80" y="576" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="54" font-weight="800" fill="url(#ntCap)">Notion AI</text>
+  <text x="384" y="576" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#8a8b90">长在你知识库里的 AI · 国内订阅全流程</text>
+</svg>

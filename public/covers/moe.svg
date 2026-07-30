@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="moBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#0d0f0a" />
+      <stop offset="1" stop-color="#0a0f0c" />
+    </linearGradient>
+    <linearGradient id="moCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24" />
+      <stop offset="1" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#moBg)" />
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#fbbf24">// AI 原理</text>
+
+  <!-- 输入 token -->
+  <g transform="translate(80 268)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="130" height="72" rx="14" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-opacity="0.55" />
+    <text x="65" y="45" font-size="22" font-weight="800" fill="#fcd34d" text-anchor="middle">token</text>
+    <text x="65" y="104" font-size="16" font-weight="600" fill="#8a8560" text-anchor="middle">来一个词</text>
+  </g>
+
+  <!-- 箭头到路由器 -->
+  <g stroke="#fbbf24" stroke-opacity="0.6" stroke-width="3" fill="none">
+    <path d="M214 304 H 258" />
+    <path d="M248 296 L 262 304 L 248 312 Z" fill="#fbbf24" stroke="none" />
+  </g>
+
+  <!-- 路由器 / 门控 -->
+  <g transform="translate(268 244)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="150" height="120" rx="16" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-opacity="0.55" stroke-width="2" />
+    <text x="75" y="50" font-size="24" font-weight="800" fill="#6ee7b7" text-anchor="middle">路由器</text>
+    <text x="75" y="82" font-size="15" font-weight="600" fill="#5f9e84" text-anchor="middle">该找谁？</text>
+    <text x="75" y="104" font-size="14" font-weight="600" fill="#4a7d68" text-anchor="middle">（分诊台）</text>
+  </g>
+
+  <!-- 路由到专家的连线：2条亮（激活）+ 4条暗 -->
+  <g fill="none">
+    <!-- 亮：到 专家2 和 专家4 -->
+    <path d="M418 284 C 500 240, 560 176, 636 168" stroke="#fbbf24" stroke-opacity="0.85" stroke-width="3.5" />
+    <path d="M418 324 C 520 360, 590 420, 636 430" stroke="#fbbf24" stroke-opacity="0.85" stroke-width="3.5" />
+    <!-- 暗：其余专家 -->
+    <g stroke="#3a4038" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="5 6">
+      <path d="M418 300 C 520 280, 580 300, 636 300" />
+      <path d="M418 312 C 520 328, 580 300, 636 300" />
+      <path d="M418 292 C 540 230, 600 300, 636 300" />
+      <path d="M418 332 C 540 400, 600 300, 636 300" />
+    </g>
+  </g>
+
+  <!-- 专家网格（右侧 2列x3） -->
+  <g transform="translate(636 128)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <!-- 激活专家：代码专家（上） -->
+    <g>
+      <rect x="0" y="0" width="200" height="80" rx="14" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="2.5" />
+      <circle cx="176" cy="18" r="6" fill="#fbbf24"><animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/></circle>
+      <text x="100" y="48" fill="#fde68a">代码专家 ⚡</text>
+    </g>
+    <!-- 暗专家 -->
+    <g fill="#20241f">
+      <rect x="228" y="0" width="200" height="80" rx="14" stroke="#3a4038" stroke-width="1.5" />
+    </g>
+    <text x="328" y="48" fill="#4a5048">翻译专家</text>
+
+    <!-- 中排：一暗 一暗 -->
+    <rect x="0" y="100" width="200" height="80" rx="14" fill="#20241f" stroke="#3a4038" stroke-width="1.5" />
+    <text x="100" y="148" fill="#4a5048">数学专家</text>
+    <rect x="228" y="100" width="200" height="80" rx="14" fill="#20241f" stroke="#3a4038" stroke-width="1.5" />
+    <text x="328" y="148" fill="#4a5048">写作专家</text>
+
+    <!-- 下排：激活（右） + 暗（左） -->
+    <rect x="0" y="200" width="200" height="80" rx="14" fill="#20241f" stroke="#3a4038" stroke-width="1.5" />
+    <text x="100" y="248" fill="#4a5048">逻辑专家</text>
+    <g>
+      <rect x="228" y="200" width="200" height="80" rx="14" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="2.5" />
+      <circle cx="404" cy="218" r="6" fill="#fbbf24"><animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/></circle>
+      <text x="328" y="248" fill="#fde68a">常识专家 ⚡</text>
+    </g>
+  </g>
+
+  <!-- 底部对比标签 -->
+  <g transform="translate(80 470)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" font-weight="700">
+    <rect x="0" y="0" width="330" height="46" rx="23" fill="rgba(52,211,153,0.08)" stroke="#34d399" stroke-opacity="0.4" />
+    <text x="165" y="30" fill="#6ee7b7" text-anchor="middle">总参数大 = 全部专家都在</text>
+    <rect x="350" y="0" width="330" height="46" rx="23" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-opacity="0.45" />
+    <text x="515" y="30" fill="#fcd34d" text-anchor="middle">激活小 = 每次只叫醒 2 个</text>
+  </g>
+
+  <text x="76" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#moCap)">混合专家 · MoE</text>
+  <text x="560" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="25" font-weight="600" fill="#7f8a80">为什么超大模型还能跑得动</text>
+</svg>
