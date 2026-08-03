@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="agBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#0a0b1a"/>
+      <stop offset="1" stop-color="#0d0a1c"/>
+    </linearGradient>
+    <linearGradient id="agCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a5b4fc"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+    <linearGradient id="agStep1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#4338ca"/></linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#agBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#a5b4fc">// AI 原理</text>
+
+  <!-- 三级台阶 -->
+  <g font-family="'PingFang SC','Microsoft YaHei',sans-serif" text-anchor="middle">
+    <!-- Step 1: ANI（现在·你在这里） -->
+    <g transform="translate(120 300)">
+      <rect x="0" y="0" width="280" height="176" rx="14" fill="url(#agStep1)"/>
+      <rect x="0" y="0" width="280" height="176" rx="14" fill="none" stroke="#a5b4fc" stroke-opacity="0.4"/>
+      <text x="140" y="58" font-family="Inter, sans-serif" font-size="34" font-weight="900" fill="#ffffff">ANI</text>
+      <text x="140" y="94" font-size="20" font-weight="700" fill="#e0e7ff">狭义 AI · 专才</text>
+      <text x="140" y="132" font-size="16" font-weight="600" fill="#c7d2fe">只在特定任务厉害</text>
+      <!-- 你在这里 标记 -->
+      <g transform="translate(140 -46)">
+        <rect x="-72" y="-2" width="144" height="42" rx="21" fill="#fbbf24"/>
+        <text x="0" y="26" font-size="18" font-weight="800" fill="#1a1205">📍 现在的 AI</text>
+      </g>
+    </g>
+
+    <!-- 断层（尚未跨过） -->
+    <g transform="translate(400 240)">
+      <text x="50" y="150" font-size="46" font-weight="900" fill="#fbbf24" text-anchor="middle">?</text>
+      <text x="50" y="196" font-size="15" font-weight="700" fill="#c99a3f" text-anchor="middle">尚未跨过</text>
+      <text x="50" y="218" font-size="14" font-weight="600" fill="#8a7340" text-anchor="middle">何时未知</text>
+    </g>
+
+    <!-- Step 2: AGI（目标·虚线） -->
+    <g transform="translate(500 200)">
+      <rect x="0" y="0" width="280" height="276" rx="14" fill="rgba(103,232,249,0.08)" stroke="#67e8f9" stroke-opacity="0.6" stroke-width="2.5" stroke-dasharray="10 8"/>
+      <text x="140" y="60" font-family="Inter, sans-serif" font-size="34" font-weight="900" fill="#67e8f9">AGI</text>
+      <text x="140" y="96" font-size="20" font-weight="700" fill="#a5f0fb">通用 AI · 通才</text>
+      <text x="140" y="150" font-size="16" font-weight="600" fill="#7fd3e0">像人一样</text>
+      <text x="140" y="176" font-size="16" font-weight="600" fill="#7fd3e0">跨领域自主学习</text>
+      <text x="140" y="202" font-size="16" font-weight="600" fill="#7fd3e0">举一反三</text>
+    </g>
+
+    <!-- Step 3: ASI（理论·更淡） -->
+    <g transform="translate(880 120)">
+      <rect x="0" y="0" width="240" height="356" rx="14" fill="rgba(168,85,247,0.05)" stroke="#a855f7" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="6 8"/>
+      <text x="120" y="58" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#c084fc" opacity="0.85">ASI</text>
+      <text x="120" y="92" font-size="19" font-weight="700" fill="#d8b4fe" opacity="0.8">超级 AI</text>
+      <text x="120" y="140" font-size="15" font-weight="600" fill="#a78bcf" opacity="0.75">全面超越人类</text>
+      <text x="120" y="166" font-size="14" font-weight="600" fill="#8b74b0" opacity="0.7">（理论设想）</text>
+    </g>
+  </g>
+
+  <text x="76" y="562" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#agCap)">通用人工智能 · AGI</text>
+  <text x="80" y="606" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="25" font-weight="600" fill="#7f86ad">离我们还有多远？</text>
+</svg>

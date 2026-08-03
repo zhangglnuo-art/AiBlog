@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="poBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d1a"/>
+      <stop offset="1" stop-color="#0c1020"/>
+    </linearGradient>
+    <linearGradient id="poCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#poBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#818cf8">// AI 工具</text>
+
+  <!-- 左：一份订阅 -->
+  <g transform="translate(96 236)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="210" height="150" rx="18" fill="rgba(129,140,248,0.10)" stroke="#818cf8" stroke-opacity="0.55" stroke-width="2"/>
+    <text x="105" y="58" font-size="46" font-weight="900" fill="url(#poCap)" text-anchor="middle">Poe</text>
+    <text x="105" y="96" font-size="18" font-weight="700" fill="#a5aef5" text-anchor="middle">一份订阅</text>
+    <text x="105" y="122" font-size="15" font-weight="600" fill="#6670b0" text-anchor="middle">$20/月 · 统一积分</text>
+  </g>
+
+  <!-- 连线：从 Poe 分发到各模型 -->
+  <g stroke="#38bdf8" stroke-opacity="0.5" stroke-width="2.5" fill="none">
+    <path d="M306 268 C 420 200, 520 168, 636 158"/>
+    <path d="M306 292 C 430 260, 520 240, 636 236"/>
+    <path d="M306 318 C 430 330, 520 316, 636 314"/>
+    <path d="M306 344 C 420 410, 520 388, 636 392"/>
+  </g>
+
+  <!-- 右：多模型气泡 -->
+  <g transform="translate(636 122)" font-family="Inter, 'PingFang SC','Microsoft YaHei',sans-serif">
+    <g font-size="21" font-weight="800">
+      <rect x="0" y="0" width="230" height="72" rx="16" fill="rgba(16,163,127,0.12)" stroke="#10a37f" stroke-opacity="0.55"/>
+      <circle cx="38" cy="36" r="16" fill="rgba(16,163,127,0.3)"/><text x="38" y="43" font-size="18" fill="#5eead4" text-anchor="middle">G</text>
+      <text x="68" y="44" fill="#d6f5ec">GPT</text>
+
+      <rect x="258" y="0" width="230" height="72" rx="16" fill="rgba(217,119,66,0.12)" stroke="#d97742" stroke-opacity="0.55"/>
+      <circle cx="296" cy="36" r="16" fill="rgba(217,119,66,0.3)"/><text x="296" y="43" font-size="18" fill="#f0a878" text-anchor="middle">C</text>
+      <text x="326" y="44" fill="#f5ddcb">Claude</text>
+
+      <rect x="0" y="92" width="230" height="72" rx="16" fill="rgba(66,133,244,0.12)" stroke="#4285f4" stroke-opacity="0.55"/>
+      <circle cx="38" cy="128" r="16" fill="rgba(66,133,244,0.3)"/><text x="38" y="135" font-size="17" fill="#8ab4f8" text-anchor="middle">✦</text>
+      <text x="68" y="136" fill="#cfe0fc">Gemini</text>
+
+      <rect x="258" y="92" width="230" height="72" rx="16" fill="rgba(229,231,235,0.10)" stroke="#e5e7eb" stroke-opacity="0.4"/>
+      <circle cx="296" cy="128" r="16" fill="rgba(229,231,235,0.2)"/><text x="296" y="135" font-size="16" fill="#e5e7eb" text-anchor="middle">𝕏</text>
+      <text x="326" y="136" fill="#e5e7eb">Grok</text>
+
+      <rect x="0" y="184" width="230" height="72" rx="16" fill="rgba(168,85,247,0.12)" stroke="#a855f7" stroke-opacity="0.55"/>
+      <circle cx="38" cy="220" r="16" fill="rgba(168,85,247,0.3)"/><text x="38" y="227" font-size="17" fill="#d8b4fe" text-anchor="middle">✎</text>
+      <text x="68" y="228" font-size="19" fill="#e6d3fb">绘画 / 多模态</text>
+
+      <rect x="258" y="184" width="230" height="72" rx="16" fill="rgba(56,189,248,0.10)" stroke="#38bdf8" stroke-opacity="0.5"/>
+      <circle cx="296" cy="220" r="16" fill="rgba(56,189,248,0.28)"/><text x="296" y="227" font-size="17" fill="#7dd3fc" text-anchor="middle">+</text>
+      <text x="326" y="228" font-size="19" fill="#cbeafd">海量 Bot</text>
+    </g>
+  </g>
+
+  <text x="96" y="560" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#poCap)">Poe</text>
+  <text x="230" y="560" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#7b86b8">一个订阅用遍 GPT、Claude、Gemini</text>
+  <text x="96" y="602" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="600" fill="#5b6494">多模型一处切换 · 同题对比 · 国内订阅全流程</text>
+</svg>
