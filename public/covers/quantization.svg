@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="qtBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#071215"/>
+      <stop offset="1" stop-color="#08131a"/>
+    </linearGradient>
+    <linearGradient id="qtCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#a3e635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#qtBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#5eead4">// AI 原理</text>
+
+  <!-- 三档：FP16 → Q8 → Q4 -->
+  <g font-family="'PingFang SC','Microsoft YaHei',sans-serif" text-anchor="middle">
+    <!-- FP16 -->
+    <g transform="translate(96 138)">
+      <rect x="0" y="0" width="270" height="260" rx="16" fill="rgba(148,163,184,0.06)" stroke="#94a3b8" stroke-opacity="0.5"/>
+      <text x="135" y="46" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#cbd5e1">FP16</text>
+      <text x="135" y="76" font-size="16" font-weight="600" fill="#8595a8">原始 · 每参数 16 位</text>
+      <!-- 16 位块 -->
+      <g fill="#94a3b8">
+        <rect x="35" y="98" width="18" height="30" rx="3"/><rect x="58" y="98" width="18" height="30" rx="3"/><rect x="81" y="98" width="18" height="30" rx="3"/><rect x="104" y="98" width="18" height="30" rx="3"/>
+        <rect x="127" y="98" width="18" height="30" rx="3"/><rect x="150" y="98" width="18" height="30" rx="3"/><rect x="173" y="98" width="18" height="30" rx="3"/><rect x="196" y="98" width="18" height="30" rx="3"/>
+        <rect x="35" y="132" width="18" height="30" rx="3"/><rect x="58" y="132" width="18" height="30" rx="3"/><rect x="81" y="132" width="18" height="30" rx="3"/><rect x="104" y="132" width="18" height="30" rx="3"/>
+        <rect x="127" y="132" width="18" height="30" rx="3"/><rect x="150" y="132" width="18" height="30" rx="3"/><rect x="173" y="132" width="18" height="30" rx="3"/><rect x="196" y="132" width="18" height="30" rx="3"/>
+      </g>
+      <text x="135" y="204" font-size="22" font-weight="800" fill="#cbd5e1">~14GB</text>
+      <text x="135" y="236" font-size="15" font-weight="600" fill="#7c8ba0">需高端显卡</text>
+    </g>
+
+    <!-- 箭头1 -->
+    <g stroke="#5eead4" stroke-opacity="0.6" stroke-width="3" fill="none">
+      <path d="M378 268 H 424"/><path d="M414 260 L 430 268 L 414 276 Z" fill="#5eead4" stroke="none"/>
+    </g>
+
+    <!-- Q8 -->
+    <g transform="translate(446 176)">
+      <rect x="0" y="0" width="230" height="222" rx="16" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-opacity="0.5"/>
+      <text x="115" y="44" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#5eead4">Q8</text>
+      <text x="115" y="72" font-size="15" font-weight="600" fill="#5f9e91">压到 8 位</text>
+      <g fill="#5eead4">
+        <rect x="42" y="90" width="18" height="30" rx="3"/><rect x="65" y="90" width="18" height="30" rx="3"/><rect x="88" y="90" width="18" height="30" rx="3"/><rect x="111" y="90" width="18" height="30" rx="3"/>
+        <rect x="134" y="90" width="18" height="30" rx="3"/><rect x="157" y="90" width="18" height="30" rx="3"/><rect x="180" y="90" width="18" height="30" rx="3"/><rect x="42" y="124" width="18" height="30" rx="3"/>
+      </g>
+      <text x="115" y="180" font-size="21" font-weight="800" fill="#99f6e4">~7GB</text>
+      <text x="115" y="206" font-size="14" font-weight="600" fill="#5f9e91">质量几乎无损</text>
+    </g>
+
+    <!-- 箭头2 -->
+    <g stroke="#a3e635" stroke-opacity="0.7" stroke-width="3" fill="none">
+      <path d="M688 288 H 734"/><path d="M724 280 L 740 288 L 724 296 Z" fill="#a3e635" stroke="none"/>
+    </g>
+
+    <!-- Q4（甜点档，高亮） -->
+    <g transform="translate(756 210)">
+      <rect x="-6" y="-6" width="212" height="200" rx="16" fill="rgba(163,230,53,0.12)" stroke="#a3e635" stroke-width="2.5"/>
+      <text x="100" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#bef264">Q4</text>
+      <text x="100" y="66" font-size="14" font-weight="700" fill="#9bbf3f">压到 4 位 · 甜点档</text>
+      <g fill="#a3e635">
+        <rect x="52" y="82" width="18" height="30" rx="3"/><rect x="75" y="82" width="18" height="30" rx="3"/><rect x="98" y="82" width="18" height="30" rx="3"/><rect x="121" y="82" width="18" height="30" rx="3"/>
+      </g>
+      <text x="100" y="152" font-size="21" font-weight="800" fill="#d9f99d">~4GB</text>
+      <text x="100" y="178" font-size="14" font-weight="700" fill="#9bbf3f">主流显卡就行 ✓</text>
+    </g>
+  </g>
+
+  <!-- 类比条 -->
+  <g transform="translate(96 430)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="470" height="46" rx="23" fill="rgba(94,234,212,0.07)" stroke="#5eead4" stroke-opacity="0.35"/>
+    <text x="235" y="30" font-size="17" font-weight="700" fill="#7fd7c9" text-anchor="middle">就像把无损音乐压成 MP3 🎵</text>
+  </g>
+
+  <text x="76" y="558" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="56" font-weight="800" fill="url(#qtCap)">模型量化</text>
+  <text x="316" y="558" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#6f8a86">为什么大模型能压进你的显卡</text>
+  <text x="80" y="600" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="600" fill="#537069">给参数「减位数」· 体积骤降 · 质量损失可接受</text>
+</svg>

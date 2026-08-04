@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="lvBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140a14"/>
+      <stop offset="1" stop-color="#0e0a18"/>
+    </linearGradient>
+    <linearGradient id="lvCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="lvHero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#lvBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#fb7185">// AI 编程</text>
+
+  <!-- 左：自然语言描述 -->
+  <g transform="translate(88 210)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="300" height="200" rx="16" fill="#1c1220" stroke="#fb7185" stroke-opacity="0.4"/>
+    <g transform="translate(24 30)">
+      <circle cx="10" cy="8" r="8" fill="rgba(251,113,133,0.4)"/>
+      <text x="30" y="14" font-size="15" font-weight="700" fill="#f9a8b4">你（不会写代码）</text>
+    </g>
+    <rect x="24" y="58" width="252" height="118" rx="12" fill="rgba(251,113,133,0.08)"/>
+    <text x="42" y="90" font-size="16" fill="#e7c4cc">「做一个活动</text>
+    <text x="42" y="116" font-size="16" fill="#e7c4cc">报名网站，带</text>
+    <text x="42" y="142" font-size="16" fill="#e7c4cc">表单和数据库」</text>
+    <rect x="42" y="150" width="3" height="20" fill="#fb7185"/>
+  </g>
+
+  <!-- 生成箭头 -->
+  <g stroke="#c084fc" stroke-opacity="0.8" stroke-width="4" fill="none">
+    <path d="M400 310 H 462"/>
+    <path d="M452 300 L 468 310 L 452 320 Z" fill="#c084fc" stroke="none"/>
+  </g>
+  <text x="431" y="292" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#c99ad8" text-anchor="middle">AI 生成</text>
+
+  <!-- 右：生成的可上线应用（浏览器预览） -->
+  <g transform="translate(490 128)">
+    <rect x="0" y="0" width="620" height="384" rx="16" fill="#17101f" stroke="#ffffff" stroke-opacity="0.1"/>
+    <!-- 浏览器栏 -->
+    <rect x="0" y="0" width="620" height="50" rx="16" fill="#1f1528"/>
+    <rect x="0" y="34" width="620" height="16" fill="#1f1528"/>
+    <circle cx="28" cy="25" r="6" fill="#fb7185"/><circle cx="50" cy="25" r="6" fill="#fbbf24"/><circle cx="72" cy="25" r="6" fill="#4ade80"/>
+    <rect x="100" y="13" width="420" height="24" rx="8" fill="#0f0a15"/>
+    <text x="120" y="30" font-family="Consolas, monospace" font-size="14" fill="#7a6b85">🔒 my-event.lovable.app</text>
+    <rect x="536" y="12" width="70" height="26" rx="8" fill="rgba(74,222,128,0.15)" stroke="#4ade80" stroke-opacity="0.5"/>
+    <text x="571" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#86efac" text-anchor="middle">已上线</text>
+
+    <!-- 页面内容：Hero -->
+    <rect x="24" y="72" width="572" height="120" rx="12" fill="url(#lvHero)"/>
+    <rect x="48" y="100" width="240" height="22" rx="6" fill="#ffffff" opacity="0.92"/>
+    <rect x="48" y="132" width="330" height="12" rx="4" fill="#ffffff" opacity="0.6"/>
+    <rect x="48" y="154" width="120" height="26" rx="8" fill="#ffffff"/>
+    <text x="108" y="172" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="14" font-weight="800" fill="#a21f47" text-anchor="middle">立即报名</text>
+
+    <!-- 表单 + 数据库示意 -->
+    <g transform="translate(24 210)">
+      <rect x="0" y="0" width="340" height="150" rx="12" fill="rgba(255,255,255,0.04)" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="30" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#c9b8d6">报名表单</text>
+      <rect x="20" y="44" width="300" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+      <rect x="20" y="80" width="300" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+      <rect x="20" y="116" width="120" height="24" rx="6" fill="#c084fc"/>
+      <text x="80" y="133" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="13" font-weight="700" fill="#2a1440" text-anchor="middle">提交</text>
+
+      <rect x="356" y="0" width="216" height="150" rx="12" fill="rgba(192,132,252,0.08)" stroke="#c084fc" stroke-opacity="0.35"/>
+      <text x="376" y="30" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#d8b4fe">🗄 数据库</text>
+      <g fill="#7c6b90">
+        <rect x="376" y="46" width="176" height="12" rx="3"/>
+        <rect x="376" y="68" width="176" height="12" rx="3"/>
+        <rect x="376" y="90" width="140" height="12" rx="3"/>
+        <rect x="376" y="112" width="176" height="12" rx="3"/>
+      </g>
+    </g>
+  </g>
+
+  <text x="88" y="566" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="54" font-weight="800" fill="url(#lvCap)">Lovable</text>
+  <text x="360" y="566" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#a98ab0">不会编程也能用 AI 做出网站</text>
+  <text x="88" y="606" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="600" fill="#7a6488">一句话 → 可上线的全栈应用 · 国内订阅全流程</text>
+</svg>
