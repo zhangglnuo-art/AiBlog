@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="idBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#120a16"/>
+      <stop offset="1" stop-color="#0a0c1a"/>
+    </linearGradient>
+    <linearGradient id="idCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="idPoster" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ec4899"/>
+      <stop offset="0.5" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#idBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#f472b6">// AI 绘画</text>
+
+  <!-- 左：提示词 -->
+  <g transform="translate(80 222)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="286" height="150" rx="16" fill="#1a1020" stroke="#f472b6" stroke-opacity="0.4"/>
+    <text x="24" y="42" font-size="16" font-weight="700" fill="#c98bab">提示词</text>
+    <rect x="24" y="58" width="238" height="72" rx="10" fill="rgba(244,114,182,0.08)"/>
+    <text x="40" y="88" font-size="16" fill="#e7c4d6">海报，标题写</text>
+    <text x="40" y="114" font-size="17" font-weight="800" fill="#fbbf24">"夏日特惠"</text>
+  </g>
+
+  <!-- 生成箭头 -->
+  <g stroke="#fb923c" stroke-opacity="0.8" stroke-width="4" fill="none">
+    <path d="M378 298 H 438"/>
+    <path d="M428 288 L 444 298 L 428 308 Z" fill="#fb923c" stroke="none"/>
+  </g>
+  <text x="408" y="280" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#e0965a" text-anchor="middle">AI 生成</text>
+
+  <!-- 中：生成的海报（字很工整） -->
+  <g transform="translate(468 118)">
+    <rect x="0" y="0" width="380" height="440" rx="18" fill="url(#idPoster)"/>
+    <rect x="0" y="0" width="380" height="440" rx="18" fill="none" stroke="#ffffff" stroke-opacity="0.15"/>
+    <!-- 装饰太阳 -->
+    <circle cx="300" cy="88" r="42" fill="#fff5cc" opacity="0.85"/>
+    <!-- 准确的大标题文字 -->
+    <text x="190" y="230" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="62" font-weight="900" fill="#ffffff" text-anchor="middle">夏日特惠</text>
+    <!-- 副标题 -->
+    <rect x="120" y="262" width="140" height="6" rx="3" fill="#ffffff" opacity="0.7"/>
+    <text x="190" y="322" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle" opacity="0.95">SUMMER SALE</text>
+    <!-- CTA -->
+    <rect x="126" y="356" width="128" height="46" rx="23" fill="#ffffff"/>
+    <text x="190" y="386" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="800" fill="#e11d6b" text-anchor="middle">立即抢购</text>
+  </g>
+
+  <!-- 右：对比——普通 AI 出的字是鬼画符 -->
+  <g transform="translate(892 178)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="228" height="150" rx="14" fill="#20161a" stroke="#71717a" stroke-opacity="0.4"/>
+    <text x="114" y="34" font-size="14" font-weight="600" fill="#8a7d84" text-anchor="middle">其他工具出字</text>
+    <!-- 鬼画符 -->
+    <g stroke="#9a8f96" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8">
+      <path d="M30 78 q 10 -20 20 0 q 10 18 -4 22 M64 62 l 6 34 M62 96 l 14 -8"/>
+      <path d="M100 66 q 16 4 4 18 q -12 8 4 16 M132 64 l -2 34"/>
+      <path d="M160 68 l 20 6 l -18 10 l 20 8 M196 64 l 2 36"/>
+    </g>
+    <text x="114" y="132" font-size="16" font-weight="700" fill="#ef7d7d" text-anchor="middle">✗ 字全是乱码</text>
+  </g>
+  <g transform="translate(892 342)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="228" height="70" rx="14" fill="rgba(251,146,60,0.10)" stroke="#fb923c" stroke-opacity="0.5"/>
+    <text x="114" y="30" font-size="16" font-weight="700" fill="#fdba74" text-anchor="middle">Ideogram</text>
+    <text x="114" y="54" font-size="15" font-weight="700" fill="#86efac" text-anchor="middle">✓ 字准确又漂亮</text>
+  </g>
+
+  <text x="80" y="602" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#idCap)">Ideogram</text>
+  <text x="380" y="602" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#a88093">AI 做带字海报 · Logo 神器 · 国内订阅</text>
+</svg>
