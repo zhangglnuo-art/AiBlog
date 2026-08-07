@@ -1,7 +1,7 @@
 ---
 title: Manus 怎么订阅？能自己干活的 AI 智能体国内开通
 description: Manus 值得订吗？和 ChatGPT 有什么不同、"自主执行任务"到底能做什么、各档价格、国内如何注册与付款、被拒卡怎么办，一文讲清并附虚拟卡教程。
-pubDate: 2026-08-22
+pubDate: 2026-08-05
 tags: ['Manus', 'AI智能体', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/manus.png?v=1

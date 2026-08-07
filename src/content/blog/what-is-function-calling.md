@@ -1,7 +1,7 @@
 ---
 title: 什么是 Function Calling？AI 从"只会说"到"能动手"
 description: AI 本来只会生成文字，为什么现在能帮你查天气、算数、订日程？Function Calling（函数调用/工具调用）是什么、怎么工作、和 Agent、MCP 有何关系，一文讲清。
-pubDate: 2026-08-22
+pubDate: 2026-08-05
 tags: ['大模型', 'Function Calling', '工具调用', 'AI智能体', 'AI原理']
 author: 编辑部
 cover: /covers/function-calling.png?v=1

@@ -1,7 +1,7 @@
 ---
 title: 什么是 RLHF？AI 是怎么被"调教"得懂事的
 description: 同样是大模型，为什么 ChatGPT 会礼貌回答、拒绝坏请求，而不是胡乱接龙？RLHF 和"对齐"是什么、AI 怎么学会好好说话、又有什么副作用，一文讲清。
-pubDate: 2026-08-19
+pubDate: 2026-08-03
 tags: ['大模型', 'RLHF', '对齐', 'AI原理']
 author: 编辑部
 cover: /covers/rlhf.png?v=1

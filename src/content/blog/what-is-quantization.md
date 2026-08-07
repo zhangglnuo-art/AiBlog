@@ -1,7 +1,7 @@
 ---
 title: 什么是模型量化？为什么大模型能压进你的显卡
 description: 同一个模型为什么有 Q4、Q8 好多版本？量化是什么、为什么能大幅省显存、会不会变笨、本地跑该选哪个量化档，一文用大白话讲清。
-pubDate: 2026-08-16
+pubDate: 2026-08-02
 tags: ['大模型', '量化', 'AI原理', '开源模型']
 author: 编辑部
 cover: /covers/quantization.png?v=1

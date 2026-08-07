@@ -1,7 +1,7 @@
 ---
 title: 什么是混合专家（MoE）？为什么超大模型还能跑得动
 description: DeepSeek、Mixtral 都在用的 MoE 是什么？一个"专家会诊"的比喻讲清混合专家模型的原理、为什么它又大又省、和普通大模型有什么区别，一文看懂。
-pubDate: 2026-08-10
+pubDate: 2026-07-30
 tags: ['大模型', '混合专家', 'MoE', 'AI原理']
 author: 编辑部
 cover: /covers/moe.png?v=1

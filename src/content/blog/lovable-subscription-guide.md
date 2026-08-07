@@ -1,7 +1,7 @@
 ---
 title: Lovable 怎么订阅？不会编程也能用 AI 做出网站
 description: Lovable 值得订吗？一句话生成可上线的网站和应用、免费和付费的区别、各档价格、国内如何注册与付款、被拒卡怎么办，一文讲清并附虚拟卡教程。
-pubDate: 2026-08-16
+pubDate: 2026-08-02
 tags: ['Lovable', 'AI编程', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/lovable.png?v=1

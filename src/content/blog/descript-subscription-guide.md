@@ -1,7 +1,7 @@
 ---
 title: Descript 怎么订阅？像编辑文档一样剪音视频
 description: Descript 值得订吗？改文字稿就能剪视频、AI 去口癖、克隆配音、自动字幕能做什么、各档价格、国内如何注册与付款，一文讲清并附虚拟卡教程。
-pubDate: 2026-08-25
+pubDate: 2026-08-06
 tags: ['Descript', 'AI剪辑', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/descript.png?v=1

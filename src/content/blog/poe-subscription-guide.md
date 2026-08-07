@@ -1,7 +1,7 @@
 ---
 title: Poe 怎么订阅？一个订阅用遍 GPT、Claude、Gemini
 description: Poe 值得订吗？一份订阅就能用 GPT、Claude、Gemini、Grok 等多家模型，各档价格多少、和单独订有什么区别、国内如何注册与付款，一文讲清并附虚拟卡教程。
-pubDate: 2026-08-13
+pubDate: 2026-07-31
 tags: ['Poe', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/poe.png?v=1

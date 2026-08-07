@@ -1,7 +1,7 @@
 ---
 title: Ideogram 怎么订阅？AI 做带字海报 Logo 神器国内开通
 description: Ideogram 值得订吗？为什么它能把文字准确画进图里、免费和付费的区别、各档价格、国内如何注册与付款、被拒卡怎么办，一文讲清并附虚拟卡教程。
-pubDate: 2026-08-19
+pubDate: 2026-08-03
 tags: ['Ideogram', 'AI绘画', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/ideogram.png?v=1

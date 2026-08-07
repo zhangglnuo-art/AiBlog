@@ -1,7 +1,7 @@
 ---
 title: 什么是 AGI？通用人工智能离我们还有多远
 description: 天天听到 AGI，它到底指什么？和现在的 ChatGPT 有什么区别、为什么说 AI 还不是 AGI、离实现还有多远，一文用大白话把这个"大问题"讲清楚。
-pubDate: 2026-08-13
+pubDate: 2026-07-31
 tags: ['AGI', '大模型', 'AI原理']
 author: 编辑部
 cover: /covers/agi.png?v=1

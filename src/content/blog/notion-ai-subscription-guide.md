@@ -1,7 +1,7 @@
 ---
 title: Notion AI 怎么订阅？国内开通全流程
 description: Notion AI 值得订吗？能做什么、和单独用 ChatGPT 有何不同、各档价格、国内如何注册与付款、被拒卡怎么办。手把手教你用虚拟信用卡开通 Notion AI。
-pubDate: 2026-08-10
+pubDate: 2026-07-30
 tags: ['Notion', 'AI办公', 'AI工具', 'AI订阅', '虚拟信用卡']
 author: 编辑部
 cover: /covers/notion-ai.png?v=1
