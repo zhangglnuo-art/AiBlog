@@ -56,7 +56,7 @@ AI 写代码已经从「补全几行」进化到「改整个项目」。但工�
 
 ## 怎么付款
 
-这些工具**基本都需要海外信用卡订阅，国内双币卡常被拒**。要多试几款对比，最省心的是备一张能通吃的[虚拟信用卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)；想控制订阅开销，可参考[AI 订阅省钱指南](/blog/ai-subscription-save-money/)。
+这些工具**基本都需要海外信用卡订阅，国内双币卡常被拒**。要多试几款对比，最省心的是备一张能通吃的[虚拟卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)；想控制订阅开销，可参考[AI 订阅省钱指南](/blog/ai-subscription-save-money/)。
 
 ## 小结
 

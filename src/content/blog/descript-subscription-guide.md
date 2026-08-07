@@ -57,7 +57,7 @@ Descript 有免费档，付费按额度和功能升级：
 
 注册没门槛：官网用邮箱或 Google 账号登录，下载客户端即可用。**卡就卡在升级付款**——Descript 走海外支付通道，**国内双币卡经常被拒**，报错类似 `Your card was declined`。根本原因是卡的发行地区与账单信息被风控判定为高风险。
 
-更稳的做法是用一张地区信息可控的[虚拟信用卡](https://rdvcc.com)，以 [RDVCC](https://rdvcc.com) 为例，大约十分钟：
+更稳的做法是用一张地区信息可控的[美国虚拟信用卡](https://rdvcc.com)，以 RDVCC 为例，大约十分钟：
 
 1. 注册并用 USDT 充值，绕开国内银行卡的跨境限制
 2. 开一张 Visa/Mastercard 虚拟卡，记下卡号、有效期、CVV

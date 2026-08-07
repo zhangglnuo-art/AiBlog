@@ -38,7 +38,7 @@ cover: /covers/digital-human.png?v=1
 
 ## 国内怎么订阅
 
-HeyGen 是海外服务，**订阅需要海外信用卡，国内双币卡常被拒**。解决办法和其他海外 AI 一样：备一张地区信息可控的[虚拟信用卡](https://rdvcc.com)——USDT 充值、几分钟出卡，绑定付款基本一次过。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
+HeyGen 是海外服务，**订阅需要海外信用卡，国内双币卡常被拒**。解决办法和其他海外 AI 一样：备一张地区信息可控的[美国虚拟信用卡](https://rdvcc.com)——USDT 充值、几分钟出卡，绑定付款基本一次过。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
 
 ## 上手建议
 

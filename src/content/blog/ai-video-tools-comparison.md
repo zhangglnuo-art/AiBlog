@@ -52,7 +52,7 @@ AI 视频这两年进步飞快，「打一句话生成一段视频」已经从�
 
 ## 海外工具怎么付款
 
-Runway、Sora、Pika、Luma 这些**都需要海外信用卡订阅，且大多不接受国内双币卡**。如果你要多试几家对比，最省心的是备一张能通吃的[虚拟信用卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式的优劣详见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
+Runway、Sora、Pika、Luma 这些**都需要海外信用卡订阅，且大多不接受国内双币卡**。如果你要多试几家对比，最省心的是备一张能通吃的[美国虚拟信用卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式的优劣详见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
 
 想同时管理图像、视频、音频等多种创作工具，可参考[2026 年最值得订阅的海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)；顺带一提，「看懂视频」和「生成视频」是两回事，前者属于[多模态大模型](/blog/what-is-multimodal-llm/)的理解能力。
 

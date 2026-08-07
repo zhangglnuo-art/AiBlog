@@ -29,7 +29,7 @@ Claude 是 Anthropic 出品的 AI 助手，凭借超长上下文、扎实的写�
 
 和 ChatGPT 一样，Claude 的付款环节同样由海外支付服务商处理，国内双币卡经常被拒。你会看到类似 `We were unable to process your payment` 的提示。
 
-根本原因还是**卡的地区与风控**。解决思路不是反复换卡，而是用一张地区信息可控的[虚拟信用卡](https://rdvcc.com)一次性搞定：
+根本原因还是**卡的地区与风控**。解决思路不是反复换卡，而是用一张地区信息可控的[融达虚拟信用卡](https://rdvcc.com)一次性搞定：
 
 1. 用 USDT 给虚拟卡账户充值
 2. 开一张 Visa/Mastercard 虚拟卡

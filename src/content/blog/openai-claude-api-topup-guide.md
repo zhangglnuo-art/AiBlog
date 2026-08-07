@@ -33,11 +33,11 @@ cover: /covers/api-billing.png?v=1
 
 OpenAI、Anthropic 的 API 后台绑卡/充值，同样由海外支付服务商处理，国内双币卡常被判高风险直接拒掉，报错类似 `Your card was declined`。
 
-原因和订阅时一样：**卡的 BIN 段、开卡地区与账单信息不匹配触发风控**。解决思路不是反复换卡，而是用一张地区信息可控的[虚拟信用卡](https://rdvcc.com)。
+原因和订阅时一样：**卡的 BIN 段、开卡地区与账单信息不匹配触发风控**。解决思路不是反复换卡，而是通过[虚拟卡发卡平台](https://rdvcc.com)开一张地区信息可控的卡。
 
 ## 用虚拟信用卡充值的步骤
 
-以 [RDVCC 虚拟信用卡](https://rdvcc.com) 为例：
+以[融达虚拟信用卡](https://rdvcc.com)为例：
 
 **OpenAI（platform.openai.com）**
 1. 用 USDT 给虚拟卡账户充值，开一张 Visa/Mastercard

@@ -49,7 +49,7 @@ Poe 主要按「积分（Points）」计费，不同模型每次调用消耗的�
 
 注册没门槛：官网或 App 用邮箱/Google/Apple 账号登录即可，免费额度直接能玩。**卡就卡在升级 Premium**——Poe 走海外支付通道（网页版与 App 内购），**国内双币卡经常被拒**。
 
-更稳的做法是用一张地区信息可控的[虚拟信用卡](https://rdvcc.com)，以 [RDVCC](https://rdvcc.com) 为例，大约十分钟：
+更稳的做法是用一张地区信息可控的[虚拟卡](https://rdvcc.com)，以 RDVCC 为例，大约十分钟：
 
 1. 注册并用 USDT 充值，绕开国内银行卡的跨境限制
 2. 开一张 Visa/Mastercard 虚拟卡，记下卡号、有效期、CVV

@@ -41,7 +41,7 @@ Copilot 的注册和安装都没有门槛：有 GitHub 账号，在 **Settings �
 
 和其他海外 AI 服务一样，Copilot 走的是海外支付通道，**国内双币卡经常被拒**，报错类似 `Your card was declined`。原因是卡的发行地区和账单信息被风控判定为高风险，反复试卡还可能连累账号。
 
-更稳的做法是用一张地区信息可控的[虚拟信用卡](https://rdvcc.com)，以 [RDVCC](https://rdvcc.com) 为例：
+更稳的做法是用一张地区信息可控的[虚拟卡](https://rdvcc.com)，以 RDVCC 为例：
 
 1. 注册并用 USDT 充值，几分钟开出一张 Visa/Mastercard 虚拟卡
 2. 在 GitHub **Settings → Billing** 里添加这张卡，账单地址按开卡地区信息填

@@ -46,7 +46,7 @@ AI 绘画工具越来越多，画质也越来越离谱。但 Midjourney、DALL·
 
 ## 海外工具怎么付款
 
-Midjourney、DALL·E、Ideogram 这些**都需要海外信用卡，且大多不接受国内双币卡**。要多试几家对比，最省心的是备一张能通吃的[虚拟信用卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
+Midjourney、DALL·E、Ideogram 这些**都需要海外信用卡，且大多不接受国内双币卡**。要多试几家对比，最省心的是备一张能通吃的[Visa 虚拟卡](https://rdvcc.com)，一张卡覆盖多平台。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
 
 想同时玩转图像、视频、音乐等 AI 创作，另可参考[AI 视频工具横评](/blog/ai-video-tools-comparison/)与[值得订阅的海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)；「画图」和「看图」是两回事，后者属于[多模态大模型](/blog/what-is-multimodal-llm/)的理解能力。
 

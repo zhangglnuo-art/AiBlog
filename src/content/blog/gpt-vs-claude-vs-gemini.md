@@ -58,7 +58,7 @@ ChatGPT 的第三方生态、GPTs、插件最丰富；Gemini 与 Gmail、Docs �
 
 ## 其实可以「都用」
 
-这三家（以及 Midjourney、Cursor 等）有个共同点——**都需要海外信用卡付款，且大多不接受国内双币卡**。如果你打算多订几个来回比较，最省心的是备一张能通吃的[虚拟信用卡](https://rdvcc.com)，一张卡覆盖多平台，避免每个都折腾支付。各支付方式的优劣详见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)，完整工具清单见[值得订阅的海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)。
+这三家（以及 Midjourney、Cursor 等）有个共同点——**都需要海外信用卡付款，且大多不接受国内双币卡**。如果你打算多订几个来回比较，最省心的是在[虚拟信用卡平台](https://rdvcc.com)开一张能通吃的卡，一张卡覆盖多平台，避免每个都折腾支付。各支付方式的优劣详见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)，完整工具清单见[值得订阅的海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)。
 
 ## 小结
 
