@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="dsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0e16"/>
+      <stop offset="1" stop-color="#0f0c18"/>
+    </linearGradient>
+    <linearGradient id="dsCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#dsBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#a78bfa">// AI 剪辑</text>
+
+  <!-- 左：文字稿编辑器 -->
+  <g transform="translate(80 126)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="600" height="404" rx="16" fill="#161320" stroke="#ffffff" stroke-opacity="0.09"/>
+    <rect x="0" y="0" width="600" height="50" rx="16" fill="#1d1830"/>
+    <rect x="0" y="34" width="600" height="16" fill="#1d1830"/>
+    <circle cx="28" cy="25" r="6" fill="#f472b6"/><circle cx="50" cy="25" r="6" fill="#fbbf24"/><circle cx="72" cy="25" r="6" fill="#4ade80"/>
+    <text x="300" y="31" font-size="15" fill="#8a7ea6" text-anchor="middle">逐字稿 · 改文字就是剪片</text>
+
+    <!-- 文字稿正文 -->
+    <g font-size="24" font-weight="700">
+      <text x="34" y="112" fill="#d6cdec">大家好，</text>
+      <text x="196" y="112" fill="#d6cdec">今天</text>
+      <!-- 被删的口癖（删除线 + 变暗） -->
+      <text x="300" y="112" fill="#5a5270" text-decoration="line-through">嗯…那个</text>
+      <text x="34" y="158" fill="#d6cdec">我们来聊聊</text>
+      <text x="270" y="158" fill="#5a5270" text-decoration="line-through">然后就是</text>
+      <text x="34" y="204" fill="#d6cdec">AI 剪辑这件事。</text>
+    </g>
+
+    <!-- 删词提示 -->
+    <g transform="translate(34 236)">
+      <rect x="0" y="0" width="340" height="44" rx="10" fill="rgba(244,114,182,0.10)" stroke="#f472b6" stroke-opacity="0.5"/>
+      <text x="20" y="29" font-size="16" font-weight="700" fill="#f9a8d4">✂ 删掉「嗯…那个」→ 视频同步删除</text>
+    </g>
+
+    <!-- 时间轴（同步反映删除） -->
+    <g transform="translate(34 300)">
+      <rect x="0" y="0" width="532" height="66" rx="10" fill="#0f0c18"/>
+      <rect x="12" y="12" width="120" height="20" rx="4" fill="#a78bfa" opacity="0.85"/>
+      <rect x="140" y="12" width="70" height="20" rx="4" fill="#5a5270"/>
+      <rect x="218" y="12" width="150" height="20" rx="4" fill="#a78bfa" opacity="0.85"/>
+      <rect x="376" y="12" width="60" height="20" rx="4" fill="#5a5270"/>
+      <rect x="444" y="12" width="76" height="20" rx="4" fill="#a78bfa" opacity="0.85"/>
+      <rect x="12" y="40" width="508" height="14" rx="4" fill="#2dd4bf" opacity="0.55"/>
+      <rect x="150" y="6" width="3" height="54" fill="#f472b6"/>
+    </g>
+  </g>
+
+  <!-- 右：AI 功能列表 -->
+  <g transform="translate(712 138)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <g font-size="18" font-weight="700">
+      <rect x="0" y="0" width="408" height="70" rx="14" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-opacity="0.4"/>
+      <text x="26" y="34" font-size="24">🎙</text>
+      <text x="66" y="32" fill="#c9bcf0">语音克隆改口播</text>
+      <text x="66" y="56" font-size="14" font-weight="600" fill="#7a6f9a">打字就能补录、改错字</text>
+
+      <rect x="0" y="86" width="408" height="70" rx="14" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-opacity="0.4"/>
+      <text x="26" y="120" font-size="24">🧹</text>
+      <text x="66" y="118" fill="#c9bcf0">一键去口癖 · 去停顿</text>
+      <text x="66" y="142" font-size="14" font-weight="600" fill="#7a6f9a">嗯、啊、静默自动清掉</text>
+
+      <rect x="0" y="172" width="408" height="70" rx="14" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-opacity="0.4"/>
+      <text x="26" y="206" font-size="24">💬</text>
+      <text x="66" y="204" fill="#c9bcf0">自动字幕 · 降噪增强</text>
+      <text x="66" y="228" font-size="14" font-weight="600" fill="#7a6f9a">转写 + 字幕 + 录音室音质</text>
+    </g>
+  </g>
+
+  <text x="80" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#dsCap)">Descript</text>
+  <text x="356" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#9587b0">像编辑文档一样剪音视频 · 国内订阅</text>
+</svg>

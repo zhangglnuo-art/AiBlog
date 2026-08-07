@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="dtBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#12100a" />
+      <stop offset="1" stop-color="#0a1016" />
+    </linearGradient>
+    <linearGradient id="dtCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24" />
+      <stop offset="1" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#dtBg)" />
+  <text x="80" y="84" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#fbbf24">// AI 原理</text>
+
+  <!-- 左：老师（大模型） -->
+  <g transform="translate(80 160)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" text-anchor="middle">
+    <rect x="0" y="0" width="280" height="300" rx="18" fill="rgba(251,191,36,0.08)" stroke="#fbbf24" stroke-opacity="0.5" stroke-width="2" />
+    <text x="140" y="60" font-size="46">👨‍🏫</text>
+    <text x="140" y="110" font-size="26" font-weight="800" fill="#fcd34d">老师</text>
+    <text x="140" y="144" font-size="18" font-weight="700" fill="#c9a94f">大模型（Teacher）</text>
+    <!-- 大脑网格示意 -->
+    <g fill="#fbbf24" opacity="0.55">
+      <circle cx="60" cy="196" r="7"/><circle cx="105" cy="184" r="7"/><circle cx="150" cy="200" r="7"/><circle cx="195" cy="186" r="7"/><circle cx="230" cy="200" r="7"/>
+      <circle cx="60" cy="238" r="7"/><circle cx="105" cy="226" r="7"/><circle cx="150" cy="242" r="7"/><circle cx="195" cy="228" r="7"/><circle cx="230" cy="242" r="7"/>
+    </g>
+    <text x="140" y="286" font-size="16" font-weight="700" fill="#a78a4a">大 · 慢 · 强</text>
+  </g>
+
+  <!-- 中：传授的"软标签" -->
+  <g transform="translate(400 190)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="200" y="-6" font-size="16" font-weight="700" fill="#e0b64f" text-anchor="middle">教的不只是答案，还有「带分寸的判断」</text>
+    <rect x="0" y="10" width="400" height="240" rx="16" fill="rgba(255,255,255,0.03)" stroke="#ffffff" stroke-opacity="0.1" />
+    <text x="24" y="46" font-size="17" font-weight="700" fill="#9fb4c9">「这是什么动物？」软标签：</text>
+    <!-- 条形分布 -->
+    <g font-size="17" font-weight="700">
+      <text x="72" y="90" fill="#d6dbe2" text-anchor="end">猫</text>
+      <rect x="86" y="76" width="280" height="24" rx="6" fill="#38bdf8"/>
+      <text x="356" y="94" fill="#0a1016" text-anchor="end">90%</text>
+
+      <text x="72" y="134" fill="#d6dbe2" text-anchor="end">狗</text>
+      <rect x="86" y="120" width="60" height="24" rx="6" fill="#7dd3fc"/>
+      <text x="158" y="138" fill="#9fb4c9">8%</text>
+
+      <text x="72" y="178" fill="#d6dbe2" text-anchor="end">狐狸</text>
+      <rect x="86" y="164" width="24" height="24" rx="6" fill="#5a7488"/>
+      <text x="122" y="182" fill="#9fb4c9">2%</text>
+    </g>
+    <text x="24" y="228" font-size="15" font-weight="600" fill="#6b8299">↑ 藏着老师的经验：猫和狗有点像</text>
+  </g>
+
+  <!-- 教 箭头 -->
+  <g stroke="#38bdf8" stroke-opacity="0.75" stroke-width="4" fill="none">
+    <path d="M812 310 H 872" /><path d="M862 300 L 878 310 L 862 320 Z" fill="#38bdf8" stroke="none" />
+  </g>
+  <text x="842" y="292" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#5fb0e0" text-anchor="middle">模仿</text>
+
+  <!-- 右：学生（小模型） -->
+  <g transform="translate(896 220)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" text-anchor="middle">
+    <rect x="0" y="0" width="224" height="200" rx="16" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="2" />
+    <text x="112" y="52" font-size="34">🎓</text>
+    <text x="112" y="92" font-size="22" font-weight="800" fill="#7dd3fc">学生</text>
+    <text x="112" y="120" font-size="15" font-weight="700" fill="#5f92b0">小模型（Student）</text>
+    <text x="112" y="158" font-size="15" font-weight="700" fill="#86efac">✓ 又小又快</text>
+    <text x="112" y="182" font-size="15" font-weight="700" fill="#86efac">本事接近老师</text>
+  </g>
+
+  <text x="76" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="56" font-weight="800" fill="url(#dtCap)">知识蒸馏</text>
+  <text x="316" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="600" fill="#8a8a72">大模型「教」出小模型的秘密</text>
+  <text x="80" y="598" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="600" fill="#6b6f55">老师带学生 · 学生模仿老师的判断 · 用小体积复现强表现</text>
+</svg>
