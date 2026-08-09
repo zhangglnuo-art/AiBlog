@@ -65,5 +65,6 @@ AI 视频生成与编辑，短视频、广告创意的利器。
 - **做内容**：Midjourney + Runway + ElevenLabs 组合
 - **写代码**：Cursor 或 Copilot 二选一
 - **做研究**：ChatGPT Plus + Perplexity Pro
+- **做跨境/外贸**：任一通用助手 + [DeepL Pro](/blog/deepl-subscription-guide/)，后者负责批量文档翻译与术语统一
 
 先把支付工具备好，剩下的就是按需订阅——不用再为「付不了款」发愁。

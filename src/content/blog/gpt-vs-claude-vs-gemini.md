@@ -20,7 +20,7 @@ GPT-5（ChatGPT）、Claude、Gemini 是目前第一梯队的三大 AI 助手，
 ## 逐维度对比
 
 ### 写作与中文表达
-Claude 的中文行文自然、语气克制，长文写作和翻译很稳；GPT-5 也很强、更「机灵」；Gemini 中文可用但整体略逊一筹。**内容创作者偏爱 Claude 或 GPT-5**。
+Claude 的中文行文自然、语气克制，长文写作和翻译很稳；GPT-5 也很强、更「机灵」；Gemini 中文可用但整体略逊一筹。**内容创作者偏爱 Claude 或 GPT-5**。纯翻译、要求批量且译法统一的场景，[DeepL Pro 这类专用工具](/blog/deepl-subscription-guide/)通常比通用大模型更省心。
 
 ### 代码能力
 三家都能写代码。GPT-5 和 Claude 在复杂重构、多文件改动上表现突出，Claude 在「读懂大项目再动手」上口碑很好；Gemini 也在快速追赶。搭配 [Cursor 这类 AI 编辑器](/blog/cursor-subscription-guide/)体验更佳。
