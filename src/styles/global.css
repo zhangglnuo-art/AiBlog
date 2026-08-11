@@ -343,3 +343,22 @@ body {
 .prose :where(strong):not(:where([class~='not-prose'] *)) {
   color: #eef2ff;
 }
+
+/* 宽表格容器（由 astro.config.mjs 的 rehypeScrollableTables 生成）：
+   5 列以上的表格在窄屏放不下，让它在自己的容器里横向滚动，
+   而不是把整个页面撑宽产生全页横向滚动。 */
+.prose .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+.prose .table-scroll > table {
+  margin: 0;
+  min-width: 100%;
+}
+@media (max-width: 640px) {
+  .prose .table-scroll > table {
+    /* 给足宽度让内容不被挤成每行一两个字，超出部分由容器滚动 */
+    min-width: 34rem;
+  }
+}

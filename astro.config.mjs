@@ -36,8 +36,51 @@ for (const file of readdirSync(blogDir)) {
   }
 }
 
+// 把 Markdown 生成的宽表格包进可横向滚动的容器。
+// 横评类文章有 5～6 列的表格，窄屏下会把整个页面撑出横向滚动条；
+// 只处理列数多的表格，2～3 列的窄表格保持原样自适应。
+const WIDE_TABLE_MIN_COLS = 5;
+
+function rehypeScrollableTables() {
+  const countColumns = (table) => {
+    let max = 0;
+    const visit = (node) => {
+      if (node.tagName === 'tr') {
+        const cells = (node.children ?? []).filter(
+          (c) => c.type === 'element' && (c.tagName === 'th' || c.tagName === 'td'),
+        );
+        max = Math.max(max, cells.length);
+      }
+      for (const child of node.children ?? []) if (child.type === 'element') visit(child);
+    };
+    visit(table);
+    return max;
+  };
+
+  return (tree) => {
+    const walk = (node) => {
+      if (!node.children) return;
+      node.children = node.children.map((child) => {
+        if (child.type !== 'element') return child;
+        walk(child);
+        if (child.tagName !== 'table' || countColumns(child) < WIDE_TABLE_MIN_COLS) return child;
+        return {
+          type: 'element',
+          tagName: 'div',
+          properties: { className: ['table-scroll'] },
+          children: [child],
+        };
+      });
+    };
+    walk(tree);
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    rehypePlugins: [rehypeScrollableTables],
+  },
   // 站点根 URL —— 决定 sitemap / canonical / RSS 的绝对地址。上线前改成正式域名。
   site: SITE_URL,
   // 纯静态输出：build 后 dist/ 直接丢到 Nginx / 主站服务器即可。
