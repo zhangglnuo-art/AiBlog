@@ -67,6 +67,7 @@ DeepL Pro 个人版分三档，按功能和额度递增：
 - **正式/非正式要手动切**：默认未必是你要的语气，商务邮件记得切正式
 - **长文档分段核对**：机器翻译在长文里仍可能丢细节，关键条款务必人工过一遍
 - **配合大模型改写**：DeepL 负责"译得准"，需要**改写、扩写、换风格**时交给 [ChatGPT](/blog/chatgpt-plus-subscription-guide/) 或 [Claude](/blog/claude-pro-subscribe-china/) 更合适
+- **译完再润一遍**：译文的语气是否得体，DeepL 不负责判断，交给 [Grammarly](/blog/grammarly-subscription-guide/) 过一遍更稳妥
 - **别把翻译当理解**：译文再顺，也不代表模型"懂"了内容，这和[大模型的工作方式](/blog/how-llm-works/)是两回事
 
 ## 常见问题

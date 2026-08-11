@@ -71,4 +71,4 @@ cover: /covers/open-vs-closed.png?v=1
 
 ## 小结
 
-开源大模型不是「免费的 ChatGPT」，它是**另一条路**：拿可控性、隐私和定制能力，去换开箱即用的体验和顶级能力。**个人求省心 → 闭源订阅；企业求合规、开发者求可控 → 开源自建**。想先把闭源三家比一比，可看[GPT-5、Claude、Gemini 怎么选](/blog/gpt-vs-claude-vs-gemini/)。
+开源大模型不是「免费的 ChatGPT」，它是**另一条路**：拿可控性、隐私和定制能力，去换开箱即用的体验和顶级能力。**个人求省心 → 闭源订阅；企业求合规、开发者求可控 → 开源自建**。想先把闭源三家比一比，可看[GPT-5、Claude、Gemini 怎么选](/blog/gpt-vs-claude-vs-gemini/)；看到"开源模型跑分已追平闭源"这类说法时，先读[大模型跑分该怎么看](/blog/what-is-benchmark/)再下判断。
