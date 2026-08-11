@@ -5,13 +5,16 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-import { SITE_URL } from './src/consts.ts';
+import { SITE_URL, TAG_INDEX_MIN_POSTS } from './src/consts.ts';
 
 // 构建文章 URL -> lastmod 映射：直接读 frontmatter 的 updatedDate/pubDate，
 // 让 sitemap 的 <lastmod> 反映内容真实更新时间（而非每次构建时间，避免误导爬虫）。
+// 同时统计每个标签的文章数，供 sitemap 过滤薄标签页使用。
 const blogDir = new URL('./src/content/blog/', import.meta.url);
 /** @type {Record<string, string>} */
 const lastmodMap = {};
+/** @type {Record<string, number>} */
+const tagCounts = {};
 for (const file of readdirSync(blogDir)) {
   if (!/\.mdx?$/.test(file)) continue;
   const slug = file.replace(/\.mdx?$/, '');
@@ -25,6 +28,11 @@ for (const file of readdirSync(blogDir)) {
   if (dateStr) {
     const d = new Date(dateStr);
     if (!Number.isNaN(d.valueOf())) lastmodMap[`/blog/${slug}/`] = d.toISOString();
+  }
+  const tagLine = /^\s*tags:\s*\[(.*)\]\s*$/m.exec(fm)?.[1] ?? '';
+  for (const raw of tagLine.split(',')) {
+    const tag = raw.trim().replace(/^['"]|['"]$/g, '');
+    if (tag) tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
   }
 }
 
@@ -45,6 +53,14 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // 文章数不足的标签页带 noindex，就不该再出现在 sitemap 里——否则等于
+      // 一边告诉 Google「别收录」，一边又把它提交上去，白耗抓取预算。
+      filter(page) {
+        const path = decodeURIComponent(new URL(page).pathname);
+        const tag = /^\/tags\/(.+)\/$/.exec(path)?.[1];
+        if (!tag) return true;
+        return (tagCounts[tag] ?? 0) >= TAG_INDEX_MIN_POSTS;
+      },
       serialize(item) {
         const path = new URL(item.url).pathname;
         if (lastmodMap[path]) item.lastmod = lastmodMap[path];

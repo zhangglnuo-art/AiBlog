@@ -23,6 +23,8 @@ interface Props {
   modifiedTime?: Date;
   /** 直接注入的 JSON-LD 对象（如 Article / BreadcrumbList） */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** 从索引中排除本页（仍允许跟随链接）。用于文章数过少、无独立价值的聚合页。 */
+  noindex?: boolean;
 }
 
 const {
@@ -35,6 +37,7 @@ const {
   publishedTime,
   modifiedTime,
   jsonLd,
+  noindex = false,
 } = Astro.props;
 
 const pageTitle = fullTitle ?? (title ? `${title} | ${SITE_TITLE}` : SITE_TITLE);
@@ -98,7 +101,10 @@ const allJsonLd = [...siteJsonLd, ...pageJsonLd];
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
-<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta
+  name="robots"
+  content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'}
+/>
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />

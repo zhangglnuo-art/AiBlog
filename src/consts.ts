@@ -64,3 +64,8 @@ export const NAV_LINKS = [
 
 // 每页文章数（分页用）
 export const POSTS_PER_PAGE = 9;
+
+// 标签页少于这个篇数就不值得单独进索引：只有一两篇文章的标签页没有独立内容，
+// 却会占掉新站有限的抓取预算。低于阈值的标签页仍可正常访问、仍传递链接，
+// 但会带 noindex 并从 sitemap 中排除。
+export const TAG_INDEX_MIN_POSTS = 3;
