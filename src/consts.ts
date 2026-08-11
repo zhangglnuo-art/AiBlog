@@ -49,6 +49,11 @@ export const FRIEND_LINKS = [
     desc: 'AI 资讯、工具教程与评测对比',
   },
   {
+    name: 'Claude 代订阅',
+    href: 'https://aidingyue.net/',
+    desc: 'Claude Pro / Max 代订阅与礼品卡，官方邮件直发',
+  },
+  {
     name: RDVCC_BRAND,
     href: RDVCC_URL,
     desc: 'USDT 开卡的海外虚拟信用卡',
