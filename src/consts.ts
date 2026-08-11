@@ -32,7 +32,17 @@ export const rdvccLink = (path = '/', campaign = 'blog') =>
 
 // 友情链接（页脚展示）。名称按各站实际定位来写，便于读者判断要不要点。
 // 增删改只需改这里；主站放最后并单独标注。
-export const FRIEND_LINKS = [
+//
+// nofollow: 全站页脚链接会出现在每个页面上，指向同一变现链条的商业站时容易被判成
+// 链接网络。这类链接标 nofollow——读者照常能点，但不传递权重，避免影响自身收录。
+type FriendLink = {
+  name: string;
+  href: string;
+  desc: string;
+  nofollow?: boolean;
+};
+
+export const FRIEND_LINKS: FriendLink[] = [
   {
     name: 'AI 服务指南',
     href: 'https://ponr.org/',
@@ -52,6 +62,7 @@ export const FRIEND_LINKS = [
     name: 'Claude 代订阅',
     href: 'https://aidingyue.net/',
     desc: 'Claude Pro / Max 代订阅与礼品卡，官方邮件直发',
+    nofollow: true,
   },
   {
     name: RDVCC_BRAND,

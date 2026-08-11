@@ -46,7 +46,7 @@ const year = new Date().getFullYear();
                 href={link.href}
                 title={link.desc}
                 target="_blank"
-                rel="noopener external"
+                rel={link.nofollow ? 'noopener external nofollow' : 'noopener external'}
               >
                 {link.name}
               </a>
