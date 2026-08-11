@@ -35,19 +35,19 @@ Copilot 有免费档，轻度用户可以先白嫖：
 
 这是很多人不知道的：**通过 GitHub Education 认证的学生和教师，以及活跃的开源项目维护者，可以免费用 Copilot Pro**。在校生用教育邮箱去 GitHub Education 申请认证即可，几天内通过——有学生身份的先走这条路，一分钱不用花。
 
-## 国内怎么订阅（付款是唯一门槛）
+## 开通 Pro：付款其实走的是 GitHub 账单
 
-Copilot 的注册和安装都没有门槛：有 GitHub 账号，在 **Settings → Copilot** 里开通即可。卡就卡在付款——
+Copilot 有个和别家不一样的地方：**付款不在 Copilot 页面里完成，而是走 GitHub 账号本身的账单系统**。所以顺序是先把卡加到 GitHub，再回来开订阅。
 
-和其他海外 AI 服务一样，Copilot 走的是海外支付通道，**国内双币卡经常被拒**，报错类似 `Your card was declined`。原因是卡的发行地区和账单信息被风控判定为高风险，反复试卡还可能连累账号。
+也正因如此，失败的表现更隐蔽：国内双币卡往往**能成功保存，扣款时才失败**，比当场被拒更让人摸不着头脑。症结仍是发卡地区与账单信息不符合风控预期。
 
-更稳的做法是用一张地区信息可控的[虚拟卡](https://rdvcc.com)，以 RDVCC 为例：
+换一张地区可控的[虚拟卡](https://rdvcc.com)就能绕过去，实际只有三步：
 
-1. 注册并用 USDT 充值，几分钟开出一张 Visa/Mastercard 虚拟卡
-2. 在 GitHub **Settings → Billing** 里添加这张卡，账单地址按开卡地区信息填
-3. 回到 **Settings → Copilot** 选择 Pro 订阅，扣款成功立即生效
+1. 在 RDVCC 用 USDT 入金后开卡，拿到卡号、有效期、CVV
+2. 到 GitHub 的 **Settings → Billing and plans** 添加这张卡，账单地址填开卡时的地区
+3. 回 **Settings → Copilot** 选 Pro，扣款通过即刻生效
 
-同一张卡还能顺手覆盖 ChatGPT、Claude、Cursor 等其他订阅，不用每个平台单独折腾。各支付方式的完整对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
+顺带一提：**学生和开源维护者走认证渠道是免费的**，那条路可以完全跳过付款。想比较各种付款方式的差别，见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
 
 ## Copilot 还是 Cursor？
 
@@ -69,6 +69,6 @@ Copilot 的注册和安装都没有门槛：有 GitHub 账号，在 **Settings �
 **Q：订阅后所有编辑器都能用吗？**
 可以。订阅绑定 GitHub 账号，VS Code、JetBrains、Neovim 等装上插件登录同一账号即可。
 
-## 小结
+## 总结
 
 Copilot 是 AI 编程工具里**门槛最低的一档**：不换编辑器、有免费档、付费也只要 $10/月，学生还能白嫖。把支付工具提前备好，整个开通流程十分钟搞定——想系统了解还有哪些值得订的工具，见[2026 年海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)。

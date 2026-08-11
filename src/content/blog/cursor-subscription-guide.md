@@ -37,23 +37,13 @@ Cursor 目前主要分三档：
 
 去官网下载安装 Cursor，用邮箱或 Google 账号登录即可。编辑器本身能正常下载使用，**真正的门槛还是在升级 Pro 的付款环节**。
 
-## 订阅支付：卡在哪一步
+## 付款被拒的原因，以及怎么绕过
 
-和其他海外 AI 服务一样，Cursor 的付款由海外支付服务商处理，国内双币卡经常在这一步被拒，报错类似 `Your card was declined`。
+Cursor 的收款由海外支付服务商处理，它会同时核对卡的 BIN 段、开卡地区和账单地址是否自洽。国内双币卡在这三项上很难对齐，所以多数人在提交时就被挡下。
 
-根本原因是**卡的 BIN 段、开卡地区与账单信息被判定为高风险**。反复换卡去试既费时间，还可能让账号被标记。更稳的做法是**一开始就用一张地区、账单信息可控的[虚拟卡](https://rdvcc.com)**。
+值得强调的是：**这不是"多试几张能碰运气过"的事**。同一批国内卡的特征高度相似，换十张判定结果通常一样，反而可能让账号被标记为异常。
 
-## 用虚拟信用卡开通 Pro 的步骤
-
-以 [RDVCC](https://rdvcc.com) 为例，大约十分钟：
-
-1. 注册并用 USDT 充值，绕开国内银行卡的跨境限制
-2. 开一张 Visa 或 Mastercard 虚拟卡，记下卡号、有效期、CVV
-3. 在 Cursor 里进入 **Settings → Account → Manage Subscription / Upgrade to Pro**
-4. 填入虚拟卡信息，账单地址按开卡时提供的地区信息填写
-5. 提交扣款成功，Pro 立即生效
-
-同一张卡通常还能覆盖 ChatGPT、Claude、Midjourney 等其他服务，不必为每个平台单独折腾支付。
+有效的做法是换一张这三项由自己决定的[虚拟卡](https://rdvcc.com)。RDVCC 这类平台用 USDT 入金后几分钟就能开出 Visa 或 Mastercard，拿到卡号、有效期、CVV 之后，回 Cursor 的 **Settings → Account → Manage Subscription** 填卡即可。**唯一要留意的是账单地址**——按开卡时给的地区信息填，这一步错了照样会被拒。扣款通过后 Pro 即刻生效。
 
 ## Cursor 还是 GitHub Copilot？
 

@@ -39,21 +39,11 @@ Perplexity Pro 约 **$20/月**（和 ChatGPT Plus、Claude Pro 同价位），�
 
 ## 注册与支付：卡在哪一步
 
-注册很简单，用邮箱或 Google 账号即可。**门槛还是在升级 Pro 的付款环节**——国内双币卡常被海外支付风控拒掉，报错类似 `Your card was declined`。
+注册本身没有障碍，邮箱或 Google 账号登录即可，免费额度足够你先感受它和普通搜索的差别。
 
-根本原因是**卡的 BIN 段、开卡地区与账单信息被判为高风险**。反复换卡去试既费时间，又可能让账号被标记。更稳的做法是**一开始就用一张地区、账单信息可控的[Visa 虚拟卡](https://rdvcc.com)**。
+要升级 Pro 就得过支付这关。Perplexity 的收单方会核对卡的 BIN 段、开卡地区与账单信息是否一致，国内双币卡在这里几乎必被判为高风险。继续换国内卡意义不大——特征相同，判定结果也相同。
 
-## 用虚拟信用卡开通 Pro 的步骤
-
-以 [RDVCC](https://rdvcc.com) 为例，大约十分钟：
-
-1. 注册并用 USDT 充值，绕开国内银行卡的跨境限制
-2. 开一张 Visa 或 Mastercard 虚拟卡，记下卡号、有效期、CVV
-3. 在 Perplexity 里进入 **Settings → Account → Upgrade / Subscription**
-4. 填入虚拟卡信息，账单地址按开卡时提供的地区信息填写
-5. 提交扣款成功，Pro 立即生效
-
-同一张卡通常还能覆盖 ChatGPT、Claude、Cursor 等其他服务，不必为每个平台单独折腾支付。
+换成一张开卡地区自己指定的 [Visa 虚拟卡](https://rdvcc.com) 就能通过。以 RDVCC 为例：USDT 入金后开卡，拿到卡号、有效期、CVV，回到 Perplexity 的 **Settings → Account → Subscription** 填卡，账单地址按开卡地区填写，扣款通过后 Pro 立即生效。
 
 ## 常见问题
 

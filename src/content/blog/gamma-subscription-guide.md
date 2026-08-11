@@ -29,7 +29,7 @@ cover: /covers/gamma.png?v=1
 
 免费版能生成、能体验完整流程，但有额度和水印限制；**高频使用、要去水印和更多导出/AI 额度，就得上付费档**。
 
-## 订阅计划与价格
+## 各档价格与额度
 
 Gamma 以「AI 额度（Credits）」和功能区分档位，大致如下：
 
@@ -41,21 +41,21 @@ Gamma 以「AI 额度（Credits）」和功能区分档位，大致如下：
 
 各档额度、价格与权益调整频繁，**以官网定价页为准**（年付通常更便宜）。个人从 **Plus** 起步最划算，不够再升 Pro。
 
-## 国内怎么订阅（付款是唯一门槛）
+## 付款这一步怎么过
 
-注册没门槛：官网用邮箱或 Google 账号登录即可，编辑器直接能用。**卡就卡在升级付款**——Gamma 走海外支付通道，**国内双币卡经常被拒**，报错类似 `Your card was declined`。根本原因是卡的发行地区与账单信息被风控判定为高风险。
+Gamma 的账号是免费的——邮箱或 Google 登录进去，编辑器和免费额度当场可用。真正需要处理的只有升级那一步。
 
-更稳的做法是通过[虚拟卡发卡平台](https://rdvcc.com)开一张地区信息可控的卡，以 RDVCC 为例，大约十分钟：
+它的收银台不接受国内发行的双币卡，绑卡时多半直接返回卡片被拒。这不是余额问题，而是发卡地区与账单信息触发了风控。反复换卡去试没有意义，换十张结果都一样。
 
-1. 注册并用 USDT 充值，绕开国内银行卡的跨境限制
-2. 开一张 Visa/Mastercard 虚拟卡，记下卡号、有效期、CVV
-3. 在 Gamma 里进入 **Settings / Upgrade**，选择 Plus 或 Pro
-4. 填入虚拟卡信息，账单地址按开卡时提供的地区信息填写
-5. 扣款成功，订阅立即生效
+可行的路径是先在[虚拟卡发卡平台](https://rdvcc.com)开一张地区信息自己填的卡。以 RDVCC 为例：
 
-同一张卡通常还能覆盖 ChatGPT、Claude、Midjourney 等其他服务，不必每个平台单独折腾支付。各支付方式对比见[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)。
+- **充值**：用 USDT 入金，不经过国内银行卡的跨境通道
+- **开卡**：几分钟拿到 Visa/Mastercard 卡号、有效期、CVV
+- **付款**：Gamma 里走 **Settings → Upgrade** 选 Plus 或 Pro，填卡时账单地址与开卡地区保持一致
 
-## 上手建议
+扣款通过后权益即时到账，这张卡之后订别的服务也能接着用。各条支付路径的成本和成功率，[海外 AI 订阅支付方式全对比](/blog/ai-subscription-payment-methods/)里列得更细。
+
+## 让生成的 PPT 更能用
 
 - **先喂大纲再生成**：与其让它凭一个词发挥，不如先用 [ChatGPT](/blog/chatgpt-plus-subscription-guide/) 列好大纲再粘进去，结构更可控
 - **内容为王，排版交给它**：你负责把观点写清楚，版式、配图让 Gamma 处理
@@ -73,6 +73,6 @@ Gamma 以「AI 额度（Credits）」和功能区分档位，大致如下：
 **Q：还有哪些 AI 工具值得搭配？**
 配合 [AI 写稿](/blog/chatgpt-plus-subscription-guide/)理内容、[AI 绘画](/blog/ai-image-tools-comparison/)补配图，一套演示又快又好看。完整清单见[2026 年海外 AI 工具盘点](/blog/best-overseas-ai-tools-2026/)。
 
-## 小结
+## 结论：值不值得订
 
 Gamma 把做 PPT 从「搭积木式的体力活」变成了「写大纲式的脑力活」——你专注内容，排版和美化交给 AI。把支付工具提前备好，开通只是几分钟的事，之后每次做汇报都能省下大把时间。想让内容团队更完整，别忘了搭配 [AI 写作](/blog/chatgpt-plus-subscription-guide/)与[省钱订阅技巧](/blog/ai-subscription-save-money/)。

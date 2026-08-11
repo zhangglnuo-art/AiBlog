@@ -31,26 +31,24 @@ cover: /covers/api-billing.png?v=1
 
 ## 充值卡在哪一步
 
-OpenAI、Anthropic 的 API 后台绑卡/充值，同样由海外支付服务商处理，国内双币卡常被判高风险直接拒掉，报错类似 `Your card was declined`。
+OpenAI 和 Anthropic 的开发者后台绑卡，同样由海外支付服务商处理。国内双币卡常被直接判为高风险拒掉，提示多半只有一句含糊的付款失败。
 
-原因和订阅时一样：**卡的 BIN 段、开卡地区与账单信息不匹配触发风控**。解决思路不是反复换卡，而是通过[虚拟卡发卡平台](https://rdvcc.com)开一张地区信息可控的卡。
+原因和订阅时完全一致：卡的 BIN 段、开卡地区与账单信息不匹配，触发风控。所以解决思路也一样——不是继续换卡，而是换一张这些信息由自己决定的卡。
 
-## 用虚拟信用卡充值的步骤
+## 两个平台的充值步骤
 
-以[融达虚拟信用卡](https://rdvcc.com)为例：
+先备好一张[融达虚拟信用卡](https://rdvcc.com)（RDVCC），USDT 入金后开出 Visa/Mastercard，然后按平台分别走：
 
 **OpenAI（platform.openai.com）**
-1. 用 USDT 给虚拟卡账户充值，开一张 Visa/Mastercard
-2. 进入 **Settings → Billing → Payment methods**，添加虚拟卡
-3. 账单地址按开卡时提供的地区信息填写
-4. 在 **Billing → Add to credit balance** 充入余额（API 为预付费，先充后用）
+1. 进 **Settings → Billing → Payment methods** 添加虚拟卡
+2. 账单地址按开卡地区填写
+3. 到 **Billing → Add to credit balance** 充入余额——API 是预付费，先充后用
 
 **Anthropic / Claude（console.anthropic.com）**
-1. 同样先备好虚拟卡
-2. 进入 **Billing / Plans**，绑定卡片并购买额度
-3. 提交扣款成功即可获得 API 调用额度
+1. 进 **Billing / Plans** 绑定卡片
+2. 直接购买额度，扣款通过即可开始调用
 
-同一张卡通常能同时覆盖 OpenAI、Anthropic 以及其他海外服务，不必每个平台单独折腾。
+两个平台可以共用同一张卡，不必分别准备。
 
 ## 几个省钱又防坑的建议
 
