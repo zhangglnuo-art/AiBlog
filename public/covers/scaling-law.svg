@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="slBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#0b0f18"/>
+      <stop offset="1" stop-color="#100c14"/>
+    </linearGradient>
+    <linearGradient id="slCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#slBg)"/>
+  <text x="80" y="84" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#38bdf8">// AI 原理</text>
+
+  <!-- 左：幂律曲线 -->
+  <g transform="translate(80 132)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="560" height="340" rx="16" fill="rgba(56,189,248,0.05)" stroke="#38bdf8" stroke-opacity="0.3"/>
+
+    <!-- 坐标轴 -->
+    <line x1="72" y1="52" x2="72" y2="278" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    <line x1="72" y1="278" x2="510" y2="278" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    <text x="34" y="60" font-size="14" font-weight="700" fill="#7f97b4">能力</text>
+    <text x="510" y="304" font-size="14" font-weight="700" fill="#7f97b4" text-anchor="end">算力 / 数据（对数）</text>
+
+    <!-- 幂律曲线：先陡后平 -->
+    <path d="M72 268 C 150 190, 210 140, 300 116 C 380 96, 440 88, 508 84"
+          stroke="#38bdf8" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+    <!-- 三段标注 -->
+    <circle cx="150" cy="196" r="7" fill="#4ade80"/>
+    <text x="166" y="192" font-size="15" font-weight="700" fill="#86efac">10× 投入 → 提升明显</text>
+
+    <circle cx="300" cy="116" r="7" fill="#fbbf24"/>
+    <text x="316" y="112" font-size="15" font-weight="700" fill="#fcd34d">100× → 提升可感</text>
+
+    <circle cx="470" cy="86" r="7" fill="#f87171"/>
+    <text x="456" y="66" font-size="15" font-weight="700" fill="#fca5a5" text-anchor="end">1000× → 提升有限</text>
+
+    <text x="280" y="326" font-size="16" font-weight="800" fill="#8fa8bf" text-anchor="middle">幂律：可预测，但收益递减</text>
+  </g>
+
+  <!-- 右：三个变量要配比 -->
+  <g transform="translate(680 132)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="0" y="22" font-size="19" font-weight="800" fill="#38bdf8">三者必须按比例一起涨</text>
+
+    <g font-size="17" font-weight="700">
+      <rect x="0" y="42" width="440" height="60" rx="12" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.35"/>
+      <text x="20" y="70" fill="#9fd0ee">参数量</text>
+      <text x="130" y="70" font-size="15" font-weight="600" fill="#65839b">脑容量</text>
+
+      <rect x="0" y="114" width="440" height="60" rx="12" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.35"/>
+      <text x="20" y="142" fill="#9fd0ee">训练数据</text>
+      <text x="130" y="142" font-size="15" font-weight="600" fill="#65839b">读过多少书 · 每参数约 20 token</text>
+
+      <rect x="0" y="186" width="440" height="60" rx="12" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.35"/>
+      <text x="20" y="214" fill="#9fd0ee">算力</text>
+      <text x="130" y="214" font-size="15" font-weight="600" fill="#65839b">学习时间</text>
+    </g>
+
+    <!-- 新曲线 -->
+    <rect x="0" y="268" width="440" height="86" rx="12" fill="rgba(244,114,182,0.08)" stroke="#f472b6" stroke-opacity="0.4"/>
+    <text x="20" y="298" font-size="17" font-weight="800" fill="#f9a8d4">数据见底后的新方向</text>
+    <text x="20" y="330" font-size="15" font-weight="600" fill="#a86a8a">把算力从「训练时」挪到「推理时」——让它想得更久</text>
+  </g>
+
+  <text x="80" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#slCap)">Scaling Law</text>
+  <text x="440" y="556" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#77778c">大模型「越大越强」的底层规律</text>
+  <text x="80" y="598" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="600" fill="#5d5d70">可预测的幂律 · 参数与数据要配比 · 收益递减后转向推理时计算</text>
+</svg>

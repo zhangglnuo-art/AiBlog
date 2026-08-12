@@ -43,6 +43,7 @@ AI 绘画工具越来越多，画质也越来越离谱。但 Midjourney、DALL·
 - **要精确控制、批量、定制** → Stable Diffusion
 - **做海报/Logo、图里要有字** → Ideogram
 - **零门槛、国内直接用** → 国产工具
+- **生成完还要排版成成品** → [Canva](/blog/canva-subscription-guide/)，出图交给上面这些，加字和出多种尺寸交给它
 
 ## 海外工具怎么付款
 

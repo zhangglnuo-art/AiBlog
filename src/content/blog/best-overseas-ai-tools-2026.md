@@ -67,5 +67,6 @@ AI 视频生成与编辑，短视频、广告创意的利器。
 - **做研究**：ChatGPT Plus + Perplexity Pro
 - **做跨境/外贸**：任一通用助手 + [DeepL Pro](/blog/deepl-subscription-guide/)，后者负责批量文档翻译与术语统一
 - **天天写英文**：再加一个 [Grammarly](/blog/grammarly-subscription-guide/)，专治"语法没错但读着别扭"
+- **要出成品物料**：[Canva Pro](/blog/canva-subscription-guide/) 补上排版这一环，AI 出的图还得排成能直接发的稿
 
 先把支付工具备好，剩下的就是按需订阅——不用再为「付不了款」发愁。
