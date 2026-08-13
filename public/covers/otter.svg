@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="otBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f18"/>
+      <stop offset="1" stop-color="#0e1220"/>
+    </linearGradient>
+    <linearGradient id="otCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#otBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#60a5fa">// AI 会议</text>
+
+  <!-- 左：会议中的实时转写 -->
+  <g transform="translate(80 130)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="540" height="330" rx="16" fill="#121a28" stroke="#ffffff" stroke-opacity="0.09"/>
+    <rect x="0" y="0" width="540" height="52" rx="16" fill="#16203200"/>
+    <circle cx="30" cy="26" r="6" fill="#f87171"/>
+    <text x="50" y="32" font-size="15" font-weight="700" fill="#8fa8c4">会议进行中 · 实时转写</text>
+    <line x1="0" y1="52" x2="540" y2="52" stroke="#ffffff" stroke-opacity="0.08"/>
+
+    <!-- 波形 -->
+    <g transform="translate(28 74)" fill="#60a5fa" opacity="0.55">
+      <rect x="0" y="14" width="5" height="16" rx="2.5"/><rect x="12" y="6" width="5" height="32" rx="2.5"/>
+      <rect x="24" y="0" width="5" height="44" rx="2.5"/><rect x="36" y="10" width="5" height="24" rx="2.5"/>
+      <rect x="48" y="18" width="5" height="8" rx="2.5"/><rect x="60" y="4" width="5" height="36" rx="2.5"/>
+      <rect x="72" y="12" width="5" height="20" rx="2.5"/><rect x="84" y="2" width="5" height="40" rx="2.5"/>
+      <rect x="96" y="16" width="5" height="12" rx="2.5"/><rect x="108" y="8" width="5" height="28" rx="2.5"/>
+    </g>
+
+    <!-- 带说话人标签的转写 -->
+    <g transform="translate(28 138)">
+      <rect x="0" y="0" width="72" height="26" rx="13" fill="rgba(96,165,250,0.18)"/>
+      <text x="36" y="18" font-size="14" font-weight="700" fill="#93c5fd" text-anchor="middle">Alex</text>
+      <text x="86" y="19" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="#c5d4e6">Can we ship by Friday?</text>
+
+      <rect x="0" y="44" width="72" height="26" rx="13" fill="rgba(45,212,191,0.18)"/>
+      <text x="36" y="62" font-size="14" font-weight="700" fill="#5eead4" text-anchor="middle">Mia</text>
+      <text x="86" y="63" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="#c5d4e6">Only if QA starts Monday.</text>
+
+      <rect x="0" y="88" width="72" height="26" rx="13" fill="rgba(96,165,250,0.18)"/>
+      <text x="36" y="106" font-size="14" font-weight="700" fill="#93c5fd" text-anchor="middle">Alex</text>
+      <text x="86" y="107" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="#7d8ea3">Then let's lock the scope…</text>
+    </g>
+
+    <text x="28" y="300" font-size="15" font-weight="700" fill="#5f7794">自动入会 · 无需手动点录音 · 自动区分说话人</text>
+  </g>
+
+  <!-- 箭头 -->
+  <g stroke="#2dd4bf" stroke-opacity="0.8" stroke-width="4" fill="none">
+    <path d="M648 292 H 704"/><path d="M694 282 L 712 292 L 694 302 Z" fill="#2dd4bf" stroke="none"/>
+  </g>
+  <text x="680" y="274" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#5eead4" text-anchor="middle">散会后</text>
+
+  <!-- 右：摘要与待办 -->
+  <g transform="translate(736 130)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="384" height="152" rx="14" fill="rgba(45,212,191,0.08)" stroke="#2dd4bf" stroke-opacity="0.4"/>
+    <text x="24" y="38" font-size="18" font-weight="800" fill="#5eead4">会议摘要</text>
+    <text x="24" y="72" font-size="15" font-weight="600" fill="#8fb3ad">周五能否上线，取决于 QA</text>
+    <text x="24" y="100" font-size="15" font-weight="600" fill="#8fb3ad">是否周一开始；范围需先锁定。</text>
+    <text x="24" y="130" font-size="14" font-weight="600" fill="#5f8a84">一小时会议 → 三分钟读完</text>
+
+    <rect x="0" y="176" width="384" height="154" rx="14" fill="rgba(96,165,250,0.08)" stroke="#60a5fa" stroke-opacity="0.4"/>
+    <text x="24" y="214" font-size="18" font-weight="800" fill="#93c5fd">待办事项</text>
+    <text x="24" y="250" font-size="15" font-weight="600" fill="#a3bcd6">□ QA 周一进场</text>
+    <text x="24" y="280" font-size="15" font-weight="600" fill="#a3bcd6">□ 周五前锁定需求范围</text>
+    <text x="24" y="310" font-size="15" font-weight="600" fill="#a3bcd6">□ 同步给产品与设计</text>
+  </g>
+
+  <text x="80" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#otCap)">Otter.ai</text>
+  <text x="336" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#6f8398">会议自动记录 · 各档额度 · 国内订阅</text>
+</svg>

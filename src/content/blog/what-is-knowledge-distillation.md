@@ -52,4 +52,4 @@ cover: /covers/distillation.png?v=1
 
 ## 小结
 
-知识蒸馏的精髓，是**让大模型当老师、小模型当学生，通过模仿老师"带分寸的判断"（软标签），用小体积复现接近大模型的表现**。它和[量化](/blog/what-is-quantization/)、剪枝、[MoE](/blog/what-is-mixture-of-experts/) 一起，是小模型越来越能打的幕后功臣，也是 AI 能力"飞入寻常百姓家"的关键。想把模型的大小与效率这条线彻底理清，可回看[什么是参数量](/blog/what-is-model-parameters/)；若目标不是压缩体积而是改变模型的风格与语气，该看的则是 [LoRA 轻量微调](/blog/what-is-lora/)。
+知识蒸馏的精髓，是**让大模型当老师、小模型当学生，通过模仿老师"带分寸的判断"（软标签），用小体积复现接近大模型的表现**。它和[量化](/blog/what-is-quantization/)、剪枝、[MoE](/blog/what-is-mixture-of-experts/) 一起，是小模型越来越能打的幕后功臣，也是 AI 能力"飞入寻常百姓家"的关键。想把模型的大小与效率这条线彻底理清，可回看[什么是参数量](/blog/what-is-model-parameters/)；若目标不是压缩体积而是改变模型的风格与语气，该看的则是 [LoRA 轻量微调](/blog/what-is-lora/)；而"让强模型直接出题、拿去训小模型"这条近亲路线，见[什么是合成数据](/blog/what-is-synthetic-data/)。

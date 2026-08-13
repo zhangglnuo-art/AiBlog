@@ -77,4 +77,4 @@ Notion 本体免费能用，AI 是**在已有工作区上加购**的——所以
 
 ## 结论：值不值得订
 
-Notion AI 的价值不在「又一个聊天框」，而在**它就长在你的知识库里**——写作、总结、问答都不用离开工作区，还能基于你自己的资料作答。把支付工具提前备好，开通只是几分钟的事。想搭出完整的 AI 办公流，可再看看 [ChatGPT 写作](/blog/chatgpt-plus-subscription-guide/)与 [Gamma 做 PPT](/blog/gamma-subscription-guide/)。
+Notion AI 的价值不在「又一个聊天框」，而在**它就长在你的知识库里**——写作、总结、问答都不用离开工作区，还能基于你自己的资料作答。把支付工具提前备好，开通只是几分钟的事。想搭出完整的 AI 办公流，可再看看 [ChatGPT 写作](/blog/chatgpt-plus-subscription-guide/)与 [Gamma 做 PPT](/blog/gamma-subscription-guide/)；会议纪要这一环如果想连"听写"也自动化，见 [Otter.ai 订阅指南](/blog/otter-ai-subscription-guide/)。
