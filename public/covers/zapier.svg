@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="zpBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12100c"/>
+      <stop offset="1" stop-color="#0d0f18"/>
+    </linearGradient>
+    <linearGradient id="zpCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#zpBg)"/>
+  <text x="80" y="88" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#fb923c">// AI 自动化</text>
+
+  <!-- 流水线 -->
+  <g transform="translate(80 130)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="0" y="20" font-size="18" font-weight="800" fill="#fdba74">一条 Zap = 触发器 + 动作</text>
+
+    <!-- 触发器 -->
+    <g transform="translate(0 46)">
+      <rect x="0" y="0" width="200" height="96" rx="14" fill="rgba(251,146,60,0.10)" stroke="#fb923c" stroke-opacity="0.5"/>
+      <text x="100" y="34" font-size="14" font-weight="700" fill="#c98a4f" text-anchor="middle">TRIGGER · 不计费</text>
+      <text x="100" y="66" font-size="17" font-weight="700" fill="#fdba74" text-anchor="middle">收到带附件邮件</text>
+    </g>
+
+    <path d="M212 94 H 258" stroke="#7a6a55" stroke-width="3.5" fill="none"/>
+    <path d="M250 87 L 264 94 L 250 101 Z" fill="#7a6a55"/>
+
+    <!-- 筛选 -->
+    <g transform="translate(276 46)">
+      <rect x="0" y="0" width="176" height="96" rx="14" fill="rgba(148,163,184,0.08)" stroke="#94a3b8" stroke-opacity="0.45"/>
+      <text x="88" y="34" font-size="14" font-weight="700" fill="#94a3b8" text-anchor="middle">FILTER · 不计费</text>
+      <text x="88" y="66" font-size="17" font-weight="700" fill="#cbd5e1" text-anchor="middle">金额 &gt; 1000</text>
+    </g>
+
+    <path d="M464 94 H 510" stroke="#7a6a55" stroke-width="3.5" fill="none"/>
+    <path d="M502 87 L 516 94 L 502 101 Z" fill="#7a6a55"/>
+
+    <!-- AI 步骤 -->
+    <g transform="translate(528 46)">
+      <rect x="0" y="0" width="188" height="96" rx="14" fill="rgba(96,165,250,0.10)" stroke="#60a5fa" stroke-opacity="0.55"/>
+      <text x="94" y="34" font-size="14" font-weight="700" fill="#60a5fa" text-anchor="middle">AI 步骤 · 1 task</text>
+      <text x="94" y="66" font-size="17" font-weight="700" fill="#bfdbfe" text-anchor="middle">提取要点并分类</text>
+    </g>
+
+    <path d="M728 94 H 774" stroke="#7a6a55" stroke-width="3.5" fill="none"/>
+    <path d="M766 87 L 780 94 L 766 101 Z" fill="#7a6a55"/>
+
+    <!-- 动作组 -->
+    <g transform="translate(792 24)" font-size="15" font-weight="700">
+      <rect x="0" y="0" width="248" height="52" rx="11" fill="rgba(74,222,128,0.09)" stroke="#4ade80" stroke-opacity="0.45"/>
+      <text x="20" y="32" fill="#86efac">存进网盘</text>
+      <text x="228" y="32" font-size="13" fill="#5f9e79" text-anchor="end">1 task</text>
+
+      <rect x="0" y="64" width="248" height="52" rx="11" fill="rgba(74,222,128,0.09)" stroke="#4ade80" stroke-opacity="0.45"/>
+      <text x="20" y="96" fill="#86efac">表格记一行</text>
+      <text x="228" y="96" font-size="13" fill="#5f9e79" text-anchor="end">1 task</text>
+
+      <rect x="0" y="128" width="248" height="52" rx="11" fill="rgba(74,222,128,0.09)" stroke="#4ade80" stroke-opacity="0.45"/>
+      <text x="20" y="160" fill="#86efac">通知到群里</text>
+      <text x="228" y="160" font-size="13" fill="#5f9e79" text-anchor="end">1 task</text>
+    </g>
+  </g>
+
+  <!-- 计费提醒 -->
+  <g transform="translate(80 366)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="1040" height="116" rx="16" fill="rgba(248,113,113,0.06)" stroke="#f87171" stroke-opacity="0.35"/>
+    <text x="28" y="40" font-size="18" font-weight="800" fill="#fca5a5">最该搞懂的：按 task 计费</text>
+    <text x="28" y="74" font-size="16" font-weight="600" fill="#c99a9a">动作计费，触发器和被筛选拦下的不计费 —— 上面这条跑一次消耗 4 个 task</text>
+    <text x="28" y="100" font-size="16" font-weight="700" fill="#f87171">超额后 Zap 会被暂停，而且是静默的：不会有人提醒你「今天没执行」</text>
+  </g>
+
+  <text x="80" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#zpCap)">Zapier</text>
+  <text x="316" y="590" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#8a8072">把 AI 接进工作流 · 任务计费 · 国内订阅</text>
+</svg>

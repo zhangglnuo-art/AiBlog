@@ -66,6 +66,8 @@ const jobs = [
   { in: 'public/covers/scaling-law.svg', out: 'public/covers/scaling-law.png', w: 1200, h: 675 },
   { in: 'public/covers/otter.svg', out: 'public/covers/otter.png', w: 1200, h: 675 },
   { in: 'public/covers/synthetic-data.svg', out: 'public/covers/synthetic-data.png', w: 1200, h: 675 },
+  { in: 'public/covers/zapier.svg', out: 'public/covers/zapier.png', w: 1200, h: 675 },
+  { in: 'public/covers/world-model.svg', out: 'public/covers/world-model.png', w: 1200, h: 675 },
   { in: 'public/covers/distillation.svg', out: 'public/covers/distillation.png', w: 1200, h: 675 },
   // 品牌 logo（Organization 结构化数据用）与 iOS 桌面图标
   { in: 'scripts/og-source/logo.svg', out: 'public/logo.png', w: 512, h: 512 },

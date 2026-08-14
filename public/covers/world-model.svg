@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="wmBg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#0a0f18"/>
+      <stop offset="1" stop-color="#0f0b14"/>
+    </linearGradient>
+    <linearGradient id="wmCap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#wmBg)"/>
+  <text x="80" y="84" font-family="Inter, 'Segoe UI', sans-serif" font-size="24" letter-spacing="6" font-weight="600" fill="#38bdf8">// AI 原理</text>
+
+  <!-- 左：语言模型 -->
+  <g transform="translate(80 128)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="490" height="216" rx="16" fill="rgba(148,163,184,0.06)" stroke="#94a3b8" stroke-opacity="0.4"/>
+    <text x="24" y="38" font-size="18" font-weight="800" fill="#cbd5e1">语言模型：预测下一个「词」</text>
+
+    <g transform="translate(24 58)">
+      <rect x="0" y="0" width="112" height="46" rx="10" fill="rgba(148,163,184,0.14)"/>
+      <text x="56" y="30" font-size="17" font-weight="700" fill="#e2e8f0" text-anchor="middle">杯子会</text>
+
+      <text x="126" y="31" font-size="19" font-weight="800" fill="#64748b">→</text>
+
+      <rect x="152" y="0" width="112" height="46" rx="10" fill="rgba(148,163,184,0.14)"/>
+      <text x="208" y="30" font-size="17" font-weight="700" fill="#e2e8f0" text-anchor="middle">掉下去</text>
+
+      <text x="278" y="31" font-size="19" font-weight="800" fill="#64748b">→</text>
+
+      <rect x="304" y="0" width="112" height="46" rx="10" fill="rgba(148,163,184,0.14)"/>
+      <text x="360" y="30" font-size="17" font-weight="700" fill="#e2e8f0" text-anchor="middle">摔碎</text>
+    </g>
+
+    <text x="24" y="152" font-size="15" font-weight="600" fill="#8fa0b4">学的是「人类怎么描述世界」</text>
+    <text x="24" y="184" font-size="15" font-weight="700" fill="#f87171">✕ 能写对重力科普，却让视频里的杯子穿过桌子</text>
+  </g>
+
+  <!-- 右：世界模型 -->
+  <g transform="translate(610 128)" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="0" y="0" width="510" height="216" rx="16" fill="rgba(192,132,252,0.07)" stroke="#c084fc" stroke-opacity="0.45"/>
+    <text x="24" y="38" font-size="18" font-weight="800" fill="#d8b4fe">世界模型：预测下一个「状态」</text>
+
+    <!-- 状态序列：杯子下落 -->
+    <g transform="translate(24 58)">
+      <rect x="0" y="0" width="130" height="60" rx="10" fill="rgba(192,132,252,0.12)"/>
+      <rect x="46" y="12" width="26" height="20" rx="3" fill="#e9d5ff"/>
+      <rect x="20" y="40" width="90" height="5" rx="2.5" fill="#7c5f9e"/>
+      <text x="65" y="76" font-size="13" font-weight="700" fill="#a78bbf" text-anchor="middle">t</text>
+
+      <text x="146" y="36" font-size="19" font-weight="800" fill="#7c5f9e">→</text>
+
+      <rect x="172" y="0" width="130" height="60" rx="10" fill="rgba(192,132,252,0.12)"/>
+      <rect x="218" y="24" width="26" height="20" rx="3" fill="#e9d5ff"/>
+      <rect x="192" y="40" width="90" height="5" rx="2.5" fill="#7c5f9e"/>
+      <text x="237" y="76" font-size="13" font-weight="700" fill="#a78bbf" text-anchor="middle">t+1</text>
+
+      <text x="318" y="36" font-size="19" font-weight="800" fill="#7c5f9e">→</text>
+
+      <rect x="344" y="0" width="130" height="60" rx="10" fill="rgba(192,132,252,0.12)"/>
+      <g fill="#e9d5ff">
+        <rect x="382" y="34" width="10" height="8" rx="2"/><rect x="396" y="38" width="12" height="6" rx="2"/><rect x="412" y="35" width="8" height="8" rx="2"/>
+      </g>
+      <rect x="364" y="40" width="90" height="5" rx="2.5" fill="#7c5f9e"/>
+      <text x="409" y="76" font-size="13" font-weight="700" fill="#a78bbf" text-anchor="middle">摔碎</text>
+    </g>
+
+    <text x="24" y="184" font-size="15" font-weight="700" fill="#86efac">✓ 学的是「世界本身怎么动」——物理与因果</text>
+  </g>
+
+  <!-- 下：三条路线 -->
+  <g transform="translate(80 380)" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="16" font-weight="700">
+    <text x="0" y="0" font-size="18" font-weight="800" fill="#38bdf8">三条正在走的路</text>
+
+    <rect x="0" y="20" width="336" height="76" rx="13" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.4"/>
+    <text x="24" y="50" fill="#9fd0ee">从海量视频里学</text>
+    <text x="24" y="76" font-size="14" font-weight="600" fill="#65839b">看多了自然懂：物体不会凭空消失</text>
+
+    <rect x="352" y="20" width="336" height="76" rx="13" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.4"/>
+    <text x="376" y="50" fill="#9fd0ee">在仿真环境里练</text>
+    <text x="376" y="76" font-size="14" font-weight="600" fill="#65839b">可无限试错，对错能自动判定</text>
+
+    <rect x="704" y="20" width="336" height="76" rx="13" fill="rgba(56,189,248,0.08)" stroke="#38bdf8" stroke-opacity="0.4"/>
+    <text x="728" y="50" fill="#9fd0ee">机器人真实世界里学</text>
+    <text x="728" y="76" font-size="14" font-weight="600" fill="#65839b">最贴近人，也最慢最贵</text>
+  </g>
+
+  <text x="80" y="566" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="52" font-weight="800" fill="url(#wmCap)">世界模型</text>
+  <text x="368" y="566" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="600" fill="#77778c">AI 为什么懂语言却不懂物理</text>
+  <text x="80" y="606" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="600" fill="#5d5d70">语言模型说得对，世界模型要做得对</text>
+</svg>
