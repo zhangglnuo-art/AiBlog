@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#121021"/><stop offset="1" stop-color="#271327"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff6d5a"/><stop offset="1" stop-color="#ffbf66"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1010" cy="115" r="260" fill="#ff6d5a" opacity=".12"/><circle cx="135" cy="620" r="240" fill="#8567ff" opacity=".13"/>
+  <text x="85" y="126" fill="#ff816d" font-family="Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="4">AI AUTOMATION</text>
+  <text x="85" y="225" fill="white" font-family="Arial, sans-serif" font-size="76" font-weight="700">n8n 自动化入门</text>
+  <text x="89" y="278" fill="#d3ccdb" font-family="Arial, sans-serif" font-size="31">让事件、AI 和应用串成一条工作流</text>
+  <g stroke="url(#line)" stroke-width="8" fill="none" stroke-linecap="round"><path d="M195 446H385L470 382H661L755 485H954"/><path d="M470 382V496H592"/></g>
+  <g fill="#201c31" stroke="#ff8b6c" stroke-width="6"><circle cx="195" cy="446" r="42"/><circle cx="470" cy="382" r="42"/><circle cx="755" cy="485" r="42"/></g>
+  <g fill="#201c31" stroke="#a797ff" stroke-width="6"><circle cx="592" cy="496" r="42"/><circle cx="954" cy="485" r="42"/></g>
+  <g fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle"><text x="195" y="454">触发</text><text x="470" y="390">AI</text><text x="755" y="493">处理</text><text x="592" y="504">规则</text><text x="954" y="493">执行</text></g>
+  <text x="85" y="610" fill="#9d95a8" font-family="Arial, sans-serif" font-size="24">AIBLOG · AI 工具与原理</text>
+</svg>
