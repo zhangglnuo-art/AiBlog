@@ -70,6 +70,8 @@ const jobs = [
   { in: 'public/covers/world-model.svg', out: 'public/covers/world-model.png', w: 1200, h: 675 },
   { in: 'public/covers/distillation.svg', out: 'public/covers/distillation.png', w: 1200, h: 675 },
   { in: 'public/covers/n8n.svg', out: 'public/covers/n8n.png', w: 1200, h: 675 },
+  { in: 'public/covers/notebooklm.svg', out: 'public/covers/notebooklm.png', w: 1200, h: 675 },
+  { in: 'public/covers/ai-memory.svg', out: 'public/covers/ai-memory.png', w: 1200, h: 675 },
   // 品牌 logo（Organization 结构化数据用）与 iOS 桌面图标
   { in: 'scripts/og-source/logo.svg', out: 'public/logo.png', w: 512, h: 512 },
   { in: 'scripts/og-source/logo.svg', out: 'public/apple-touch-icon.png', w: 180, h: 180 },
