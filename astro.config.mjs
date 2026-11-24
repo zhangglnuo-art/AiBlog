@@ -46,6 +46,19 @@ try {
     for (const m of modelsJson.models ?? []) {
       if (m.slug) lastmodMap[`/models/${m.slug}/`] = modelsJson.updatedAt;
     }
+    const scenarioSlugs = [
+      'writing',
+      'ppt',
+      'coding',
+      'long-doc',
+      'reasoning',
+      'multimodal',
+      'cost-effective',
+      'china-direct',
+    ];
+    for (const scene of scenarioSlugs) {
+      lastmodMap[`/models/use-case/${scene}/`] = modelsJson.updatedAt;
+    }
   }
 } catch {
   // 无模型数据时跳过

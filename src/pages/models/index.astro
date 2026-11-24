@@ -11,6 +11,9 @@ import {
   getRegionLabel,
   getTierLabel,
 } from '../../data/models';
+import { SCENARIOS, buildWizardData } from '../../data/scenarios';
+
+const wizardScenarios = buildWizardData();
 
 const updatedDate = modelsDataset.updatedAt.slice(0, 10);
 const chinaModels = allModels.filter((m) => m.region === 'china');
@@ -198,6 +201,121 @@ const comparePayload = allModels.map((m) => ({
           </div>
           <div class="mt-1 text-xs text-muted">数据同步：{updatedDate}</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 步按需求智能选型器（场景 -> 网络条件 -> 预算偏好 -> Top 3 推荐 + 一键加入对比） -->
+  <section id="wizard" class="mx-auto max-w-6xl px-4 pt-10">
+    <div class="glass rounded-3xl p-5 sm:p-7">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span class="eyebrow">Smart Model Finder · 3 步选模型</span>
+          <h2 class="mt-2 text-2xl font-bold text-ink">按你的真实需求，快速挑出最适合的 AI 大模型</h2>
+          <p class="mt-1 text-sm text-muted">
+            不用纠结参数术语：选好你要做的事、网络条件与预算，立刻算出 Top 3 推荐并支持一键横向对比。
+          </p>
+        </div>
+        <button
+          type="button"
+          id="wizard-clear"
+          class="hidden rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300 transition hover:border-neon-cyan/50 hover:text-neon-cyan"
+        >
+          清除场景筛选
+        </button>
+      </div>
+
+      <!-- 第 1 步：选择使用场景 -->
+      <div class="mt-6">
+        <div class="text-xs font-semibold uppercase tracking-wider text-neon-cyan">第 1 步 · 你想用 AI 做什么？（点击选择）</div>
+        <div class="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4" id="wizard-scenarios">
+          {
+            SCENARIOS.map((s) => (
+              <button
+                type="button"
+                class="scene-card group text-left"
+                data-scene={s.slug}
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <span class="font-semibold text-ink group-hover:text-neon-cyan">
+                    <span class="mr-1.5" aria-hidden="true">{s.icon}</span>
+                    {s.shortName}
+                  </span>
+                  <span class="text-[11px] text-muted">选型</span>
+                </div>
+                <p class="mt-1 line-clamp-1 text-xs text-muted">{s.tagline}</p>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 第 2 & 3 步：使用条件与预算偏好 -->
+      <div class="mt-5 grid gap-4 border-t border-white/8 pt-5 md:grid-cols-2">
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-neon-cyan">第 2 步 · 网络与支付条件</div>
+          <div class="mt-2.5 flex flex-wrap gap-2">
+            <button type="button" class="wiz-pill is-active" data-wiz="access" data-value="all">全部不限（国内外都看）</button>
+            <button type="button" class="wiz-pill" data-wiz="access" data-value="china">必须国内直连（免折腾）</button>
+            <button type="button" class="wiz-pill" data-wiz="access" data-value="global">可用海外旗舰</button>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-neon-cyan">第 3 步 · 预算与性能偏好</div>
+          <div class="mt-2.5 flex flex-wrap gap-2">
+            <button type="button" class="wiz-pill is-active" data-wiz="budget" data-value="all">均衡推荐</button>
+            <button type="button" class="wiz-pill" data-wiz="budget" data-value="top">追求最强上限</button>
+            <button type="button" class="wiz-pill" data-wiz="budget" data-value="value">极致省钱 / 低 API 单价</button>
+            <button type="button" class="wiz-pill" data-wiz="budget" data-value="open">必须开源权重可自部署</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 实时推荐结果面板 -->
+      <div id="wizard-result" class="mt-6 rounded-2xl border border-neon-cyan/20 bg-white/[0.025] p-4 sm:p-5">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <div id="wizard-result-title" class="text-base font-bold text-ink">
+              推荐方案：请选择上方使用场景，或查看默认综合推荐
+            </div>
+            <div id="wizard-result-sub" class="mt-0.5 text-xs text-muted">
+              下方排行榜也会自动按你的筛选条件同步更新
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <a
+              id="wizard-scene-link"
+              href="/models/use-case/writing/"
+              class="hidden rounded-xl border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:border-neon-cyan/50 hover:text-neon-cyan"
+            >
+              查看该场景专题榜 →
+            </a>
+            <button
+              type="button"
+              id="wizard-compare-btn"
+              class="rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-3.5 py-1.5 text-xs font-semibold text-white shadow transition hover:brightness-110"
+            >
+              一键将这 3 款加入横向对比 ↓
+            </button>
+          </div>
+        </div>
+
+        <div id="wizard-cards" class="mt-4 grid gap-4 md:grid-cols-3"></div>
+      </div>
+
+      <!-- 静态直出的场景专题 SEO 内链条（确保爬虫收录全部 8 个场景专题页） -->
+      <div class="mt-5 flex flex-wrap items-center gap-2 border-t border-white/5 pt-4 text-xs text-muted">
+        <span>热门场景独立榜单：</span>
+        {
+          SCENARIOS.map((s) => (
+            <a
+              href={`/models/use-case/${s.slug}/`}
+              class="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-slate-300 transition hover:border-neon-cyan/40 hover:text-neon-cyan"
+            >
+              {s.icon} {s.shortName}
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -482,6 +600,43 @@ const comparePayload = allModels.map((m) => ({
   </section>
 
   <style>
+    .scene-card {
+      border-radius: 0.9rem;
+      padding: 0.75rem 0.9rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .scene-card:hover {
+      border-color: rgba(56, 232, 255, 0.4);
+      background: rgba(56, 232, 255, 0.06);
+    }
+    .scene-card.is-active {
+      border-color: rgba(56, 232, 255, 0.75);
+      background: rgba(56, 232, 255, 0.12);
+      box-shadow: 0 0 0 1px rgba(56, 232, 255, 0.25) inset;
+    }
+    .wiz-pill {
+      border-radius: 0.7rem;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .wiz-pill:hover {
+      color: var(--color-ink);
+      border-color: rgba(56, 232, 255, 0.35);
+    }
+    .wiz-pill.is-active {
+      color: var(--color-neon-cyan);
+      background: rgba(56, 232, 255, 0.14);
+      border-color: rgba(56, 232, 255, 0.5);
+    }
     .filter-btn {
       border-radius: 0.65rem;
       padding: 0.3rem 0.7rem;
@@ -504,7 +659,7 @@ const comparePayload = allModels.map((m) => ({
     }
   </style>
 
-  <script is:inline define:vars={{ comparePayload }}>
+  <script is:inline define:vars={{ comparePayload, wizardScenarios }}>
     (() => {
       const state = {
         region: 'all',
@@ -514,8 +669,15 @@ const comparePayload = allModels.map((m) => ({
         sort: 'elo-desc',
       };
 
+      const wizardState = {
+        scene: 'writing',
+        access: 'all',
+        budget: 'all',
+      };
+
       const defaultSelected = ['gemini-4-carbon', 'claude-opus-5-5', 'deepseek-v4-pro'];
       let selectedSlugs = [...defaultSelected];
+      let currentRecommendedSlugs = [...defaultSelected];
 
       const tbody = document.getElementById('leaderboard-tbody');
       const rows = Array.from(document.querySelectorAll('.model-row'));
@@ -526,12 +688,176 @@ const comparePayload = allModels.map((m) => ({
       const resetBtn = document.getElementById('compare-reset');
       const checkboxes = Array.from(document.querySelectorAll('.compare-checkbox'));
 
+      const sceneButtons = Array.from(document.querySelectorAll('.scene-card'));
+      const wizPills = Array.from(document.querySelectorAll('.wiz-pill'));
+      const wizardCardsEl = document.getElementById('wizard-cards');
+      const wizardTitleEl = document.getElementById('wizard-result-title');
+      const wizardSubEl = document.getElementById('wizard-result-sub');
+      const wizardSceneLink = document.getElementById('wizard-scene-link');
+      const wizardCompareBtn = document.getElementById('wizard-compare-btn');
+      const wizardClearBtn = document.getElementById('wizard-clear');
+
       const modelMap = new Map(comparePayload.map((m) => [m.slug, m]));
+      const scenarioMap = new Map(wizardScenarios.map((s) => [s.slug, s]));
+
+      // 支持 URL 参数 ?scene=ppt 等直接定位场景
+      const urlScene = new URLSearchParams(window.location.search).get('scene');
+      if (urlScene && scenarioMap.has(urlScene)) {
+        wizardState.scene = urlScene;
+      }
 
       function syncCheckboxes() {
         checkboxes.forEach((cb) => {
           cb.checked = selectedSlugs.includes(cb.value);
         });
+      }
+
+      function syncFilterButtonsUI() {
+        document.querySelectorAll('.filter-btn').forEach((b) => {
+          const key = b.dataset.filter;
+          const val = b.dataset.value;
+          b.classList.toggle('is-active', key && state[key] === val);
+        });
+      }
+
+      function syncWizardUI() {
+        sceneButtons.forEach((b) => {
+          b.classList.toggle('is-active', b.dataset.scene === wizardState.scene);
+        });
+        wizPills.forEach((b) => {
+          const key = b.dataset.wiz;
+          const val = b.dataset.value;
+          b.classList.toggle('is-active', key && wizardState[key] === val);
+        });
+      }
+
+      function renderWizard() {
+        const sc = scenarioMap.get(wizardState.scene) || wizardScenarios[0];
+        if (!sc || !wizardCardsEl) return;
+
+        let candidates = comparePayload
+          .map((m) => {
+            const evalRes = sc.scores[m.slug] || { matched: true, score: 80, reason: m.summary };
+            let finalScore = evalRes.score;
+            if (wizardState.budget === 'top') {
+              finalScore += m.tier === 'flagship' ? 6 : m.tier === 'fast' ? -6 : 0;
+            } else if (wizardState.budget === 'value') {
+              const p = m.blendedPricePerM ?? 5;
+              finalScore += p <= 0.6 ? 12 : p <= 2 ? 5 : p >= 8 ? -12 : -4;
+            }
+            return { model: m, ...evalRes, finalScore };
+          })
+          .filter((item) => item.matched);
+
+        if (wizardState.access !== 'all') {
+          candidates = candidates.filter((item) => item.model.region === wizardState.access);
+        }
+        if (wizardState.budget === 'open') {
+          candidates = candidates.filter((item) => item.model.license === 'open-weight');
+        }
+
+        candidates.sort((a, b) => b.finalScore - a.finalScore || b.model.arenaElo - a.model.arenaElo);
+
+        // 挑选 Top 3（当条件宽松时尽量提供：最佳首选 + 高性价比平替 + 国产直连首选）
+        const picked = [];
+        const used = new Set();
+        const pushPick = (item, badge, badgeClass) => {
+          if (!item || used.has(item.model.slug)) return;
+          used.add(item.model.slug);
+          picked.push({ ...item, badge, badgeClass });
+        };
+
+        if (candidates.length > 0) {
+          pushPick(candidates[0], '🏆 场景最佳首选', 'text-neon-cyan');
+        }
+        if (candidates.length > 1) {
+          const cheapAlt = [...candidates]
+            .filter((c) => !used.has(c.model.slug))
+            .sort((a, b) => (a.model.blendedPricePerM ?? 999) - (b.model.blendedPricePerM ?? 999))[0];
+          if (cheapAlt && wizardState.budget !== 'top') {
+            pushPick(cheapAlt, '💰 高性价比平替', 'text-amber-300');
+          }
+        }
+        if (wizardState.access === 'all') {
+          const chinaAlt = candidates.find((c) => !used.has(c.model.slug) && c.model.region === 'china');
+          if (chinaAlt) pushPick(chinaAlt, '🇨🇳 国内直连首选', 'text-emerald-300');
+        }
+        for (const c of candidates) {
+          if (picked.length >= 3) break;
+          pushPick(c, '⭐ 强力备选', 'text-brand-300');
+        }
+
+        currentRecommendedSlugs = picked.map((p) => p.model.slug);
+
+        if (wizardTitleEl) {
+          wizardTitleEl.textContent = `${sc.icon} 「${sc.name}」为你匹配到 ${candidates.length} 款合适模型`;
+        }
+        if (wizardSubEl) {
+          const accessTxt =
+            wizardState.access === 'china' ? '仅国内直连' : wizardState.access === 'global' ? '仅海外模型' : '国内外不限';
+          const budgetTxt =
+            wizardState.budget === 'top'
+              ? '追求最强上限'
+              : wizardState.budget === 'value'
+                ? '极致省钱优先'
+                : wizardState.budget === 'open'
+                  ? '开源权重可自部署'
+                  : '综合均衡';
+          wizardSubEl.textContent = `当前条件：${accessTxt} · ${budgetTxt}（下方完整榜单已联动过滤）`;
+        }
+        if (wizardSceneLink) {
+          wizardSceneLink.href = sc.url;
+          wizardSceneLink.classList.remove('hidden');
+        }
+        if (wizardClearBtn) {
+          wizardClearBtn.classList.remove('hidden');
+        }
+
+        if (!picked.length) {
+          wizardCardsEl.innerHTML =
+            '<div class="col-span-full rounded-xl border border-white/10 bg-white/[0.02] p-5 text-center text-sm text-muted">当前组合条件过于严格，暂无完全匹配模型，建议放宽「预算」或「网络条件」试试。</div>';
+          return;
+        }
+
+        wizardCardsEl.innerHTML = picked
+          .map(
+            (p) => `
+          <div class="flex flex-col justify-between rounded-2xl border border-white/10 bg-surface/70 p-4">
+            <div>
+              <div class="flex items-center justify-between gap-2 text-xs">
+                <span class="font-semibold ${p.badgeClass}">${p.badge}</span>
+                <span class="font-mono text-muted">适配分 <strong class="text-ink">${p.score}</strong></span>
+              </div>
+              <div class="mt-2 flex items-center justify-between gap-2">
+                <a href="/models/${p.model.slug}/" class="text-base font-bold text-ink hover:text-neon-cyan hover:underline">${p.model.name}</a>
+                <span class="rounded-full bg-white/5 px-2 py-0.5 text-[11px] text-slate-300">${p.model.regionLabel}</span>
+              </div>
+              <div class="mt-1 text-xs text-muted">${p.model.providerZh} · ${p.model.inputFormatted} / ${p.model.outputFormatted} (1M)</div>
+              <p class="mt-2.5 text-xs leading-relaxed text-slate-300">${p.reason}</p>
+            </div>
+            <div class="mt-3 flex items-center justify-between border-t border-white/5 pt-2.5 text-xs">
+              <span class="text-muted">${p.model.contextFormatted} 上下文</span>
+              <a href="/models/${p.model.slug}/" class="font-medium text-neon-cyan hover:underline">查看详情 →</a>
+            </div>
+          </div>
+        `,
+          )
+          .join('');
+      }
+
+      function applyWizardToTable() {
+        state.region = wizardState.access;
+        state.license = wizardState.budget === 'open' ? 'open-weight' : 'all';
+        state.tier = wizardState.budget === 'top' ? 'flagship' : 'all';
+        if (wizardState.scene === 'coding') state.sort = 'coding-desc';
+        else if (wizardState.scene === 'reasoning') state.sort = 'reasoning-desc';
+        else if (wizardState.scene === 'cost-effective' || wizardState.budget === 'value') state.sort = 'price-asc';
+        else if (wizardState.scene === 'long-doc') state.sort = 'context-desc';
+        else state.sort = 'elo-desc';
+
+        if (sortSelect) sortSelect.value = state.sort;
+        syncFilterButtonsUI();
+        applyFilterAndSort();
       }
 
       function renderCompare() {
@@ -664,6 +990,60 @@ const comparePayload = allModels.map((m) => ({
         renderCompare();
       });
 
+      sceneButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const s = btn.dataset.scene;
+          if (!s) return;
+          wizardState.scene = s;
+          if (s === 'china-direct') wizardState.access = 'china';
+          syncWizardUI();
+          renderWizard();
+          applyWizardToTable();
+        });
+      });
+
+      wizPills.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.wiz;
+          const val = btn.dataset.value;
+          if (!key || !val) return;
+          wizardState[key] = val;
+          syncWizardUI();
+          renderWizard();
+          applyWizardToTable();
+        });
+      });
+
+      wizardCompareBtn?.addEventListener('click', () => {
+        if (!currentRecommendedSlugs.length) return;
+        selectedSlugs = [...currentRecommendedSlugs];
+        syncCheckboxes();
+        renderCompare();
+        document.getElementById('compare-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      wizardClearBtn?.addEventListener('click', () => {
+        wizardState.scene = 'writing';
+        wizardState.access = 'all';
+        wizardState.budget = 'all';
+        state.region = 'all';
+        state.license = 'all';
+        state.tier = 'all';
+        state.search = '';
+        state.sort = 'elo-desc';
+        if (searchInput) searchInput.value = '';
+        if (sortSelect) sortSelect.value = 'elo-desc';
+        syncWizardUI();
+        syncFilterButtonsUI();
+        renderWizard();
+        applyFilterAndSort();
+      });
+
+      syncWizardUI();
+      renderWizard();
+      if (urlScene && scenarioMap.has(urlScene)) {
+        applyWizardToTable();
+      }
       syncCheckboxes();
       renderCompare();
     })();
