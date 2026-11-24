@@ -172,6 +172,8 @@ const jobs = [
   { in: 'public/covers/negative-sampling.svg', out: 'public/covers/negative-sampling.png', w: 1200, h: 675 },
   { in: 'public/covers/inverted-index.svg', out: 'public/covers/inverted-index.png', w: 1200, h: 675 },
   { in: 'public/covers/pseudo-relevance-feedback.svg', out: 'public/covers/pseudo-relevance-feedback.png', w: 1200, h: 675 },
+  { in: 'public/covers/approximate-nearest-neighbor.svg', out: 'public/covers/approximate-nearest-neighbor.png', w: 1200, h: 675 },
+  { in: 'public/covers/search-result-diversification.svg', out: 'public/covers/search-result-diversification.png', w: 1200, h: 675 },
   // 品牌 logo（Organization 结构化数据用）与 iOS 桌面图标
   { in: 'scripts/og-source/logo.svg', out: 'public/logo.png', w: 512, h: 512 },
   { in: 'scripts/og-source/logo.svg', out: 'public/apple-touch-icon.png', w: 180, h: 180 },
