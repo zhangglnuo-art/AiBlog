@@ -10,6 +10,7 @@ import {
   getLicenseLabel,
   getRegionLabel,
   getTierLabel,
+  getModelLogo,
 } from '../../data/models';
 import { SCENARIOS, buildWizardData } from '../../data/scenarios';
 
@@ -119,6 +120,7 @@ const comparePayload = allModels.map((m) => ({
   rank: m.rank,
   name: m.name,
   providerZh: m.providerZh,
+  logo: getModelLogo(m.provider),
   region: m.region,
   regionLabel: getRegionLabel(m.region),
   license: m.license,
@@ -166,8 +168,9 @@ const comparePayload = allModels.map((m) => ({
       <div class="reveal mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class="glass rounded-2xl p-4">
           <div class="text-xs text-muted">海外榜首参考</div>
-          <a href={`/models/${topGlobal.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
-            {topGlobal.name}
+          <a href={`/models/${topGlobal.slug}/`} class="mt-1.5 flex items-center gap-2 text-lg font-bold text-ink hover:text-neon-cyan">
+            <img src={getModelLogo(topGlobal.provider)} alt={topGlobal.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-md bg-white/10 p-1" />
+            <span class="truncate">{topGlobal.name}</span>
           </a>
           <div class="mt-1 text-xs text-neon-cyan">
             Elo {topGlobal.arenaElo} · {formatContext(topGlobal.contextLength)} 上下文
@@ -176,8 +179,9 @@ const comparePayload = allModels.map((m) => ({
 
         <div class="glass rounded-2xl p-4">
           <div class="text-xs text-muted">国产第一梯队</div>
-          <a href={`/models/${topChina.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
-            {topChina.name}
+          <a href={`/models/${topChina.slug}/`} class="mt-1.5 flex items-center gap-2 text-lg font-bold text-ink hover:text-neon-cyan">
+            <img src={getModelLogo(topChina.provider)} alt={topChina.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-md bg-white/10 p-1" />
+            <span class="truncate">{topChina.name}</span>
           </a>
           <div class="mt-1 text-xs text-neon-cyan">
             Elo {topChina.arenaElo} · 国内直连
@@ -186,8 +190,9 @@ const comparePayload = allModels.map((m) => ({
 
         <div class="glass rounded-2xl p-4">
           <div class="text-xs text-muted">极致性价比 API</div>
-          <a href={`/models/${bestValue.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
-            {bestValue.name}
+          <a href={`/models/${bestValue.slug}/`} class="mt-1.5 flex items-center gap-2 text-lg font-bold text-ink hover:text-neon-cyan">
+            <img src={getModelLogo(bestValue.provider)} alt={bestValue.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-md bg-white/10 p-1" />
+            <span class="truncate">{bestValue.name}</span>
           </a>
           <div class="mt-1 text-xs text-neon-cyan">
             输入 {formatPrice(bestValue.inputPricePerM)} / 输出 {formatPrice(bestValue.outputPricePerM)} (每百万)
@@ -430,31 +435,45 @@ const comparePayload = allModels.map((m) => ({
                   </span>
                 </td>
                 <td class="px-4 py-3.5">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <a
-                      href={`/models/${m.slug}/`}
-                      class="font-semibold text-ink hover:text-neon-cyan hover:underline"
-                    >
-                      {m.name}
-                    </a>
-                    <span
-                      class:list={[
-                        'rounded-full px-2 py-0.5 text-[11px] font-medium',
-                        m.region === 'china'
-                          ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/25'
-                          : 'bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/25',
-                      ]}
-                    >
-                      {getRegionLabel(m.region)}
+                  <div class="flex items-center gap-3">
+                    <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.06] p-1.5">
+                      <img
+                        src={getModelLogo(m.provider)}
+                        alt={`${m.provider} Logo`}
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                        class="h-6 w-6 object-contain"
+                      />
                     </span>
-                    {m.license === 'open-weight' && (
-                      <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] font-medium text-violet-300 ring-1 ring-violet-400/25">
-                        开源
-                      </span>
-                    )}
-                  </div>
-                  <div class="mt-0.5 text-xs text-muted">
-                    {m.providerZh} · {getTierLabel(m.tier)} · {m.releaseDate}
+                    <div class="min-w-0">
+                      <div class="flex flex-wrap items-center gap-2">
+                        <a
+                          href={`/models/${m.slug}/`}
+                          class="font-semibold text-ink hover:text-neon-cyan hover:underline"
+                        >
+                          {m.name}
+                        </a>
+                        <span
+                          class:list={[
+                            'rounded-full px-2 py-0.5 text-[11px] font-medium',
+                            m.region === 'china'
+                              ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/25'
+                              : 'bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/25',
+                          ]}
+                        >
+                          {getRegionLabel(m.region)}
+                        </span>
+                        {m.license === 'open-weight' && (
+                          <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] font-medium text-violet-300 ring-1 ring-violet-400/25">
+                            开源
+                          </span>
+                        )}
+                      </div>
+                      <div class="mt-0.5 text-xs text-muted">
+                        {m.providerZh} · {getTierLabel(m.tier)} · {m.releaseDate}
+                      </div>
+                    </div>
                   </div>
                 </td>
                 <td class="px-3 py-3.5 font-mono">
@@ -829,7 +848,10 @@ const comparePayload = allModels.map((m) => ({
                 <span class="font-mono text-muted">适配分 <strong class="text-ink">${p.score}</strong></span>
               </div>
               <div class="mt-2 flex items-center justify-between gap-2">
-                <a href="/models/${p.model.slug}/" class="text-base font-bold text-ink hover:text-neon-cyan hover:underline">${p.model.name}</a>
+                <a href="/models/${p.model.slug}/" class="flex items-center gap-2 text-base font-bold text-ink hover:text-neon-cyan hover:underline">
+                  <img src="${p.model.logo}" alt="${p.model.providerZh}" width="22" height="22" class="h-6 w-6 shrink-0 rounded-lg border border-white/10 bg-white/[0.06] p-1 object-contain" />
+                  <span>${p.model.name}</span>
+                </a>
                 <span class="rounded-full bg-white/5 px-2 py-0.5 text-[11px] text-slate-300">${p.model.regionLabel}</span>
               </div>
               <div class="mt-1 text-xs text-muted">${p.model.providerZh} · ${p.model.inputFormatted} / ${p.model.outputFormatted} (1M)</div>
@@ -874,12 +896,17 @@ const comparePayload = allModels.map((m) => ({
           <article class="card flex flex-col justify-between p-5">
             <div>
               <div class="flex items-start justify-between gap-2">
-                <div>
-                  <span class="text-xs font-mono text-neon-cyan">#${m.rank} · ${m.regionLabel} · ${m.licenseLabel}</span>
-                  <h3 class="mt-1 text-lg font-bold text-ink">
-                    <a href="/models/${m.slug}/" class="hover:text-neon-cyan">${m.name}</a>
-                  </h3>
-                  <div class="text-xs text-muted">${m.providerZh} · 发布于 ${m.releaseDate}</div>
+                <div class="flex items-start gap-2.5">
+                  <span class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.06] p-1.5">
+                    <img src="${m.logo}" alt="${m.providerZh}" width="24" height="24" class="h-6 w-6 object-contain" />
+                  </span>
+                  <div>
+                    <span class="text-xs font-mono text-neon-cyan">#${m.rank} · ${m.regionLabel} · ${m.licenseLabel}</span>
+                    <h3 class="mt-0.5 text-lg font-bold text-ink">
+                      <a href="/models/${m.slug}/" class="hover:text-neon-cyan">${m.name}</a>
+                    </h3>
+                    <div class="text-xs text-muted">${m.providerZh} · 发布于 ${m.releaseDate}</div>
+                  </div>
                 </div>
                 <span class="rounded-lg bg-white/5 px-2.5 py-1 font-mono text-sm font-bold text-neon-cyan">${m.arenaElo}</span>
               </div>

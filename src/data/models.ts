@@ -86,3 +86,20 @@ export function getLicenseLabel(license: AIModel['license']): string {
 export function getRegionLabel(region: AIModel['region']): string {
   return region === 'china' ? '国产' : '海外';
 }
+
+const PROVIDER_LOGOS: Record<string, string> = {
+  Google: '/logos/models/gemini.svg',
+  Anthropic: '/logos/models/claude.svg',
+  OpenAI: '/logos/models/openai.svg',
+  DeepSeek: '/logos/models/deepseek.svg',
+  'Alibaba Qwen': '/logos/models/qwen.svg',
+  'Moonshot AI': '/logos/models/kimi.svg',
+  'Zhipu AI (Z.ai)': '/logos/models/zhipu.svg',
+  MiniMax: '/logos/models/minimax.svg',
+  xAI: '/logos/models/grok.svg',
+  ByteDance: '/logos/models/doubao.svg',
+};
+
+export function getModelLogo(provider: string): string {
+  return PROVIDER_LOGOS[provider] ?? '/favicon.svg';
+}

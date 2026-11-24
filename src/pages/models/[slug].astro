@@ -10,6 +10,7 @@ import {
   getLicenseLabel,
   getRegionLabel,
   getTierLabel,
+  getModelLogo,
   type AIModel,
 } from '../../data/models';
 
@@ -103,10 +104,23 @@ const jsonLd = [
         <span class="text-muted">发布日期：{model.releaseDate}</span>
       </div>
 
-      <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-        {model.name}
-        <span class="ml-2 text-lg font-medium text-muted">by {model.providerZh}</span>
-      </h1>
+      <div class="mt-4 flex items-center gap-4">
+        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white/[0.06] p-2.5 shadow-[0_0_24px_-6px_rgba(56,232,255,0.45)]">
+          <img
+            src={getModelLogo(model.provider)}
+            alt={`${model.provider} Logo`}
+            width="36"
+            height="36"
+            class="h-9 w-9 object-contain"
+          />
+        </span>
+        <div>
+          <h1 class="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+            {model.name}
+          </h1>
+          <div class="mt-0.5 text-sm font-medium text-muted">by {model.providerZh}</div>
+        </div>
+      </div>
 
       <p class="mt-4 text-base leading-relaxed text-slate-300">{model.summary}</p>
 
@@ -235,13 +249,22 @@ const jsonLd = [
             {[model, ...competitors].map((m, i) => (
               <tr class:list={[i === 0 ? 'bg-neon-cyan/[0.06]' : 'hover:bg-white/[0.03]']}>
                 <td class="px-4 py-3 font-semibold text-ink">
-                  {i === 0 ? (
-                    <span>{m.name}（当前）</span>
-                  ) : (
-                    <a href={`/models/${m.slug}/`} class="text-neon-cyan hover:underline">
-                      {m.name}
-                    </a>
-                  )}
+                  <div class="flex items-center gap-2.5">
+                    <img
+                      src={getModelLogo(m.provider)}
+                      alt={m.provider}
+                      width="20"
+                      height="20"
+                      class="h-6 w-6 shrink-0 rounded-lg border border-white/10 bg-white/[0.06] p-1 object-contain"
+                    />
+                    {i === 0 ? (
+                      <span>{m.name}（当前）</span>
+                    ) : (
+                      <a href={`/models/${m.slug}/`} class="text-neon-cyan hover:underline">
+                        {m.name}
+                      </a>
+                    )}
+                  </div>
                 </td>
                 <td class="px-3 py-3 text-xs text-slate-300">
                   {getRegionLabel(m.region)} · {getLicenseLabel(m.license)}

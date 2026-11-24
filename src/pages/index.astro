@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { HOME_TITLE } from '../consts';
-import { allModels, formatContext, formatPrice, getRegionLabel } from '../data/models';
+import { allModels, formatContext, formatPrice, getRegionLabel, getModelLogo } from '../data/models';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -104,11 +104,26 @@ const topics = ['提示词工程', '大模型原理', 'RAG', 'AI Agent', 'AI 工
                   {getRegionLabel(m.region)}
                 </span>
               </div>
-              <h3 class="mt-2 text-lg font-bold text-ink transition-colors group-hover:text-neon-cyan">
-                {m.name}
-              </h3>
-              <p class="mt-1 text-xs text-muted">
-                {m.providerZh} · {formatContext(m.contextLength)} 上下文 · {formatPrice(m.inputPricePerM)}/{formatPrice(m.outputPricePerM)}
+              <div class="mt-2.5 flex items-center gap-2.5">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.06] p-1.5">
+                  <img
+                    src={getModelLogo(m.provider)}
+                    alt={`${m.provider} Logo`}
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    class="h-6 w-6 object-contain"
+                  />
+                </span>
+                <div class="min-w-0">
+                  <h3 class="truncate text-base font-bold text-ink transition-colors group-hover:text-neon-cyan">
+                    {m.name}
+                  </h3>
+                  <p class="truncate text-xs text-muted">{m.providerZh}</p>
+                </div>
+              </div>
+              <p class="mt-2 text-xs text-muted">
+                {formatContext(m.contextLength)} 上下文 · {formatPrice(m.inputPricePerM)}/{formatPrice(m.outputPricePerM)}
               </p>
               <p class="mt-2.5 line-clamp-2 text-xs leading-relaxed text-slate-300">{m.summary}</p>
             </a>

@@ -9,6 +9,7 @@ import {
   getLicenseLabel,
   getRegionLabel,
   getTierLabel,
+  getModelLogo,
 } from '../../../data/models';
 import { SCENARIOS, getRankedModelsForScenario, type ScenarioGuide } from '../../../data/scenarios';
 
@@ -104,7 +105,10 @@ const jsonLd = [
           topOverall && (
             <a href={`/models/${topOverall.model.slug}/`} class="card group p-4">
               <div class="text-xs font-semibold text-neon-cyan">🏆 场景综合首选 · 适配分 {topOverall.score}</div>
-              <div class="mt-1.5 text-lg font-bold text-ink group-hover:text-neon-cyan">{topOverall.model.name}</div>
+              <div class="mt-2 flex items-center gap-2 text-lg font-bold text-ink group-hover:text-neon-cyan">
+                <img src={getModelLogo(topOverall.model.provider)} alt={topOverall.model.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-lg border border-white/10 bg-white/[0.06] p-1 object-contain" />
+                <span>{topOverall.model.name}</span>
+              </div>
               <div class="mt-1 text-xs text-muted">
                 {topOverall.model.providerZh} · {formatPrice(topOverall.model.inputPricePerM)} / {formatPrice(topOverall.model.outputPricePerM)}
               </div>
@@ -116,7 +120,10 @@ const jsonLd = [
           topChina && (
             <a href={`/models/${topChina.model.slug}/`} class="card group p-4">
               <div class="text-xs font-semibold text-emerald-300">🇨🇳 国内直连首选 · 适配分 {topChina.score}</div>
-              <div class="mt-1.5 text-lg font-bold text-ink group-hover:text-neon-cyan">{topChina.model.name}</div>
+              <div class="mt-2 flex items-center gap-2 text-lg font-bold text-ink group-hover:text-neon-cyan">
+                <img src={getModelLogo(topChina.model.provider)} alt={topChina.model.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-lg border border-white/10 bg-white/[0.06] p-1 object-contain" />
+                <span>{topChina.model.name}</span>
+              </div>
               <div class="mt-1 text-xs text-muted">
                 {topChina.model.providerZh} · {topChina.model.chinaAccess}
               </div>
@@ -128,7 +135,10 @@ const jsonLd = [
           topBudget && (
             <a href={`/models/${topBudget.model.slug}/`} class="card group p-4">
               <div class="text-xs font-semibold text-amber-300">💰 高性价比省钱之选 · 适配分 {topBudget.score}</div>
-              <div class="mt-1.5 text-lg font-bold text-ink group-hover:text-neon-cyan">{topBudget.model.name}</div>
+              <div class="mt-2 flex items-center gap-2 text-lg font-bold text-ink group-hover:text-neon-cyan">
+                <img src={getModelLogo(topBudget.model.provider)} alt={topBudget.model.provider} width="24" height="24" class="h-6 w-6 shrink-0 rounded-lg border border-white/10 bg-white/[0.06] p-1 object-contain" />
+                <span>{topBudget.model.name}</span>
+              </div>
               <div class="mt-1 text-xs text-muted">
                 输入 {formatPrice(topBudget.model.inputPricePerM)} / 输出 {formatPrice(topBudget.model.outputPricePerM)} (每百万)
               </div>
@@ -181,23 +191,37 @@ const jsonLd = [
                     </span>
                   </td>
                   <td class="px-4 py-3.5">
-                    <div class="flex flex-wrap items-center gap-2">
-                      <a href={`/models/${item.model.slug}/`} class="font-semibold text-ink hover:text-neon-cyan hover:underline">
-                        {item.model.name}
-                      </a>
-                      <span
-                        class:list={[
-                          'rounded-full px-2 py-0.5 text-[11px]',
-                          item.model.region === 'china'
-                            ? 'bg-emerald-500/15 text-emerald-300'
-                            : 'bg-brand-500/15 text-brand-200',
-                        ]}
-                      >
-                        {getRegionLabel(item.model.region)}
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.06] p-1.5">
+                        <img
+                          src={getModelLogo(item.model.provider)}
+                          alt={`${item.model.provider} Logo`}
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                          class="h-6 w-6 object-contain"
+                        />
                       </span>
-                    </div>
-                    <div class="mt-0.5 text-xs text-muted">
-                      {item.model.providerZh} · {getLicenseLabel(item.model.license)} · {getTierLabel(item.model.tier)}
+                      <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-2">
+                          <a href={`/models/${item.model.slug}/`} class="font-semibold text-ink hover:text-neon-cyan hover:underline">
+                            {item.model.name}
+                          </a>
+                          <span
+                            class:list={[
+                              'rounded-full px-2 py-0.5 text-[11px]',
+                              item.model.region === 'china'
+                                ? 'bg-emerald-500/15 text-emerald-300'
+                                : 'bg-brand-500/15 text-brand-200',
+                            ]}
+                          >
+                            {getRegionLabel(item.model.region)}
+                          </span>
+                        </div>
+                        <div class="mt-0.5 text-xs text-muted">
+                          {item.model.providerZh} · {getLicenseLabel(item.model.license)} · {getTierLabel(item.model.tier)}
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td class="px-3 py-3.5 font-mono">
