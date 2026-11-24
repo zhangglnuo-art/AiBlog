@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "new": "node scripts/new-post.mjs",
+    "sync-models": "node scripts/sync-models.mjs",
     "deploy": "astro build && node scripts/deploy.mjs",
     "inspect-server": "node scripts/inspect-server.mjs"
   },

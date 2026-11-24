@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL, SITE_NAME } from '../../consts';
+import {
+  allModels,
+  modelsDataset,
+  formatContext,
+  formatPrice,
+  formatModality,
+  getLicenseLabel,
+  getRegionLabel,
+  getTierLabel,
+  type AIModel,
+} from '../../data/models';
+
+export function getStaticPaths() {
+  return allModels.map((model) => ({
+    params: { slug: model.slug },
+    props: { model },
+  }));
+}
+
+interface Props {
+  model: AIModel;
+}
+
+const { model } = Astro.props;
+const updatedDate = modelsDataset.updatedAt.slice(0, 10);
+
+// 挑选 3 个最相关的竞品作为横向对比推荐（优先同档位或跨地区代表）
+const competitors = allModels
+  .filter((m) => m.slug !== model.slug)
+  .sort((a, b) => {
+    const scoreA = (a.tier === model.tier ? 2 : 0) + (a.region !== model.region ? 1 : 0) - Math.abs(a.arenaElo - model.arenaElo) / 100;
+    const scoreB = (b.tier === model.tier ? 2 : 0) + (b.region !== model.region ? 1 : 0) - Math.abs(b.arenaElo - model.arenaElo) / 100;
+    return scoreB - scoreA;
+  })
+  .slice(0, 3);
+
+const pageTitle = `${model.name} 怎么样？2026 评分、API价格、上下文参数与竞品区别`;
+const pageDesc = `${model.name}（${model.providerZh}）2026最新评测参数：LMArena 参考分 ${model.arenaElo}（第 #${model.rank} 名），上下文 ${formatContext(model.contextLength)}，API 输入 ${formatPrice(model.inputPricePerM)} / 输出 ${formatPrice(model.outputPricePerM)} 每百万 Token。查看优缺点、适用场景与主流大模型对比。`;
+
+const canonicalUrl = new URL(`/models/${model.slug}/`, SITE_URL).href;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: model.name,
+    applicationCategory: 'AI Large Language Model',
+    operatingSystem: 'Cloud API / Web',
+    description: pageDesc,
+    url: canonicalUrl,
+    datePublished: model.releaseDate,
+    dateModified: modelsDataset.updatedAt,
+    author: {
+      '@type': 'Organization',
+      name: model.provider,
+    },
+    ...(model.inputPricePerM != null
+      ? {
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            price: model.inputPricePerM,
+            description: `API 输入单价 ${formatPrice(model.inputPricePerM)} / 百万 Token，输出单价 ${formatPrice(model.outputPricePerM)} / 百万 Token`,
+          },
+        }
+      : {}),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '首页', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'AI 大模型排行榜', item: new URL('/models/', SITE_URL).href },
+      { '@type': 'ListItem', position: 3, name: model.name, item: canonicalUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout fullTitle={`${pageTitle} | ${SITE_NAME}`} description={pageDesc} jsonLd={jsonLd}>
+  <article class="mx-auto max-w-5xl px-4 py-10 sm:py-14">
+    <!-- 面包屑 -->
+    <nav class="mb-6 flex flex-wrap items-center gap-2 text-xs text-muted" aria-label="面包屑导航">
+      <a href="/" class="hover:text-neon-cyan">首页</a>
+      <span>/</span>
+      <a href="/models/" class="hover:text-neon-cyan">AI 大模型排行榜</a>
+      <span>/</span>
+      <span class="text-slate-300">{model.name}</span>
+    </nav>
+
+    <!-- 顶部概览 -->
+    <header class="glass rounded-3xl p-6 sm:p-8">
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <span class="rounded-lg bg-neon-cyan/15 px-2.5 py-1 font-mono font-bold text-neon-cyan ring-1 ring-neon-cyan/35">
+          总榜 #{model.rank}
+        </span>
+        <span class="chip">{getRegionLabel(model.region)}</span>
+        <span class="chip">{getLicenseLabel(model.license)}</span>
+        <span class="chip">{getTierLabel(model.tier)}</span>
+        <span class="text-muted">发布日期：{model.releaseDate}</span>
+      </div>
+
+      <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+        {model.name}
+        <span class="ml-2 text-lg font-medium text-muted">by {model.providerZh}</span>
+      </h1>
+
+      <p class="mt-4 text-base leading-relaxed text-slate-300">{model.summary}</p>
+
+      <!-- 核心数据卡片网格 -->
+      <dl class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">LMArena Elo</dt>
+          <dd class="mt-1 font-mono text-xl font-extrabold text-neon-cyan">{model.arenaElo}</dd>
+        </div>
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">编程能力分</dt>
+          <dd class="mt-1 font-mono text-xl font-extrabold text-ink">{model.codingScore}</dd>
+        </div>
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">推理能力分</dt>
+          <dd class="mt-1 font-mono text-xl font-extrabold text-ink">{model.reasoningScore}</dd>
+        </div>
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">上下文窗口</dt>
+          <dd class="mt-1 font-mono text-xl font-extrabold text-ink">{formatContext(model.contextLength)}</dd>
+        </div>
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">输入价 / 1M</dt>
+          <dd class="mt-1 font-mono text-lg font-bold text-ink">{formatPrice(model.inputPricePerM)}</dd>
+        </div>
+        <div class="rounded-2xl border border-white/8 bg-white/[0.03] p-3.5">
+          <dt class="text-xs text-muted">输出价 / 1M</dt>
+          <dd class="mt-1 font-mono text-lg font-bold text-ink">{formatPrice(model.outputPricePerM)}</dd>
+        </div>
+      </dl>
+
+      <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/8 pt-4 text-xs text-slate-300">
+        <div>
+          <span class="text-muted">支持模态：</span>
+          {model.modalities.map(formatModality).join(' / ')}
+        </div>
+        <div>
+          <span class="text-muted">国内使用条件：</span>
+          <strong class="text-ink">{model.chinaAccess}</strong>
+        </div>
+        {
+          model.openrouterId && (
+            <div>
+              <span class="text-muted">API 模型 ID：</span>
+              <code class="rounded bg-white/10 px-1.5 py-0.5 text-neon-cyan">{model.openrouterId}</code>
+            </div>
+          )
+        }
+      </div>
+    </header>
+
+    <!-- 优缺点分析 -->
+    <section class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="card p-6">
+        <h2 class="text-lg font-bold text-emerald-300">核心优势</h2>
+        <ul class="mt-3 space-y-2.5 text-sm leading-relaxed text-slate-300">
+          {
+            model.strengths.map((s) => (
+              <li class="flex items-start gap-2">
+                <span class="mt-0.5 text-emerald-400">✓</span>
+                <span>{s}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="text-lg font-bold text-amber-300">需要注意的局限</h2>
+        <ul class="mt-3 space-y-2.5 text-sm leading-relaxed text-slate-300">
+          {
+            model.limitations.map((l) => (
+              <li class="flex items-start gap-2">
+                <span class="mt-0.5 text-amber-400">!</span>
+                <span>{l}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 核心区别与适用场景 -->
+    <section class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="glass rounded-2xl p-6">
+        <h2 class="text-lg font-bold text-ink">与其他主流大模型的区别</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-300">{model.differenceNote}</p>
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+        <h2 class="text-lg font-bold text-ink">最适合的使用场景</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {model.bestFor.map((scene) => <span class="chip">{scene}</span>)}
+        </div>
+        {
+          model.region === 'global' && (
+            <p class="mt-4 text-xs leading-relaxed text-muted">
+              提示：海外模型官方订阅或 API 充值通常需要海外网络与外币支付方式，可查看
+              <a href="/blog/ai-subscription-payment-methods/" class="text-neon-cyan hover:underline">
+                AI 订阅支付方式整理
+              </a>
+              。
+            </p>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- 同级竞品参数对比表 -->
+    <section class="mt-10">
+      <span class="eyebrow">Comparison</span>
+      <h2 class="mt-2 text-2xl font-bold text-ink">{model.name} 与热门竞品对比</h2>
+      <div class="mt-4 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+        <table class="w-full min-w-[680px] border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-white/[0.03] text-xs text-muted">
+              <th class="px-4 py-3">模型名称</th>
+              <th class="px-3 py-3">地区 / 授权</th>
+              <th class="px-3 py-3">综合 Elo</th>
+              <th class="px-3 py-3">编程 / 推理</th>
+              <th class="px-3 py-3">上下文</th>
+              <th class="px-3 py-3">输入 / 输出价 (1M)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            {[model, ...competitors].map((m, i) => (
+              <tr class:list={[i === 0 ? 'bg-neon-cyan/[0.06]' : 'hover:bg-white/[0.03]']}>
+                <td class="px-4 py-3 font-semibold text-ink">
+                  {i === 0 ? (
+                    <span>{m.name}（当前）</span>
+                  ) : (
+                    <a href={`/models/${m.slug}/`} class="text-neon-cyan hover:underline">
+                      {m.name}
+                    </a>
+                  )}
+                </td>
+                <td class="px-3 py-3 text-xs text-slate-300">
+                  {getRegionLabel(m.region)} · {getLicenseLabel(m.license)}
+                </td>
+                <td class="px-3 py-3 font-mono font-bold text-neon-cyan">{m.arenaElo}</td>
+                <td class="px-3 py-3 font-mono text-xs text-slate-200">
+                  {m.codingScore} / {m.reasoningScore}
+                </td>
+                <td class="px-3 py-3 font-mono text-slate-200">{formatContext(m.contextLength)}</td>
+                <td class="px-3 py-3 font-mono text-xs text-slate-200">
+                  {formatPrice(m.inputPricePerM)} / {formatPrice(m.outputPricePerM)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 站内延伸阅读 -->
+    {
+      model.relatedPosts.length > 0 && (
+        <section class="mt-10">
+          <span class="eyebrow">Related Guides</span>
+          <h2 class="mt-2 text-xl font-bold text-ink">站内相关教程与原理解读</h2>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            {model.relatedPosts.map((post) => (
+              <a href={post.href} class="card flex items-center justify-between p-4 text-sm font-medium text-ink hover:text-neon-cyan">
+                <span>{post.title}</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/8 pt-6 text-xs text-muted">
+      <a href="/models/" class="btn-ghost text-sm">← 返回 2026 AI 大模型完整排行榜</a>
+      <span>数据最近同步日期：{updatedDate}</span>
+    </div>
+  </article>
+</BaseLayout>

@@ -21,6 +21,9 @@ name: Build & Deploy to Server
 on:
   push:
     branches: [main]
+  # 每周一 UTC 01:00（北京时间 09:00）自动同步最新 AI 模型 API 定价/参数并重新构建上线
+  schedule:
+    - cron: '0 1 * * 1'
   workflow_dispatch: {}
 
 jobs:
@@ -39,6 +42,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+      - run: pnpm sync-models
       - run: pnpm build
 
       # 1) 确保服务器已装 nginx、写入站点配置、（首次）申请 HTTPS 证书

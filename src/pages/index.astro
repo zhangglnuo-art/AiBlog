@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { HOME_TITLE } from '../consts';
+import { allModels, formatContext, formatPrice, getRegionLabel } from '../data/models';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -10,6 +11,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 
 const featured = posts.find((p) => p.data.featured) ?? posts[0];
 const rest = posts.filter((p) => p.id !== featured?.id).slice(0, 6);
+const topModelsPreview = [
+  ...allModels.filter((m) => m.region === 'global').slice(0, 3),
+  ...allModels.filter((m) => m.region === 'china').slice(0, 3),
+];
 
 const topics = ['提示词工程', '大模型原理', 'RAG', 'AI Agent', 'AI 工具实测'];
 ---
@@ -33,10 +38,11 @@ const topics = ['提示词工程', '大模型原理', 'RAG', 'AI Agent', 'AI 工
       </p>
 
       <div class="reveal mt-9 flex flex-wrap items-center gap-4">
-        <a href="/blog/" class="btn-glow">
-          浏览全部文章
+        <a href="/models/" class="btn-glow">
+          查看 AI 大模型排行榜
           <span aria-hidden="true">→</span>
         </a>
+        <a href="/blog/" class="btn-ghost">浏览全部文章</a>
         <a href="/about/" class="btn-ghost">关于本站</a>
       </div>
 
@@ -66,6 +72,41 @@ const topics = ['提示词工程', '大模型原理', 'RAG', 'AI Agent', 'AI 工
   </section>
 
   <div class="mx-auto max-w-5xl px-4 py-16">
+    <!-- 2026 AI 大模型排行榜精选入口 -->
+    <section class="reveal mb-16">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span class="eyebrow">2026 Leaderboard</span>
+          <h2 class="mt-2 text-2xl font-bold text-ink">国内外 AI 大模型排行榜速览</h2>
+        </div>
+        <a href="/models/" class="text-sm font-medium text-neon-cyan hover:underline">
+          查看完整 {allModels.length} 款模型对比 →
+        </a>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          topModelsPreview.map((m) => (
+            <a href={`/models/${m.slug}/`} class="card group p-5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-mono font-bold text-neon-cyan">#{m.rank} · Elo {m.arenaElo}</span>
+                <span class="rounded-full bg-white/5 px-2 py-0.5 text-[11px] text-slate-300">
+                  {getRegionLabel(m.region)}
+                </span>
+              </div>
+              <h3 class="mt-2 text-lg font-bold text-ink transition-colors group-hover:text-neon-cyan">
+                {m.name}
+              </h3>
+              <p class="mt-1 text-xs text-muted">
+                {m.providerZh} · {formatContext(m.contextLength)} 上下文 · {formatPrice(m.inputPricePerM)}/{formatPrice(m.outputPricePerM)}
+              </p>
+              <p class="mt-2.5 line-clamp-2 text-xs leading-relaxed text-slate-300">{m.summary}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
     {
       featured && (
         <a

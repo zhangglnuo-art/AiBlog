@@ -74,6 +74,7 @@ export const FRIEND_LINKS: FriendLink[] = [
 // 导航栏
 export const NAV_LINKS = [
   { label: '首页', href: '/' },
+  { label: '大模型榜', href: '/models/' },
   { label: '文章', href: '/blog/' },
   { label: '关于', href: '/about/' },
 ];

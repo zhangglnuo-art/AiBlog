@@ -1,0 +1,671 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL, SITE_NAME } from '../../consts';
+import {
+  allModels,
+  modelsDataset,
+  formatContext,
+  formatPrice,
+  formatModality,
+  getLicenseLabel,
+  getRegionLabel,
+  getTierLabel,
+} from '../../data/models';
+
+const updatedDate = modelsDataset.updatedAt.slice(0, 10);
+const chinaModels = allModels.filter((m) => m.region === 'china');
+const globalModels = allModels.filter((m) => m.region === 'global');
+const openWeightModels = allModels.filter((m) => m.license === 'open-weight');
+
+const topGlobal = globalModels[0];
+const topChina = chinaModels[0];
+const bestValue = [...allModels]
+  .filter((m) => m.blendedPricePerM != null)
+  .sort((a, b) => (a.blendedPricePerM ?? 999) - (b.blendedPricePerM ?? 999))[0];
+
+const pageTitle = '2026 AI大模型排行榜 — 国内外最新LLM评分、API价格与参数对比';
+const pageDesc = `2026最新AI大模型排行榜与参数对比数据库，覆盖 Gemini 4、Claude 5.5、GPT-6.2、Kimi K3.1、Qwen4 Max、DeepSeek V4、GLM 5.3、Grok 4.7 等 ${allModels.length} 款国内外主流大模型的 LMArena 评分、编程/推理分、上下文窗口、API 定价与核心区别。`;
+
+const faqs = [
+  {
+    q: '2026 年综合能力最强的 AI 大模型是哪几个？',
+    a: '从 LMArena 人类偏好盲测与综合智能榜单来看，海外第一梯队主要是 Google Gemini 4 Carbon / Neon、Anthropic Claude Opus 5.5 / Fable 5.2 以及 OpenAI GPT-6.2 Astra；国产第一梯队则是 Kimi K3.1 Pro、阿里通义千问 Qwen4 Max、DeepSeek V4 Pro 与智谱 GLM 5.3 Prime。',
+  },
+  {
+    q: '国产大模型和海外大模型最主要的区别是什么？',
+    a: '第一是访问与支付门槛：国产大模型支持国内直连与人民币/微信支付宝结算，海外旗舰（GPT / Claude / Gemini / Grok）通常需要海外网络与外币支付方式；第二是成本：国产模型（如 DeepSeek V4.1 Flash、Kimi K3.1 Pro、MiniMax M3.1）的 API 单价普遍只有海外旗舰的 1/5 到 1/20；第三是擅长领域：海外顶配在前沿复杂代码重构和全模态视频音频理解上略占优势，国产旗舰在中文语境、长文档性价比和私有化开源部署上体验更好。',
+  },
+  {
+    q: '写代码应该选哪个 AI 大模型？',
+    a: '追求最高代码工程质量与大型代码库重构，首选 Claude Opus 5.5、Claude Fable 5.2 或 Gemini 4 Neon；追求日常 IDE 编码性价比，推荐 Claude Sonnet 5.5、GPT-6.2 Sol；希望国内直连且低成本刷算法/写代码，DeepSeek V4 Pro 与 Qwen4 Max 是高性价比首选。',
+  },
+  {
+    q: '开源权重模型和闭源商业模型怎么选？',
+    a: '如果企业有数据不出内网、私有化部署或深度微调需求，建议优先选择 DeepSeek V4 系列、Kimi K3.1 Pro 或 MiniMax M3.1 等开源权重生态；如果追求免运维与绝对能力上限，直接调用闭源旗舰 API（Gemini 4 / Claude 5.5 / GPT-6.2 / Qwen4 Max）最省心。',
+  },
+  {
+    q: '本页的 AI 模型价格、上下文长度和榜单数据如何更新？',
+    a: '本页的上下文长度、多模态支持和 API 输入/输出单价通过脚本自动同步自 OpenRouter 公开模型目录，结合 LMArena 与 Artificial Analysis 公开评测榜单定期更新，并标注最近同步日期。',
+  },
+];
+
+const canonicalUrl = new URL('/models/', SITE_URL).href;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: pageTitle,
+    description: pageDesc,
+    url: canonicalUrl,
+    numberOfItems: allModels.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: allModels.map((m) => ({
+      '@type': 'ListItem',
+      position: m.rank,
+      name: `${m.name} (${m.provider})`,
+      url: new URL(`/models/${m.slug}/`, SITE_URL).href,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: '2026 国内外 AI 大模型参数与排行榜数据集',
+    description: pageDesc,
+    url: canonicalUrl,
+    dateModified: modelsDataset.updatedAt,
+    inLanguage: 'zh-CN',
+    creator: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    keywords: [
+      'AI大模型排行榜',
+      '2026大模型排名',
+      '国产大模型对比',
+      'LLM排行榜',
+      'LMArena榜单',
+      'AI模型API价格对比',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '首页', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'AI 大模型排行榜', item: canonicalUrl },
+    ],
+  },
+];
+
+const comparePayload = allModels.map((m) => ({
+  slug: m.slug,
+  rank: m.rank,
+  name: m.name,
+  providerZh: m.providerZh,
+  region: m.region,
+  regionLabel: getRegionLabel(m.region),
+  license: m.license,
+  licenseLabel: getLicenseLabel(m.license),
+  tier: m.tier,
+  tierLabel: getTierLabel(m.tier),
+  arenaElo: m.arenaElo,
+  codingScore: m.codingScore,
+  reasoningScore: m.reasoningScore,
+  contextLength: m.contextLength,
+  contextFormatted: formatContext(m.contextLength),
+  inputPricePerM: m.inputPricePerM,
+  outputPricePerM: m.outputPricePerM,
+  blendedPricePerM: m.blendedPricePerM,
+  inputFormatted: formatPrice(m.inputPricePerM),
+  outputFormatted: formatPrice(m.outputPricePerM),
+  modalities: m.modalities.map(formatModality),
+  releaseDate: m.releaseDate,
+  chinaAccess: m.chinaAccess,
+  summary: m.summary,
+  bestFor: m.bestFor,
+  differenceNote: m.differenceNote,
+  tags: m.tags,
+}));
+---
+
+<BaseLayout fullTitle={`${pageTitle} | ${SITE_NAME}`} description={pageDesc} jsonLd={jsonLd}>
+  <!-- Hero & 关键摘要 -->
+  <section class="border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+      <div class="reveal">
+        <span class="eyebrow">AI Models · Leaderboard · {updatedDate} 更新</span>
+      </div>
+
+      <h1 class="reveal mt-4 text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">
+        2026 <span class="gradient-text">AI 大模型排行榜</span> 与核心参数对比
+      </h1>
+
+      <p class="reveal mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+        收录国内外 <strong class="text-ink">{allModels.length}</strong> 款最新主流大语言模型（海外 {globalModels.length} 款、国产 {chinaModels.length} 款），
+        一站查看 <strong class="text-ink">LMArena 盲测评分、编程/推理能力、上下文窗口、API 定价、开源状态与核心区别</strong>，支持一键筛选与多模型同屏对比。
+      </p>
+
+      <!-- 核心指标卡 -->
+      <div class="reveal mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="glass rounded-2xl p-4">
+          <div class="text-xs text-muted">海外榜首参考</div>
+          <a href={`/models/${topGlobal.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
+            {topGlobal.name}
+          </a>
+          <div class="mt-1 text-xs text-neon-cyan">
+            Elo {topGlobal.arenaElo} · {formatContext(topGlobal.contextLength)} 上下文
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-4">
+          <div class="text-xs text-muted">国产第一梯队</div>
+          <a href={`/models/${topChina.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
+            {topChina.name}
+          </a>
+          <div class="mt-1 text-xs text-neon-cyan">
+            Elo {topChina.arenaElo} · 国内直连
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-4">
+          <div class="text-xs text-muted">极致性价比 API</div>
+          <a href={`/models/${bestValue.slug}/`} class="mt-1 block text-lg font-bold text-ink hover:text-neon-cyan">
+            {bestValue.name}
+          </a>
+          <div class="mt-1 text-xs text-neon-cyan">
+            输入 {formatPrice(bestValue.inputPricePerM)} / 输出 {formatPrice(bestValue.outputPricePerM)} (每百万)
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-4">
+          <div class="text-xs text-muted">收录规模 / 开源权重</div>
+          <div class="mt-1 text-lg font-bold text-ink">
+            {allModels.length} 款模型 <span class="text-sm font-normal text-muted">/ {openWeightModels.length} 款开源</span>
+          </div>
+          <div class="mt-1 text-xs text-muted">数据同步：{updatedDate}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 筛选 + 排序 + 排行榜主表 -->
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <div class="glass rounded-2xl p-4 sm:p-5">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <!-- 筛选器 -->
+        <div class="flex flex-wrap items-center gap-2" id="model-filters">
+          <span class="mr-1 text-xs font-semibold text-muted">地区：</span>
+          <button type="button" class="filter-btn is-active" data-filter="region" data-value="all">全部</button>
+          <button type="button" class="filter-btn" data-filter="region" data-value="global">海外模型</button>
+          <button type="button" class="filter-btn" data-filter="region" data-value="china">国产模型</button>
+
+          <span class="ml-2 mr-1 text-xs font-semibold text-muted">授权：</span>
+          <button type="button" class="filter-btn is-active" data-filter="license" data-value="all">全部</button>
+          <button type="button" class="filter-btn" data-filter="license" data-value="closed">闭源商业</button>
+          <button type="button" class="filter-btn" data-filter="license" data-value="open-weight">开源权重</button>
+
+          <span class="ml-2 mr-1 text-xs font-semibold text-muted">档位：</span>
+          <button type="button" class="filter-btn is-active" data-filter="tier" data-value="all">全部</button>
+          <button type="button" class="filter-btn" data-filter="tier" data-value="flagship">旗舰</button>
+          <button type="button" class="filter-btn" data-filter="tier" data-value="balanced">均衡</button>
+          <button type="button" class="filter-btn" data-filter="tier" data-value="fast">极速轻量</button>
+        </div>
+
+        <!-- 搜索与排序 -->
+        <div class="flex flex-wrap items-center gap-2.5">
+          <input
+            id="model-search"
+            type="search"
+            placeholder="搜索模型 / 厂商 / 场景..."
+            aria-label="搜索 AI 模型"
+            class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink placeholder:text-muted focus:border-neon-cyan/60 focus:outline-none sm:w-52"
+          />
+          <select
+            id="model-sort"
+            aria-label="排序方式"
+            class="rounded-xl border border-white/10 bg-surface px-3 py-1.5 text-sm text-ink focus:border-neon-cyan/60 focus:outline-none"
+          >
+            <option value="elo-desc">按综合 Elo 排名</option>
+            <option value="coding-desc">按编程能力优先</option>
+            <option value="reasoning-desc">按推理能力优先</option>
+            <option value="price-asc">按 API 价格从低到高</option>
+            <option value="context-desc">按上下文窗口从大到小</option>
+            <option value="date-desc">按发布时间最新</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-white/5 pt-3 text-xs text-muted">
+        <div>
+          当前显示 <strong id="visible-count" class="text-ink">{allModels.length}</strong> / {allModels.length} 款模型
+          <span class="ml-2 hidden sm:inline">· 勾选每行左侧复选框，可加入下方「横向对比器」（最多 3 款）</span>
+        </div>
+        <div class="text-slate-400">API 单价单位：美元 / 百万 Token（USD / 1M）</div>
+      </div>
+    </div>
+
+    <!-- 排行榜表格（服务端完整渲染，爬虫直接可读全部表格与链接） -->
+    <div class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+      <table class="w-full min-w-[880px] border-collapse text-left text-sm" id="leaderboard-table">
+        <thead>
+          <tr class="border-b border-white/10 bg-white/[0.03] text-xs uppercase tracking-wider text-muted">
+            <th class="px-3 py-3.5 w-10 text-center">对比</th>
+            <th class="px-3 py-3.5 w-14">排名</th>
+            <th class="px-4 py-3.5">模型 / 厂商</th>
+            <th class="px-3 py-3.5">综合 Elo</th>
+            <th class="px-3 py-3.5">编程 / 推理</th>
+            <th class="px-3 py-3.5">上下文</th>
+            <th class="px-3 py-3.5">输入 / 输出价</th>
+            <th class="px-3 py-3.5">多模态</th>
+            <th class="px-4 py-3.5">核心定位</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-tbody" class="divide-y divide-white/5">
+          {
+            allModels.map((m) => (
+              <tr
+                class="model-row transition-colors hover:bg-white/[0.04]"
+                data-slug={m.slug}
+                data-region={m.region}
+                data-license={m.license}
+                data-tier={m.tier}
+                data-elo={m.arenaElo}
+                data-coding={m.codingScore}
+                data-reasoning={m.reasoningScore}
+                data-price={m.blendedPricePerM ?? 999}
+                data-context={m.contextLength}
+                data-date={m.releaseDate}
+                data-search={`${m.name} ${m.provider} ${m.providerZh} ${m.bestFor.join(' ')} ${m.tags.join(' ')}`.toLowerCase()}
+              >
+                <td class="px-3 py-3.5 text-center">
+                  <input
+                    type="checkbox"
+                    class="compare-checkbox h-4 w-4 cursor-pointer accent-cyan-400"
+                    value={m.slug}
+                    aria-label={`选择对比 ${m.name}`}
+                  />
+                </td>
+                <td class="px-3 py-3.5 font-mono font-bold">
+                  <span
+                    class:list={[
+                      'inline-flex h-7 w-7 items-center justify-center rounded-lg text-xs',
+                      m.rank <= 3
+                        ? 'bg-gradient-to-br from-neon-cyan/30 to-brand-500/40 text-neon-cyan ring-1 ring-neon-cyan/40'
+                        : 'bg-white/5 text-muted',
+                    ]}
+                  >
+                    #{m.rank}
+                  </span>
+                </td>
+                <td class="px-4 py-3.5">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <a
+                      href={`/models/${m.slug}/`}
+                      class="font-semibold text-ink hover:text-neon-cyan hover:underline"
+                    >
+                      {m.name}
+                    </a>
+                    <span
+                      class:list={[
+                        'rounded-full px-2 py-0.5 text-[11px] font-medium',
+                        m.region === 'china'
+                          ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/25'
+                          : 'bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/25',
+                      ]}
+                    >
+                      {getRegionLabel(m.region)}
+                    </span>
+                    {m.license === 'open-weight' && (
+                      <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] font-medium text-violet-300 ring-1 ring-violet-400/25">
+                        开源
+                      </span>
+                    )}
+                  </div>
+                  <div class="mt-0.5 text-xs text-muted">
+                    {m.providerZh} · {getTierLabel(m.tier)} · {m.releaseDate}
+                  </div>
+                </td>
+                <td class="px-3 py-3.5 font-mono">
+                  <div class="font-bold text-neon-cyan">{m.arenaElo}</div>
+                  <div class="mt-1 h-1.5 w-16 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      class="h-full rounded-full bg-gradient-to-r from-brand-500 to-neon-cyan"
+                      style={`width: ${Math.max(25, Math.min(100, Math.round(((m.arenaElo - 1420) / 115) * 100)))}%`}
+                    />
+                  </div>
+                </td>
+                <td class="px-3 py-3.5 font-mono text-xs">
+                  <div class="text-ink">编程 <span class="font-semibold text-brand-300">{m.codingScore}</span></div>
+                  <div class="mt-0.5 text-muted">推理 <span class="font-semibold text-slate-200">{m.reasoningScore}</span></div>
+                </td>
+                <td class="px-3 py-3.5 font-mono text-ink">{formatContext(m.contextLength)}</td>
+                <td class="px-3 py-3.5 font-mono text-xs">
+                  <div class="text-ink">{formatPrice(m.inputPricePerM)} / M</div>
+                  <div class="mt-0.5 text-muted">{formatPrice(m.outputPricePerM)} / M</div>
+                </td>
+                <td class="px-3 py-3.5">
+                  <div class="flex flex-wrap gap-1">
+                    {m.modalities.map((mod) => (
+                      <span class="rounded bg-white/5 px-1.5 py-0.5 text-[11px] text-slate-300">
+                        {formatModality(mod)}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+                <td class="px-4 py-3.5 text-xs text-slate-300">
+                  <div class="line-clamp-2 max-w-[210px]">{m.bestFor.slice(0, 3).join(' · ')}</div>
+                  <a href={`/models/${m.slug}/`} class="mt-1 inline-block text-neon-cyan hover:underline">
+                    详情与区别 →
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 交互式多模型横向对比区 -->
+    <section id="compare-section" class="mt-12">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span class="eyebrow">Side-by-Side Compare</span>
+          <h2 class="mt-2 text-2xl font-bold text-ink">AI 大模型横向对比器</h2>
+          <p class="mt-1 text-sm text-muted">
+            默认对比海外旗舰与国产旗舰代表，你也可以在上方表格勾选任意 2–3 款模型实时切换。
+          </p>
+        </div>
+        <button
+          type="button"
+          id="compare-reset"
+          class="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300 transition hover:border-neon-cyan/50 hover:text-neon-cyan"
+        >
+          恢复默认热门对比
+        </button>
+      </div>
+
+      <div id="compare-grid" class="mt-5 grid gap-5 md:grid-cols-3"></div>
+    </section>
+
+    <!-- 国内外大模型核心区别指南（强 SEO 文本内容） -->
+    <section class="mt-16 grid gap-6 lg:grid-cols-2">
+      <div class="card p-6 sm:p-8">
+        <span class="eyebrow">Global vs China</span>
+        <h2 class="mt-2 text-2xl font-bold text-ink">海外大模型 vs 国产大模型：核心区别在哪？</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
+          <p>
+            <strong class="text-ink">1. 能力边界与专长：</strong>
+            海外顶配（如 Gemini 4 Carbon / Neon、Claude Opus 5.5 / Fable 5.2、GPT-6.2 Astra）在超复杂多文件代码重构、前沿科研推理以及全模态音视频理解上依然保持小幅领先；
+            国产旗舰（Kimi K3.1 Pro、Qwen4 Max、DeepSeek V4 Pro、GLM 5.3 Prime）在中文长文阅读、本土知识与公文/商业语境下已经达到同等甚至更自然的体验。
+          </p>
+          <p>
+            <strong class="text-ink">2. API 调用成本差距：</strong>
+            国产旗舰与极速档的价格优势非常明显。例如 DeepSeek V4.1 Flash 输入低至每百万 Token 约 $0.03，Kimi K3.1 Pro 与 DeepSeek V4 Pro 的输入价也只有海外旗舰的 1/10 左右，非常适合大规模 RAG、批量清洗与高并发业务。
+          </p>
+          <p>
+            <strong class="text-ink">3. 接入与订阅门槛：</strong>
+            国产模型普遍支持国内直连与人民币结算；海外官网订阅（ChatGPT Plus、Claude Pro、Gemini Advanced、Grok）则往往需要海外网络环境与国际支付卡。若需了解海外 AI 订阅与 API 充值细节，可参考站内的
+            <a href="/blog/ai-subscription-payment-methods/" class="text-neon-cyan hover:underline">AI 订阅支付方式指南</a> 与
+            <a href="/blog/openai-claude-api-topup-guide/" class="text-neon-cyan hover:underline">OpenAI/Claude API 充值教程</a>。
+          </p>
+        </div>
+      </div>
+
+      <div class="card p-6 sm:p-8">
+        <span class="eyebrow">Selection Guide</span>
+        <h2 class="mt-2 text-2xl font-bold text-ink">不同场景怎么选大模型最划算？</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
+          <li>
+            <strong class="text-neon-cyan">• 复杂编程 / AI IDE 开发：</strong>
+            首选 <a href="/models/claude-opus-5-5/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Claude Opus 5.5</a>、
+            <a href="/models/claude-sonnet-5-5/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Claude Sonnet 5.5</a> 或
+            <a href="/models/gemini-4-neon/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Gemini 4 Neon</a>；追求低成本刷题与后端代码可选
+            <a href="/models/deepseek-v4-pro/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">DeepSeek V4 Pro</a>。
+          </li>
+          <li>
+            <strong class="text-neon-cyan">• 长文档 / 音视频多模态理解：</strong>
+            <a href="/models/gemini-4-carbon/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Gemini 4 Carbon</a> 原生支持文本/图片/音频/视频/文件 + 1M 上下文；中文长报告精读首选
+            <a href="/models/kimi-k3-1-pro/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Kimi K3.1 Pro</a>。
+          </li>
+          <li>
+            <strong class="text-neon-cyan">• 企业知识库 / 高并发批量处理：</strong>
+            推荐采用「大小模型路由」策略：简单分类、摘要与初筛交给
+            <a href="/models/deepseek-v4-1-flash/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">DeepSeek V4.1 Flash</a>、
+            <a href="/models/minimax-m3-1-flash/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">MiniMax M3.1 Flash</a> 或
+            <a href="/models/claude-haiku-5-5/" class="text-ink underline decoration-white/30 hover:text-neon-cyan">Claude Haiku 5.5</a>，复杂问答再升级到旗舰模型。
+          </li>
+          <li>
+            <strong class="text-neon-cyan">• 私有化部署与数据合规：</strong>
+            优先考察开源权重阵营（DeepSeek V4、Kimi K3.1、MiniMax M3.1）或阿里云百炼 / 智谱 / 火山引擎提供的企业专有实例。
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 常见问题 FAQ（配合 FAQPage JSON-LD） -->
+    <section class="mt-14">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="mt-2 text-2xl font-bold text-ink">AI 大模型排行榜常见问题</h2>
+      <div class="mt-5 space-y-3">
+        {
+          faqs.map((item) => (
+            <details class="glass group rounded-2xl p-5" open>
+              <summary class="cursor-pointer list-none font-semibold text-ink flex items-center justify-between gap-4">
+                <span>{item.q}</span>
+                <span class="text-neon-cyan transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-slate-300">{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- 数据来源声明 -->
+    <p class="mt-10 text-xs leading-relaxed text-muted">
+      数据说明：{modelsDataset.source}。API 价格以 OpenRouter 公开目录（美元/百万 Token）为基准，不同云厂商、批处理（Batch）或缓存命中模式下可能存在折扣；Elo 与分项能力分为公开榜单综合参考值，实际选型建议结合自身业务集实测。
+    </p>
+  </section>
+
+  <style>
+    .filter-btn {
+      border-radius: 0.65rem;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      color: var(--color-ink);
+      border-color: rgba(56, 232, 255, 0.35);
+    }
+    .filter-btn.is-active {
+      color: var(--color-neon-cyan);
+      background: rgba(56, 232, 255, 0.12);
+      border-color: rgba(56, 232, 255, 0.45);
+    }
+  </style>
+
+  <script is:inline define:vars={{ comparePayload }}>
+    (() => {
+      const state = {
+        region: 'all',
+        license: 'all',
+        tier: 'all',
+        search: '',
+        sort: 'elo-desc',
+      };
+
+      const defaultSelected = ['gemini-4-carbon', 'claude-opus-5-5', 'deepseek-v4-pro'];
+      let selectedSlugs = [...defaultSelected];
+
+      const tbody = document.getElementById('leaderboard-tbody');
+      const rows = Array.from(document.querySelectorAll('.model-row'));
+      const countEl = document.getElementById('visible-count');
+      const searchInput = document.getElementById('model-search');
+      const sortSelect = document.getElementById('model-sort');
+      const compareGrid = document.getElementById('compare-grid');
+      const resetBtn = document.getElementById('compare-reset');
+      const checkboxes = Array.from(document.querySelectorAll('.compare-checkbox'));
+
+      const modelMap = new Map(comparePayload.map((m) => [m.slug, m]));
+
+      function syncCheckboxes() {
+        checkboxes.forEach((cb) => {
+          cb.checked = selectedSlugs.includes(cb.value);
+        });
+      }
+
+      function renderCompare() {
+        if (!compareGrid) return;
+        const list = selectedSlugs.map((s) => modelMap.get(s)).filter(Boolean);
+        if (!list.length) {
+          compareGrid.innerHTML =
+            '<div class="glass col-span-full rounded-2xl p-6 text-center text-sm text-muted">请在上方排行榜勾选 1–3 款模型进行对比。</div>';
+          return;
+        }
+        compareGrid.innerHTML = list
+          .map(
+            (m) => `
+          <article class="card flex flex-col justify-between p-5">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-xs font-mono text-neon-cyan">#${m.rank} · ${m.regionLabel} · ${m.licenseLabel}</span>
+                  <h3 class="mt-1 text-lg font-bold text-ink">
+                    <a href="/models/${m.slug}/" class="hover:text-neon-cyan">${m.name}</a>
+                  </h3>
+                  <div class="text-xs text-muted">${m.providerZh} · 发布于 ${m.releaseDate}</div>
+                </div>
+                <span class="rounded-lg bg-white/5 px-2.5 py-1 font-mono text-sm font-bold text-neon-cyan">${m.arenaElo}</span>
+              </div>
+
+              <dl class="mt-4 grid grid-cols-2 gap-2.5 rounded-xl bg-white/[0.03] p-3 text-xs">
+                <div>
+                  <dt class="text-muted">编程 / 推理</dt>
+                  <dd class="mt-0.5 font-mono font-semibold text-ink">${m.codingScore} / ${m.reasoningScore}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted">上下文窗口</dt>
+                  <dd class="mt-0.5 font-mono font-semibold text-ink">${m.contextFormatted}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted">输入 / 输出价</dt>
+                  <dd class="mt-0.5 font-mono font-semibold text-ink">${m.inputFormatted} / ${m.outputFormatted}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted">国内访问</dt>
+                  <dd class="mt-0.5 font-medium text-slate-200">${m.chinaAccess}</dd>
+                </div>
+              </dl>
+
+              <p class="mt-3 text-xs leading-relaxed text-slate-300"><strong class="text-ink">核心区别：</strong>${m.differenceNote}</p>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-3 text-xs">
+              <span class="text-muted">${m.modalities.join(' / ')}</span>
+              <a href="/models/${m.slug}/" class="font-semibold text-neon-cyan hover:underline">查看完整评测 →</a>
+            </div>
+          </article>
+        `,
+          )
+          .join('');
+      }
+
+      function applyFilterAndSort() {
+        const q = state.search.trim().toLowerCase();
+        const visible = [];
+
+        rows.forEach((row) => {
+          const okRegion = state.region === 'all' || row.dataset.region === state.region;
+          const okLicense = state.license === 'all' || row.dataset.license === state.license;
+          const okTier = state.tier === 'all' || row.dataset.tier === state.tier;
+          const okSearch = !q || (row.dataset.search || '').includes(q);
+          const show = okRegion && okLicense && okTier && okSearch;
+          row.style.display = show ? '' : 'none';
+          if (show) visible.push(row);
+        });
+
+        visible.sort((a, b) => {
+          if (state.sort === 'coding-desc') return Number(b.dataset.coding) - Number(a.dataset.coding);
+          if (state.sort === 'reasoning-desc') return Number(b.dataset.reasoning) - Number(a.dataset.reasoning);
+          if (state.sort === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+          if (state.sort === 'context-desc') return Number(b.dataset.context) - Number(a.dataset.context);
+          if (state.sort === 'date-desc') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+          return Number(b.dataset.elo) - Number(a.dataset.elo);
+        });
+
+        if (tbody) {
+          visible.forEach((row) => tbody.appendChild(row));
+        }
+        if (countEl) countEl.textContent = String(visible.length);
+      }
+
+      document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.filter;
+          const val = btn.dataset.value;
+          if (!key || !val) return;
+          state[key] = val;
+          document.querySelectorAll(`.filter-btn[data-filter="${key}"]`).forEach((b) => {
+            b.classList.toggle('is-active', b === btn);
+          });
+          applyFilterAndSort();
+        });
+      });
+
+      searchInput?.addEventListener('input', (e) => {
+        state.search = e.target.value || '';
+        applyFilterAndSort();
+      });
+
+      sortSelect?.addEventListener('change', (e) => {
+        state.sort = e.target.value || 'elo-desc';
+        applyFilterAndSort();
+      });
+
+      checkboxes.forEach((cb) => {
+        cb.addEventListener('change', () => {
+          const slug = cb.value;
+          if (cb.checked) {
+            if (!selectedSlugs.includes(slug)) {
+              if (selectedSlugs.length >= 3) selectedSlugs.shift();
+              selectedSlugs.push(slug);
+            }
+          } else {
+            selectedSlugs = selectedSlugs.filter((s) => s !== slug);
+          }
+          syncCheckboxes();
+          renderCompare();
+        });
+      });
+
+      resetBtn?.addEventListener('click', () => {
+        selectedSlugs = [...defaultSelected];
+        syncCheckboxes();
+        renderCompare();
+      });
+
+      syncCheckboxes();
+      renderCompare();
+    })();
+  </script>
+</BaseLayout>
