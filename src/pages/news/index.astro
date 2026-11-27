@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL, SITE_NAME } from '../../consts';
+import {
+  allNews,
+  newsDataset,
+  NEWS_CATEGORIES,
+  getCategoryLabel,
+  formatNewsTime,
+} from '../../data/news';
+
+const updatedStr = formatNewsTime(newsDataset.updatedAt);
+const updatedDate = newsDataset.updatedAt.slice(0, 10);
+
+const chinaCount = allNews.filter((n) => n.region === 'china').length;
+const globalCount = allNews.filter((n) => n.region === 'global').length;
+
+// 统计热门话题标签
+const tagFreq = new Map<string, number>();
+for (const item of allNews) {
+  for (const t of item.tags) {
+    tagFreq.set(t, (tagFreq.get(t) ?? 0) + 1);
+  }
+}
+const hotTags = [...tagFreq.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 10)
+  .map(([tag]) => tag);
+
+const pageTitle = '2026 AI 热点新闻与大模型最新动态 — 每日实时聚合快讯';
+const pageDesc = `每日自动聚合国内外最新 AI 热点新闻与大模型前沿动态，覆盖量子位、IT之家、OpenAI 官方、Google AI、Hugging Face、The Verge 与 Hacker News，第一时间追踪大模型发布、开源突破与行业趋势。`;
+
+const canonicalUrl = new URL('/news/', SITE_URL).href;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pageTitle,
+    description: pageDesc,
+    url: canonicalUrl,
+    dateModified: newsDataset.updatedAt,
+    inLanguage: 'zh-CN',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '最新 AI 热点快讯列表',
+    url: canonicalUrl,
+    numberOfItems: Math.min(20, allNews.length),
+    itemListElement: allNews.slice(0, 20).map((item, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.title,
+      url: item.url,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '首页', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'AI 热点新闻', item: canonicalUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout fullTitle={`${pageTitle} | ${SITE_NAME}`} description={pageDesc} jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+      <div class="reveal flex flex-wrap items-center gap-3">
+        <span class="eyebrow">AI News Radar · 每日自动更新</span>
+        <span class="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/30">
+          最近同步：{updatedStr}
+        </span>
+      </div>
+
+      <h1 class="reveal mt-4 text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">
+        2026 <span class="gradient-text">AI 热点新闻</span> 与前沿动态
+      </h1>
+
+      <p class="reveal mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+        自动追踪国内外权威信源（{newsDataset.activeSources.join('、')}），
+        汇聚最新大模型发布、开源社区突破与 AI 行业快讯。想对比最新大模型评分与价格？可前往
+        <a href="/models/" class="text-neon-cyan hover:underline">2026 AI 大模型排行榜 →</a>
+      </p>
+
+      <!-- 统计概览 -->
+      <div class="reveal mt-7 grid max-w-2xl grid-cols-3 gap-3 sm:gap-4">
+        <div class="glass rounded-2xl px-4 py-3">
+          <div class="text-2xl font-extrabold text-ink">{allNews.length}</div>
+          <div class="mt-0.5 text-xs text-muted">条最新 AI 快讯</div>
+        </div>
+        <div class="glass rounded-2xl px-4 py-3">
+          <div class="text-2xl font-extrabold text-emerald-300">{chinaCount}</div>
+          <div class="mt-0.5 text-xs text-muted">条中文国内热点</div>
+        </div>
+        <div class="glass rounded-2xl px-4 py-3">
+          <div class="text-2xl font-extrabold text-neon-cyan">{globalCount}</div>
+          <div class="mt-0.5 text-xs text-muted">条海外一手动态</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 筛选与新闻列表 -->
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <!-- 筛选条 -->
+    <div class="glass rounded-2xl p-4 sm:p-5">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-wrap items-center gap-2" id="news-cat-filters">
+          {
+            NEWS_CATEGORIES.map((cat, idx) => (
+              <button
+                type="button"
+                class:list={['news-filter-btn', idx === 0 && 'is-active']}
+                data-cat={cat.id}
+              >
+                {cat.label}
+              </button>
+            ))
+          }
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <input
+            id="news-search"
+            type="search"
+            placeholder="搜索关键词（如 DeepSeek / OpenAI / 开源）..."
+            aria-label="搜索 AI 新闻"
+            class="w-full rounded-xl border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm text-ink placeholder:text-muted focus:border-neon-cyan/60 focus:outline-none sm:w-72"
+          />
+        </div>
+      </div>
+
+      <!-- 热门话题快捷过滤 -->
+      <div class="mt-3 flex flex-wrap items-center gap-2 border-t border-white/5 pt-3 text-xs">
+        <span class="text-muted">热门话题：</span>
+        <button type="button" class="news-tag-btn is-active" data-tag="all">全部</button>
+        {
+          hotTags.map((tag) => (
+            <button type="button" class="news-tag-btn" data-tag={tag}>
+              #{tag}
+            </button>
+          ))
+        }
+        <span class="ml-auto text-muted">
+          当前显示 <strong id="news-visible-count" class="text-ink">{allNews.length}</strong> 条
+        </span>
+      </div>
+    </div>
+
+    <!-- 新闻卡片流（纯静态直出，爬虫直接可读全部标题、摘要与时间） -->
+    <div id="news-list" class="mt-6 grid gap-4 md:grid-cols-2">
+      {
+        allNews.map((item) => (
+          <article
+            class="news-item card flex flex-col justify-between p-5"
+            data-cat={item.category}
+            data-tags={item.tags.join(',')}
+            data-search={`${item.title} ${item.summary} ${item.sourceName} ${item.tags.join(' ')}`.toLowerCase()}
+          >
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      'rounded-full px-2.5 py-0.5 font-medium',
+                      item.region === 'china'
+                        ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/25'
+                        : item.category === 'official'
+                          ? 'bg-neon-cyan/15 text-neon-cyan ring-1 ring-neon-cyan/30'
+                          : 'bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/25',
+                    ]}
+                  >
+                    {item.sourceName}
+                  </span>
+                  <span class="text-muted">{getCategoryLabel(item.category)}</span>
+                </div>
+                <time datetime={item.publishedAt} class="font-mono text-muted">
+                  {formatNewsTime(item.publishedAt)}
+                </time>
+              </div>
+
+              <h2 class="mt-3 text-base font-bold leading-snug text-ink sm:text-lg">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="transition-colors hover:text-neon-cyan"
+                >
+                  {item.title}
+                </a>
+              </h2>
+
+              {item.summary && (
+                <p class="mt-2 line-clamp-3 text-xs leading-relaxed text-slate-300 sm:text-sm">
+                  {item.summary}
+                </p>
+              )}
+            </div>
+
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-white/5 pt-3 text-xs">
+              <div class="flex flex-wrap gap-1.5">
+                {item.tags.map((t) => (
+                  <span class="rounded bg-white/5 px-2 py-0.5 text-[11px] text-slate-300">#{t}</span>
+                ))}
+              </div>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="font-medium text-neon-cyan hover:underline"
+              >
+                阅读原文 ↗
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div id="news-empty" class="glass mt-6 hidden rounded-2xl p-8 text-center text-sm text-muted">
+      没有找到匹配的 AI 新闻，请尝试切换分类或清空搜索词。
+    </div>
+
+    <!-- 站内联动导流块 -->
+    <section class="mt-12 grid gap-4 md:grid-cols-2">
+      <a href="/models/" class="card group p-6">
+        <span class="eyebrow">Model Leaderboard</span>
+        <h2 class="mt-2 text-xl font-bold text-ink group-hover:text-neon-cyan">
+          2026 国内外 AI 大模型排行榜与选型器 →
+        </h2>
+        <p class="mt-2 text-sm text-muted">
+          看完最新 AI 新闻，直接对比 Gemini 4、Claude 5.5、GPT-6.2、DeepSeek V4、Kimi K3.1 与 Qwen4 Max 的评分、价格与场景适配。
+        </p>
+      </a>
+
+      <a href="/blog/" class="card group p-6">
+        <span class="eyebrow">Deep Dive</span>
+        <h2 class="mt-2 text-xl font-bold text-ink group-hover:text-neon-cyan">
+          AI 原理科普与工具实测教程库 →
+        </h2>
+        <p class="mt-2 text-sm text-muted">
+          深入理解 RAG、Agent、MCP、推理模型、混合检索等核心概念，获取海外 AI 工具订阅与使用实战指南。
+        </p>
+      </a>
+    </section>
+
+    <p class="mt-8 text-xs leading-relaxed text-muted">
+      说明：本页资讯由自动化脚本每日定时采集自公开 RSS 与社区接口（最近更新：{updatedDate}），版权归原媒体与官方发布机构所有，点击标题可直达原始出处。
+    </p>
+  </section>
+
+  <style>
+    .news-filter-btn {
+      border-radius: 0.7rem;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .news-filter-btn:hover {
+      color: var(--color-ink);
+      border-color: rgba(56, 232, 255, 0.35);
+    }
+    .news-filter-btn.is-active {
+      color: var(--color-neon-cyan);
+      background: rgba(56, 232, 255, 0.14);
+      border-color: rgba(56, 232, 255, 0.5);
+    }
+    .news-tag-btn {
+      border-radius: 9999px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.72rem;
+      color: var(--color-muted);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .news-tag-btn:hover,
+    .news-tag-btn.is-active {
+      color: var(--color-neon-cyan);
+      background: rgba(56, 232, 255, 0.12);
+      border-color: rgba(56, 232, 255, 0.4);
+    }
+  </style>
+
+  <script is:inline>
+    (() => {
+      const state = { cat: 'all', tag: 'all', q: '' };
+      const items = Array.from(document.querySelectorAll('.news-item'));
+      const countEl = document.getElementById('news-visible-count');
+      const emptyEl = document.getElementById('news-empty');
+      const searchEl = document.getElementById('news-search');
+
+      function apply() {
+        const q = state.q.trim().toLowerCase();
+        let visible = 0;
+        items.forEach((el) => {
+          const okCat = state.cat === 'all' || el.dataset.cat === state.cat;
+          const tags = (el.dataset.tags || '').split(',');
+          const okTag = state.tag === 'all' || tags.includes(state.tag);
+          const okQ = !q || (el.dataset.search || '').includes(q);
+          const show = okCat && okTag && okQ;
+          el.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (countEl) countEl.textContent = String(visible);
+        if (emptyEl) emptyEl.classList.toggle('hidden', visible > 0);
+      }
+
+      document.querySelectorAll('.news-filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.cat = btn.dataset.cat || 'all';
+          document.querySelectorAll('.news-filter-btn').forEach((b) => b.classList.toggle('is-active', b === btn));
+          apply();
+        });
+      });
+
+      document.querySelectorAll('.news-tag-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.tag = btn.dataset.tag || 'all';
+          document.querySelectorAll('.news-tag-btn').forEach((b) => b.classList.toggle('is-active', b === btn));
+          apply();
+        });
+      });
+
+      searchEl?.addEventListener('input', (e) => {
+        state.q = e.target.value || '';
+        apply();
+      });
+    })();
+  </script>
+</BaseLayout>

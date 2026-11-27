@@ -64,6 +64,18 @@ try {
   // 无模型数据时跳过
 }
 
+// 读取 AI 热点新闻最近同步日期，为 /news/ 提供真实 lastmod。
+try {
+  const newsJson = JSON.parse(
+    readFileSync(new URL('./src/data/news.generated.json', import.meta.url), 'utf-8'),
+  );
+  if (newsJson.updatedAt) {
+    lastmodMap['/news/'] = newsJson.updatedAt;
+  }
+} catch {
+  // 无新闻数据时跳过
+}
+
 // 把 Markdown 生成的宽表格包进可横向滚动的容器。
 // 横评类文章有 5～6 列的表格，窄屏下会把整个页面撑出横向滚动条；
 // 只处理列数多的表格，2～3 列的窄表格保持原样自适应。

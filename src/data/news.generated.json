@@ -1,0 +1,723 @@
+{
+  "updatedAt": "2026-11-27T07:11:28.120Z",
+  "activeSources": [
+    "IT之家",
+    "The Verge AI",
+    "OpenAI 官方",
+    "Hugging Face",
+    "Hacker News",
+    "Google AI",
+    "量子位"
+  ],
+  "totalCount": 50,
+  "items": [
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "何小鹏：小鹏汽车明年、后年无论是销量还是利润都会超出大家的期望",
+      "url": "https://www.ithome.com/1/033/423.htm",
+      "summary": "IT之家 11 月 27 日消息，在今日的 2026 广州车展上，小鹏集团董事长、CEO 何小鹏与小鹏人形机器人 IRON 共同巡展。 据新浪科技报道，何小鹏表示：“我觉得汽车行业在 2024 年-2030 年之间是一个耐久战，一定会持续的上上下下。但是我们的…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T07:03:19.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "一个标签页曾吃掉 8.4GB 内存：谷歌称已修复 Chrome 浏览器 Gemini 吃内存问题",
+      "url": "https://www.ithome.com/1/033/416.htm",
+      "summary": "IT之家 11 月 27 日消息，科技媒体 Android Headline 昨日（11 月 26 日）发布博文，报道称 针对 Gemini 网页应用在 Chrome 浏览器中长期占用过高内存的问题 ，谷歌回应表示相关修复已经上线。 报道称在 Reddit 和…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T07:01:50.000Z",
+      "tags": [
+        "Google"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "梅赛德斯-奔驰：Momenta R7 世界模型、全新 AI 智能座舱 2027 年覆盖更多燃油车型",
+      "url": "https://www.ithome.com/1/033/382.htm",
+      "summary": "IT之家 11 月 27 日消息，2026 广州车展今日开幕，梅赛德斯-奔驰公布辅助驾驶、AI 智能座舱更多消息。 据其介绍， 梅赛德斯-奔驰是首批实现 Momenta R7 世界模型上车 、首个实现“车位到车位”能力的豪华品牌。奔驰与 Momenta 共创的…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:52:14.000Z",
+      "tags": [
+        "多模态"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "全球近 3 万开发者洞察：JetBrains 称 55% 受访者认为 AI 提高其创造力",
+      "url": "https://www.ithome.com/1/033/368.htm",
+      "summary": "IT之家 11 月 27 日消息，JetBrains 发布《2026 开发者生态系统现状》报告， 报告称 AI 正在深入日常开发流程，55% 的受访者认为采用 AI 后创造力有所提升，但 46% 的人也感到对代码的“归属感”下降。 《开发者生态系统现状》年度调…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:47:09.000Z",
+      "tags": [
+        "OpenAI",
+        "Claude",
+        "Agent"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "全新梅赛德斯-奔驰 VLE MPV 车型中国首秀：31.3 英寸 8K 巨幕、22 扬声器柏林之声",
+      "url": "https://www.ithome.com/1/033/360.htm",
+      "summary": "IT之家 11 月 27 日消息，在 2026 广州车展上，梅赛德斯-奔驰 VLE MPV 迎来国内首秀。 新车基于奔驰全新开发的 MPV 原生架构打造，是该架构下首款量产车型，未来将由福建奔驰进行本土化生产。本次车展新车仅进行国内首秀，尚未公布上市时间及售价…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:42:01.000Z",
+      "tags": [
+        "多模态"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "全新梅赛德斯奔驰智混 CLA 上市：限时 19.9 万元起，配豆包 AI 与 Momenta 模型",
+      "url": "https://www.ithome.com/1/033/357.htm",
+      "summary": "IT之家 11 月 27 日消息，在 2026 广州车展上，全新梅赛德斯-奔驰智混 CLA 车型正式上市。新车推出两款车型，官方指导价为 22.9 万至 28.56 万元，限时专享价为 19.9 万至 24.56 万元。 新车延续纯电版 CLA 的设计风格，搭…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:31:38.000Z",
+      "tags": [
+        "国产AI"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "华为星芒 OSTA O1 Pro 阔直板手机首销激活量曝光，开售三天约 4700 台",
+      "url": "https://www.ithome.com/1/033/356.htm",
+      "summary": "IT之家 11 月 27 日消息，博主 @数码闲聊站 今日发文爆料，某厂 O1 Pro（预计指华为星芒 OSTA O1 Pro ）开售 3 天， 首销激活销量约 4700 台 （统计周期为 W47 | 11 月 16 日-11 月 22 日）。 参考IT之家此…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:31:35.000Z",
+      "tags": [
+        "算力芯片"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "全新梅赛德斯奔驰纯电 GLC SUV 上市：限时 25.49~36.22 万元，标配 800V 架构与 Momenta 智驾",
+      "url": "https://www.ithome.com/1/033/350.htm",
+      "summary": "IT之家 11 月 27 日消息，在 2026 广州车展上，全新梅赛德斯-奔驰纯电 GLC SUV 正式上市。新车共推出三款车型，官方售价区间为 26.99 万至 36.22 万元，限时专享价为 25.49 万元起。其中，皓雅版限时价格为 25.49 万元，星…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T06:11:20.000Z",
+      "tags": [
+        "国产AI"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "荣威家越 07 纯电版上市：行业首搭豆包座舱助手，13.28 万元起",
+      "url": "https://www.ithome.com/1/033/348.htm",
+      "summary": "IT之家 11 月 27 日消息，在今天的广州车展发布会上，荣威家越 07 纯电版正式发布，官方指导价 &nbsp;13.28 至 14.98 万元。 该车全系标配 800V 碳化硅平台 + 651km 超长纯电续航 + 80.6kWh 大电池，电机峰值功率达…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T05:58:17.000Z",
+      "tags": [
+        "国产AI",
+        "算力芯片"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "何小鹏谈“IRON 人形机器人何时进入海外”：中国市场交付后一个季度，就会进入欧洲",
+      "url": "https://www.ithome.com/1/033/344.htm",
+      "summary": "IT之家 11 月 27 日消息，在 2026 广州车展期间，小鹏集团董事长、CEO 何小鹏与小鹏机器人 IRON 共同巡展。 据新浪科技报道，何小鹏谈到“何时进入海外市场”：“ 在中国市场交付后一个季度，我们就会进入欧洲 。有 500-1000 名海外的合作…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T05:50:23.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "不到 90 天从空地到建筑群：SpaceX 数据中心已初具规模，网友直呼“中国速度”",
+      "url": "https://www.ithome.com/1/033/342.htm",
+      "summary": "IT之家 11 月 27 日消息，根据博主 Sawyer Merritt 今天（11 月 27 日）在 X 平台发布推文，晒出一张 SpaceX 位于美国得克萨斯州 StarBase 数据中心建设现场航拍图， 称在不到 90 天时间里项目推进初具规模，多栋大型…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T05:44:44.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "ithome-aHR0cHM6Ly93d3cu",
+      "title": "阿里千问澄清后训练负责人周浩离职传闻，将起诉造谣自媒体",
+      "url": "https://www.ithome.com/1/033/341.htm",
+      "summary": "IT之家 11 月 27 日消息，针对今日自媒体“Top 华人科创社”发布的《Qwen 后训练负责人周浩离职》一文，阿里千问官方正式作出回应，明确表示该文章纯属造谣，并将起诉追究其法律责任。 千问官方指出，该自媒体不仅杜撰了人员变动的事实，甚至连当事人名字都写…",
+      "sourceId": "ithome",
+      "sourceName": "IT之家",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T05:41:04.000Z",
+      "tags": [
+        "Qwen"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "钛动科技 × 腾讯云达成战略合作，用AI打开企业全球增长新空间",
+      "url": "https://www.qbitai.com/2026/11/513194.html",
+      "summary": "企业需要有用的 AI",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T04:05:56.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "蚂蚁灵波发布LingBot-Map 2.0，模型自己修正“空间记忆”，把地图画更准",
+      "url": "https://www.qbitai.com/2026/11/513211.html",
+      "summary": "11 月 27 日，蚂蚁灵波科技发布流式三维重建模型 LingBot-Map 2.0",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T04:05:18.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "20个AI Agents组队，4天狂跑350次实验，超越ClickBench最佳公开成绩",
+      "url": "https://www.qbitai.com/2026/11/513163.html",
+      "summary": "Quickwit查询总耗时降31%，最高降87%",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T03:53:49.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "腾讯混元发布 Hy3D 3.6：高模表面更整洁、结构更清晰、刻画更细腻",
+      "url": "https://www.qbitai.com/2026/11/513155.html",
+      "summary": "3D生成的竞争重点正在从“能看”转向“能用”",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T03:45:19.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "具身公司抱团回应：通用大模型跨维打击？没那么简单",
+      "url": "https://www.qbitai.com/2026/11/513125.html",
+      "summary": "",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T03:33:11.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "百亿具身独角兽破壁，玩家集体涌向它的牌桌",
+      "url": "https://www.qbitai.com/2026/11/513101.html",
+      "summary": "",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T03:23:25.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "第三批嘉宾来袭！速戳报名MEET2027，驭见AI新共识！",
+      "url": "https://www.qbitai.com/2026/11/513091.html",
+      "summary": "倒计时两周，报名从速！",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T02:56:03.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "乾崑共创者计划发布：加入乾崑生态，共创出行未来！",
+      "url": "https://www.qbitai.com/2026/11/513087.html",
+      "summary": "11月26日，“乾崑生态 共赴热爱”华为乾崑生态大会在广州南沙体育馆举行。",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T02:19:12.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "陶哲轩下场验证黎曼猜想！“AI批量吐证明就像发电厂排核废料”",
+      "url": "https://www.qbitai.com/2026/11/513075.html",
+      "summary": "担心课题被AI抢先，该怎么办？",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-27T02:03:10.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "qbitai-aHR0cHM6Ly93d3cu",
+      "title": "AI 3D界的“X光”来了！一图直出巴洛克雕塑，3D打印开箱即用",
+      "url": "https://www.qbitai.com/2026/11/512981.html",
+      "summary": "还得是科班尖子生",
+      "sourceId": "qbitai",
+      "sourceName": "量子位",
+      "region": "china",
+      "category": "china",
+      "publishedAt": "2026-11-26T12:39:08.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-26T11:37:17.000Z",
+      "tags": [
+        "开源"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+      "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
+      "summary": "A coalition of 42 state attorneys general is trying to prevent Character.AI from selling off user data as it navigates Chapter 11…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-26T09:54:40.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-26T05:05:36.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "url": "https://huggingface.co/blog/training-swarms",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-26T00:00:00.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Google’s patent for custom AI video feeds paints a bleak picture of entertainment’s future",
+      "url": "https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent",
+      "summary": "Last year, Google filed a patent for a system called My Channel that's designed to create feeds filled with personalized, AI-gener…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-25T21:51:26.000Z",
+      "tags": [
+        "Google",
+        "多模态"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Where scientists draw the line on AI agents",
+      "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-25T18:52:55.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+      "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+      "summary": "In an announcement on Wednesday, the FCC says it authorized SpaceX to deploy up to 1 million AI chip-equipped satellites as part o…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-25T17:44:51.000Z",
+      "tags": [
+        "Google"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Nothing offers a full look at its AI earbuds and charging case",
+      "url": "https://www.theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal",
+      "summary": "Nothing is showing off a much more detailed look at its upcoming AI earbuds ahead of their December 8th release. The Ear Note buds…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-25T16:00:59.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Amazon is reportedly in talks to end Muse AI shopping block",
+      "url": "https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions",
+      "summary": "Amazon has held talks about letting Meta's Muse AI agent shop on its online marketplace, according to a report from Fortune. The d…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-25T14:12:33.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Has vibe coding made open source the new normal for synths?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1040081/vibe-coding-open-source-music-firmware",
+      "summary": "The emergence of powerful vibe-coding agents and tools like Reverse Engineer Anything has caused chaos in the music gear world, le…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-25T13:00:00.000Z",
+      "tags": [
+        "开源",
+        "Agent"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "An Indic Voice Agent with CUGA",
+      "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-25T10:22:09.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+      "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Jensen Huang reportedly tells Nvidia staff it’s ‘not true’ Trump got him rehired",
+      "url": "https://www.theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology",
+      "summary": "Nvidia CEO Jensen Huang apologized to staff during his first all-hands since returning to the company, while attempting to distanc…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-24T20:02:03.000Z",
+      "tags": [
+        "算力芯片"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "David Fincher is being dragged for suspected use of AI in his latest film",
+      "url": "https://www.theverge.com/entertainment/1041417/david-fincher-netflix-cliff-booth-ai-interpositive",
+      "summary": "Though David Fincher's fans had been eagerly anticipating The Further Mis-Adventures of Cliff Booth, early screenings of the Once…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-24T18:15:00.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Tidal will start banning AI-generated music next month",
+      "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban",
+      "summary": "Tidal is officially banning AI-generated music on December 9th. As a result of this change, Tidal will delete around 29 million AI…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-24T17:17:09.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "theverge-aHR0cHM6Ly93d3cu",
+      "title": "Jensen Huang deepfakes are the hot new AI slop",
+      "url": "https://www.theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes",
+      "summary": "Jensen Huang is partying it up in Ibiza. In a video with nearly 6 million views on Instagram, the former CEO of Nvidia is dancing…",
+      "sourceId": "theverge",
+      "sourceName": "The Verge AI",
+      "region": "global",
+      "category": "media",
+      "publishedAt": "2026-11-24T16:30:00.000Z",
+      "tags": [
+        "多模态",
+        "算力芯片"
+      ]
+    },
+    {
+      "id": "google-ai-aHR0cHM6Ly9ibG9n",
+      "title": "How Gemini is changing the game for Golden State's organization and fans.",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
+      "summary": "Google Gemini partners with Golden State to power fan experiences and business operations for the Warriors, Valkyries, and Chase C…",
+      "sourceId": "google-ai",
+      "sourceName": "Google AI",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T16:00:00.000Z",
+      "tags": [
+        "Google"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five tar…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T13:00:00.000Z",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "Searching for distant planets with Astra",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T11:00:00.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "How Intentful uses dots to make more time for growth",
+      "url": "https://openai.com/business/customer-stories/intentful-dots",
+      "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "url": "https://openai.com/business/customer-stories/ifood",
+      "summary": "",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "Clay helps sales teams win with Codex and ChatGPT",
+      "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+      "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out p…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-23T21:20:00.000Z",
+      "tags": [
+        "OpenAI",
+        "开源"
+      ]
+    },
+    {
+      "id": "google-ai-aHR0cHM6Ly9ibG9n",
+      "title": "A more tailored Google Search that’s uniquely yours",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "summary": "Get more helpful Search responses by securely opting in to connect Google Wallet, Drive, and the Gemini app to Personal Intelligen…",
+      "sourceId": "google-ai",
+      "sourceName": "Google AI",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-23T17:00:00.000Z",
+      "tags": [
+        "Google"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "Connected intelligence for in-house legal",
+      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house l…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "openai-aHR0cHM6Ly9vcGVu",
+      "title": "Richpanel helps companies automate 50% of support in 30 days",
+      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conv…",
+      "sourceId": "openai",
+      "sourceName": "OpenAI 官方",
+      "region": "global",
+      "category": "official",
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "tags": [
+        "OpenAI",
+        "Agent"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "How to build and maintain an agentic evaluation",
+      "url": "https://huggingface.co/blog/agentic-evals",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-23T00:00:00.000Z",
+      "tags": [
+        "Agent"
+      ]
+    },
+    {
+      "id": "huggingface-aHR0cHM6Ly9odWdn",
+      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+      "url": "https://huggingface.co/blog/inkling2mini",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face",
+      "region": "global",
+      "category": "opensource",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "tags": [
+        "AI前沿"
+      ]
+    }
+  ]
+}

@@ -11,6 +11,7 @@
     "astro": "astro",
     "new": "node scripts/new-post.mjs",
     "sync-models": "node scripts/sync-models.mjs",
+    "sync-news": "node scripts/sync-news.mjs",
     "deploy": "astro build && node scripts/deploy.mjs",
     "inspect-server": "node scripts/inspect-server.mjs"
   },
