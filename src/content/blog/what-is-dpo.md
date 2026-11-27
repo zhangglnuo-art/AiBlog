@@ -5,6 +5,7 @@ pubDate: 2026-09-04
 tags: ['DPO', 'RLHF', '大模型', 'AI原理']
 author: 编辑部
 cover: /covers/dpo.png?v=1
+draft: true
 ---
 
 让模型会回答问题，通常先靠监督微调；让它更符合人类偏好、安全和有用性，则需要比较“哪种回答更好”。**DPO（Direct Preference Optimization，直接偏好优化）**直接利用这种偏好对训练模型，不必先单独训练一个奖励模型。

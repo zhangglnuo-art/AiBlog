@@ -5,6 +5,7 @@ pubDate: 2026-09-11
 tags: ['RAG', '知识库', 'AI安全', '权限管理']
 author: 编辑部
 cover: /covers/knowledge-base-permissions.png?v=1
+draft: true
 ---
 
 把企业资料接进 RAG 后，最危险的问题不是“找不到答案”，而是“找到了不该给这个人看的答案”。如果权限只在最终页面做判断，模型可能已经读过机密内容，甚至在回答里间接泄露。

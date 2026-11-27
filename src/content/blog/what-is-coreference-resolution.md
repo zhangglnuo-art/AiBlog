@@ -5,6 +5,7 @@ pubDate: 2026-10-12
 tags: ['指代消解', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/coreference-resolution.png?v=1
+draft: true
 ---
 
 指代消解（Coreference Resolution）是判断文中的代词、简称或省略说法，究竟指向前面哪个人、哪家机构或哪件事。例如「张伟把报告交给了李娜，她又转给了同事」——「她」指的是李娜，不是张伟。

@@ -5,6 +5,7 @@ pubDate: 2026-09-11
 tags: ['OCR', '计算机视觉', 'AI原理', '文档处理']
 author: 编辑部
 cover: /covers/ocr.png?v=1
+draft: true
 ---
 
 扫描合同、纸质发票、照片里的菜单，对电脑来说原本只是像素，无法搜索或复制。**OCR（Optical Character Recognition，光学字符识别）**把这些像素转换成文字和位置，让图像中的内容重新成为可编辑、可检索的数据。

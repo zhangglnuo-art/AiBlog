@@ -5,6 +5,7 @@ pubDate: 2026-10-16
 tags: ['词义消歧', '自然语言处理', '信息抽取', 'AI原理']
 author: 编辑部
 cover: /covers/word-sense-disambiguation.png?v=1
+draft: true
 ---
 
 词义消歧（Word Sense Disambiguation）是判断一个多义词在当前这句话里取哪个意思。同一个「苹果」，在「苹果很好吃」里是水果，在「苹果发布了新机」里是公司。

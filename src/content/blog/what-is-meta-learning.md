@@ -5,6 +5,7 @@ pubDate: 2026-09-22
 tags: ['元学习', '机器学习', '模型训练', 'AI原理']
 author: 编辑部
 cover: /covers/meta-learning.png?v=1
+draft: true
 ---
 
 元学习（Meta-learning）常被称为“学会如何学习”。普通机器学习会从一个任务的数据中寻找规律；元学习则从许多相似任务的经验中，学习怎样更快适应下一个新任务。

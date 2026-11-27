@@ -5,6 +5,7 @@ pubDate: 2026-09-07
 tags: ['课程学习', '机器学习', 'AI原理', '模型训练']
 author: 编辑部
 cover: /covers/curriculum-learning.png?v=1
+draft: true
 ---
 
 人学习数学通常先学加减法，再学方程和微积分。**课程学习（Curriculum Learning）**把类似思想用于模型训练：先给模型较简单、干净的样本，再逐步加入更复杂、噪声更大或需要长推理的数据。

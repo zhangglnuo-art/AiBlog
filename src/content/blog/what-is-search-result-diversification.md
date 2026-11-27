@@ -5,6 +5,7 @@ pubDate: 2026-11-24
 tags: ['多样性重排', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/search-result-diversification.png?v=1
+draft: true
 ---
 
 结果去重与多样性重排（Search Result Diversification）是在检索排序之后，避免排在最前面的文档或片段全部重复讲同一件事，让入选结果既跟问题相关、又能覆盖不同侧面或来源的步骤。

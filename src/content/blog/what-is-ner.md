@@ -5,6 +5,7 @@ pubDate: 2026-09-24
 tags: ['命名实体识别', '自然语言处理', 'AI原理', '文本处理']
 author: 编辑部
 cover: /covers/ner.png?v=1
+draft: true
 ---
 
 命名实体识别（Named Entity Recognition，NER）是从文本中找出具有特定含义的片段，并标注其类型的技术。常见实体包括人名、机构、地点、日期、金额、产品和法规编号。

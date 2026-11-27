@@ -5,6 +5,7 @@ pubDate: 2026-10-13
 tags: ['关系抽取', '自然语言处理', '知识图谱', 'AI原理']
 author: 编辑部
 cover: /covers/relation-extraction.png?v=1
+draft: true
 ---
 
 关系抽取（Relation Extraction）是在已经找出文本中的实体之后，判断它们之间是什么关系。例如「张伟在星河科技担任产品负责人」，实体是张伟和星河科技，关系是「任职于」。

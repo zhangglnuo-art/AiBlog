@@ -5,6 +5,7 @@ pubDate: 2026-09-04
 tags: ['LLM流式输出', 'AI API', 'AI开发', '开发效率']
 author: 编辑部
 cover: /covers/llm-streaming.png?v=1
+draft: true
 ---
 
 大模型生成答案需要逐 token 往后写。若等整段文本全部完成才返回，用户可能盯着空白页面十几秒；流式输出（Streaming）会把生成中的片段持续发送到前端，让用户先看到第一句话。

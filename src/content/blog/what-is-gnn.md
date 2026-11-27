@@ -5,6 +5,7 @@ pubDate: 2026-09-18
 tags: ['图神经网络', '机器学习', 'AI原理', '知识图谱']
 author: 编辑部
 cover: /covers/gnn.png?v=1
+draft: true
 ---
 
 图神经网络（Graph Neural Network，GNN）是一类专门处理关系网络的模型。它把实体表示为节点，把实体之间的联系表示为边，例如用户与商品、账户与交易、论文与引用。

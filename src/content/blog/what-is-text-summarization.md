@@ -5,6 +5,7 @@ pubDate: 2026-09-29
 tags: ['文本摘要', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/text-summarization.png?v=1
+draft: true
 ---
 
 文本摘要（Text Summarization）是将长文章、报告、工单或会议记录压缩成更短内容的技术。目标不是简单删句子，而是保留主题、关键事实、结论与待办信息，让读者快速了解原文重点。

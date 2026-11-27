@@ -5,6 +5,7 @@ pubDate: 2026-09-11
 tags: ['目标检测', '计算机视觉', 'AI原理', '图像识别']
 author: 编辑部
 cover: /covers/object-detection.png?v=1
+draft: true
 ---
 
 如果要让 AI 回答“照片里有什么”，图像分类就够；如果还要知道“每个对象在哪里、有几个”，就需要**目标检测（Object Detection）**。它通常输出对象类别、位置矩形框和置信度，例如“画面左侧有一辆车，置信度 96%”。

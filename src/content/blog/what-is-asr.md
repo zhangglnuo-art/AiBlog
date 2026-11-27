@@ -5,6 +5,7 @@ pubDate: 2026-09-08
 tags: ['ASR', 'AI语音', 'AI原理', '语音转文字']
 author: 编辑部
 cover: /covers/asr.png?v=1
+draft: true
 ---
 
 会议记录、视频字幕、语音助手和客服质检背后，都有同一项能力：**自动语音识别（ASR，Automatic Speech Recognition）**。它把连续的声音波形切分、识别成词，并尽量标出说话人、时间和标点，让音频成为可搜索、可摘要的文本。

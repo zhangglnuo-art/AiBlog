@@ -5,6 +5,7 @@ pubDate: 2026-10-12
 tags: ['槽位填充', '自然语言处理', '对话系统', 'AI原理']
 author: 编辑部
 cover: /covers/slot-filling.png?v=1
+draft: true
 ---
 
 槽位填充（Slot Filling）是在已经知道用户想做什么之后，把完成这件事还缺的具体信息从话里抽出来。比如意图是「订机票」，槽位可能包括出发地、目的地、日期和人数。

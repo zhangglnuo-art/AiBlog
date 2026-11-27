@@ -5,6 +5,7 @@ pubDate: 2026-09-23
 tags: ['模型剪枝', '模型优化', '机器学习', 'AI原理']
 author: 编辑部
 cover: /covers/model-pruning.png?v=1
+draft: true
 ---
 
 模型剪枝（Model Pruning）是从神经网络中移除影响较小的参数、连接或结构，以减少模型大小、计算量和推理延迟。它的目标不是改变模型要解决的问题，而是让相同能力以更低成本运行。

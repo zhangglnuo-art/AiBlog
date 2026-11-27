@@ -5,6 +5,7 @@ pubDate: 2026-10-15
 tags: ['查询改写', 'RAG', '信息检索', 'AI原理']
 author: 编辑部
 cover: /covers/query-rewriting.png?v=1
+draft: true
 ---
 
 查询改写（Query Rewriting）是在检索之前，把用户的原话改成更适合搜索的问法。用户常说得很短、带着上文，或用了和文档不一样的词。直接拿原话去搜，正确资料可能根本进不了上下文。

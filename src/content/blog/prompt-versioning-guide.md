@@ -5,6 +5,7 @@ pubDate: 2026-08-28
 tags: ['提示词', 'AI开发', '开发效率', 'AI评测']
 author: 编辑部
 cover: /covers/prompt-versioning.png?v=1
+draft: true
 ---
 
 提示词写在代码里、复制在表格里、散落在聊天记录里，是很多 AI 应用早期的常态。问题是：某天效果变差时，没有人知道改了什么、影响了哪些用户，也无法安全回退。

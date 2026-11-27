@@ -5,6 +5,7 @@ pubDate: 2026-09-07
 tags: ['AI内容', '事实核查', 'AI安全', '内容创作']
 author: 编辑部
 cover: /covers/ai-fact-checking.png?v=1
+draft: true
 ---
 
 AI 最危险的错误不是语病，而是把不确定甚至错误的信息说得非常笃定。发布 AI 辅助内容前，真正要核查的不是“读起来顺不顺”，而是其中每一个能影响读者判断的事实断言。

@@ -5,6 +5,7 @@ pubDate: 2026-08-28
 tags: ['Reranker', 'RAG', 'Embedding', 'AI原理']
 author: 编辑部
 cover: /covers/reranker.png?v=1
+draft: true
 ---
 
 向量检索擅长从海量资料里快速捞出“看起来相关”的几十段，但它不总能把最能回答问题的那一段排在第一名。**Reranker（重排序模型）**负责第二轮更细的判断：拿着问题和候选片段逐一比较，再重新排出最值得交给大模型的几段。

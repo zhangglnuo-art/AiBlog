@@ -5,6 +5,7 @@ pubDate: 2026-10-14
 tags: ['事件抽取', '自然语言处理', '信息抽取', 'AI原理']
 author: 编辑部
 cover: /covers/event-extraction.png?v=1
+draft: true
 ---
 
 事件抽取（Event Extraction）是从文本里找出一件已经发生或将要发生的事，并补上这件事的要素：谁做的、对谁做的、在何时何地、结果是什么。

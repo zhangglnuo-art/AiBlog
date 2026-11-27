@@ -5,6 +5,7 @@ pubDate: 2026-10-09
 tags: ['语义相似度', '自然语言处理', 'Embedding', 'AI原理']
 author: 编辑部
 cover: /covers/semantic-similarity.png?v=1
+draft: true
 ---
 
 语义相似度（Semantic Similarity）用于衡量两段文字在含义上有多接近。它不只看词是否完全相同，也尝试理解同义表达、上下文和主题关系。

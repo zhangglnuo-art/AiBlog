@@ -5,6 +5,7 @@ pubDate: 2026-09-28
 tags: ['说话人分离', '语音AI', 'AI原理', '会议记录']
 author: 编辑部
 cover: /covers/speaker-diarization.png?v=1
+draft: true
 ---
 
 说话人分离（Speaker Diarization）是把一段录音按说话者划分的技术。它试图回答“什么时候有人说话”之外的另一个问题：这一段是谁说的、下一段是否换了人。

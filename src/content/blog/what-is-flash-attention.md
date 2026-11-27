@@ -5,6 +5,7 @@ pubDate: 2026-08-31
 tags: ['FlashAttention', 'Transformer', 'AI原理', '模型推理']
 author: 编辑部
 cover: /covers/flash-attention.png?v=1
+draft: true
 ---
 
 注意力机制是 Transformer 的核心，但序列变长时，它不仅算得多，还会产生巨大的中间矩阵，占用大量显存。**FlashAttention** 不是新的模型结构，而是一种更高效计算注意力的方法：尽量少把中间结果搬进搬出显存。

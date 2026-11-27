@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 tags: ['近重复检测', '文本处理', '自然语言处理', 'AI原理']
 author: 编辑部
 cover: /covers/near-duplicate-detection.png?v=1
+draft: true
 ---
 
 近重复检测（Near-Duplicate Detection）用来找出内容几乎相同、但并不是逐字一致的文档。转载时改了标题、删了一句广告、替换了几个错字，精确比对会认为它们不同，读者看起来却是同一篇。

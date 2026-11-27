@@ -5,6 +5,7 @@ pubDate: 2026-09-24
 tags: ['语音活动检测', '语音AI', 'AI原理', '音频处理']
 author: 编辑部
 cover: /covers/vad.png?v=1
+draft: true
 ---
 
 语音活动检测（Voice Activity Detection，VAD）用于判断一段音频中何时有人在说话，何时是静音、背景噪声或其他非语音声音。

@@ -5,6 +5,7 @@ pubDate: 2026-10-14
 tags: ['阅读理解', '自然语言处理', '问答系统', 'AI原理']
 author: 编辑部
 cover: /covers/reading-comprehension.png?v=1
+draft: true
 ---
 
 机器阅读理解（Machine Reading Comprehension）是让 AI 阅读给定文章，再根据问题从文中找出或组织答案。它和开放问答不同：答案应该来自这篇材料，而不是模型自己的记忆。

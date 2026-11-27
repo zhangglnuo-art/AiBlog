@@ -5,6 +5,7 @@ pubDate: 2026-11-20
 tags: ['倒排索引', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/inverted-index.png?v=1
+draft: true
 ---
 
 倒排索引（Inverted Index）是把“每篇文档里有哪些词”反过来，记成“每个词出现在哪些文档里”的数据结构。就像书本末尾的术语索引表：先查词，再直接翻到对应的页码，而不用从第一页逐字读到最后一页。

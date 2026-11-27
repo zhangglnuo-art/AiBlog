@@ -5,6 +5,7 @@ pubDate: 2026-09-04
 tags: ['主动学习', '机器学习', 'AI原理', '数据标注']
 author: 编辑部
 cover: /covers/active-learning.png?v=1
+draft: true
 ---
 
 训练数据不是越多越好。若有一百万条几乎相同、容易判断的样本，让人全部标注既贵又浪费。**主动学习（Active Learning）**让模型先从未标注数据中挑出“最不确定、最有信息量”的例子，再交给人标注。

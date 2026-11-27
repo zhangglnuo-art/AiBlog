@@ -5,6 +5,7 @@ pubDate: 2026-09-21
 tags: ['集成学习', '机器学习', 'AI原理', '模型训练']
 author: 编辑部
 cover: /covers/ensemble-learning.png?v=1
+draft: true
 ---
 
 集成学习（Ensemble Learning）是把多个模型的预测组合起来，得到更稳定或更准确结果的方法。它背后的直觉很简单：如果模型犯错的方式不完全相同，适当组合后可以互相弥补。

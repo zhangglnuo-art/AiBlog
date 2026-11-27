@@ -5,6 +5,7 @@ pubDate: 2026-10-20
 tags: ['混合检索', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/hybrid-retrieval.png?v=1
+draft: true
 ---
 
 混合检索（Hybrid Retrieval）是把关键词检索和向量检索一起用来找资料，再把两路结果合并成一份候选列表。它要解决的是：只走一路，总会漏掉另一路才找得到的文档。

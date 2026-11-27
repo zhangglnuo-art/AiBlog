@@ -5,6 +5,7 @@ pubDate: 2026-10-15
 tags: ['语义角色标注', '自然语言处理', '信息抽取', 'AI原理']
 author: 编辑部
 cover: /covers/semantic-role-labeling.png?v=1
+draft: true
 ---
 
 语义角色标注（Semantic Role Labeling）是给句子里的动作标出参与者角色：谁是施事、谁是受事、工具、时间和地点分别是什么。

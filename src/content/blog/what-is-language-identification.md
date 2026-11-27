@@ -5,6 +5,7 @@ pubDate: 2026-10-21
 tags: ['语言识别', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/language-identification.png?v=1
+draft: true
 ---
 
 语言识别（Language Identification）判断一段文字主要是哪种语言。它常放在翻译、检索和纠错之前：语言判错，后面的模型可能用错词表和规则。

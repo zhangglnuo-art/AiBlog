@@ -5,6 +5,7 @@ pubDate: 2026-10-09
 tags: ['文本匹配', '自然语言处理', 'AI原理', '文本处理']
 author: 编辑部
 cover: /covers/text-matching.png?v=1
+draft: true
 ---
 
 文本匹配（Text Matching）是判断两段文字之间是否存在特定关系的任务。这个关系可以是“是否相同”“是否相关”“是否能回答问题”，也可以是“是否互相矛盾”。

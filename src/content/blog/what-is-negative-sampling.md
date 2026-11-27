@@ -5,6 +5,7 @@ pubDate: 2026-11-19
 tags: ['负面采样', '信息检索', '机器学习', 'AI原理']
 author: 编辑部
 cover: /covers/negative-sampling.png?v=1
+draft: true
 ---
 
 负面采样（Negative Sampling）是在训练模型时，从大量非目标候选里挑出一部分“反例”与正例一起对比学习的方法。无论是在训练词向量、检索模型还是推荐系统，如果只告诉模型“什么是对的”，它很容易给所有内容都打高分，却学不会区分边界。

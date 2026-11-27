@@ -5,6 +5,7 @@ pubDate: 2026-10-08
 tags: ['依存句法', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/dependency-parsing.png?v=1
+draft: true
 ---
 
 依存句法（Dependency Parsing）分析句子中词语之间的依赖关系，例如谁是动作主体、动作作用于什么对象、哪个词修饰另一个词。

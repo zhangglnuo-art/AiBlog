@@ -5,6 +5,7 @@ pubDate: 2026-09-23
 tags: ['持续学习', '机器学习', '模型训练', 'AI原理']
 author: 编辑部
 cover: /covers/continual-learning.png?v=1
+draft: true
 ---
 
 持续学习（Continual Learning）研究的是让模型在数据和任务不断到来时持续更新，同时尽量保留原有能力。它更接近真实世界的使用方式：产品、语言、用户行为和业务规则都会变化，模型不可能只训练一次就永久不变。

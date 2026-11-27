@@ -5,6 +5,7 @@ pubDate: 2026-09-18
 tags: ['联邦学习', '隐私保护', '机器学习', 'AI原理']
 author: 编辑部
 cover: /covers/federated-learning.png?v=1
+draft: true
 ---
 
 联邦学习（Federated Learning）是一种协作训练方式：数据保留在各自设备或机构本地，参与方只交换模型更新，而不是把原始数据全部汇总到一个中心。

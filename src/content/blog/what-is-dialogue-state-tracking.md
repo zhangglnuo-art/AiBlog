@@ -5,6 +5,7 @@ pubDate: 2026-10-19
 tags: ['对话状态跟踪', '对话系统', '自然语言处理', 'AI原理']
 author: 编辑部
 cover: /covers/dialogue-state-tracking.png?v=1
+draft: true
 ---
 
 对话状态跟踪（Dialogue State Tracking）是在多轮对话里记住「目前已经确定了什么、还缺什么」。用户很少一次把话说完，系统要把每一轮的新信息合并进同一份状态。

@@ -5,6 +5,7 @@ pubDate: 2026-10-08
 tags: ['问答系统', '自然语言处理', '知识库', 'AI原理']
 author: 编辑部
 cover: /covers/question-answering.png?v=1
+draft: true
 ---
 
 问答系统（Question Answering）让计算机接收自然语言问题，并返回对应答案。它可以从固定知识库中查找，也可以检索文档后生成回答。

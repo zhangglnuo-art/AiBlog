@@ -5,6 +5,7 @@ pubDate: 2026-09-24
 tags: ['文本分类', '自然语言处理', '机器学习', 'AI原理']
 author: 编辑部
 cover: /covers/text-classification.png?v=1
+draft: true
 ---
 
 文本分类（Text Classification）是将一段文字分配到预设类别的任务。例如把客服工单分为退款、物流和账号问题，或把邮件标记为正常、推广和垃圾信息。

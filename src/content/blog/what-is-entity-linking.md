@@ -5,6 +5,7 @@ pubDate: 2026-10-21
 tags: ['实体链接', '自然语言处理', '知识图谱', 'AI原理']
 author: 编辑部
 cover: /covers/entity-linking.png?v=1
+draft: true
 ---
 
 实体链接（Entity Linking）是在找出文本中的名字之后，把它对应到知识库里的某一个具体条目。识别出「苹果」还不够，还要判断它指的是哪一家公司，或是不是公司。

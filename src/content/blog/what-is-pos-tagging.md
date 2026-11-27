@@ -5,6 +5,7 @@ pubDate: 2026-10-08
 tags: ['词性标注', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/pos-tagging.png?v=1
+draft: true
 ---
 
 词性标注（Part-of-Speech Tagging）是为句子中的词语标记语法角色，例如名词、动词、形容词、代词或介词。它帮助系统初步理解句子结构。

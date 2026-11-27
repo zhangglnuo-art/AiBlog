@@ -5,6 +5,7 @@ pubDate: 2026-10-27
 tags: ['句对齐', '自然语言处理', '机器翻译', 'AI原理']
 author: 编辑部
 cover: /covers/sentence-alignment.png?v=1
+draft: true
 ---
 
 句对齐（Sentence Alignment）把两份对应文本里的句子配成组合。一份是中文合同，一份是它的英文译本；也可以是一段演讲和稍后整理的字幕。两边的句子数量常常不一样：一句中文可能对应两句英文，标题和页码也会插在中间。

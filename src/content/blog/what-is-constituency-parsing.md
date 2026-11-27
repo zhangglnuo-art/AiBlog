@@ -5,6 +5,7 @@ pubDate: 2026-10-26
 tags: ['成分句法', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/constituency-parsing.png?v=1
+draft: true
 ---
 
 成分句法（Constituency Parsing）把句子分成一层层的短语。例如「那位新来的同事提交了报告」里，「那位新来的同事」可以先组成一个名词短语，「提交了报告」组成一个动词短语，再合起来成为整句。

@@ -5,6 +5,7 @@ pubDate: 2026-09-07
 tags: ['AI Agent', 'Function Calling', 'AI开发', '工具调用']
 author: 编辑部
 cover: /covers/agent-tool-design.png?v=1
+draft: true
 ---
 
 Agent 能否完成任务，常常不取决于模型会不会思考，而取决于它能不能正确使用工具。若工具名模糊、参数没有约束、错误信息不可读，模型就会选错 API、重复调用或把不完整数据写入系统。

@@ -5,6 +5,7 @@ pubDate: 2026-09-11
 tags: ['提示词注入', 'AI安全', 'AI Agent', '开发效率']
 author: 编辑部
 cover: /covers/prompt-injection-defense.png?v=1
+draft: true
 ---
 
 提示词注入的本质是：模型读到不可信内容后，把其中的文字误当成更高优先级指令。它不能靠“忽略恶意指令”这一句话彻底解决，因为模型需要阅读网页、邮件和文档，攻击内容就藏在正常数据里。

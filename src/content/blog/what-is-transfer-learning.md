@@ -5,6 +5,7 @@ pubDate: 2026-09-18
 tags: ['迁移学习', '模型训练', '机器学习', 'AI原理']
 author: 编辑部
 cover: /covers/transfer-learning.png?v=1
+draft: true
 ---
 
 迁移学习（Transfer Learning）是把模型在一个任务或数据集上学到的能力，迁移到另一个相关任务上。它的核心想法是：不必每次都从零开始训练。

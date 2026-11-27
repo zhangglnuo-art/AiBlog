@@ -5,6 +5,7 @@ pubDate: 2026-09-24
 tags: ['情感分析', '自然语言处理', 'AI原理', '数据分析']
 author: 编辑部
 cover: /covers/sentiment-analysis.png?v=1
+draft: true
 ---
 
 情感分析（Sentiment Analysis）是识别文本所表达倾向的技术，常将内容归为正面、负面或中性，也可以识别更细的情绪与观点对象。

@@ -5,6 +5,7 @@ pubDate: 2026-09-10
 tags: ['图像分割', '计算机视觉', 'AI原理', 'AI绘画']
 author: 编辑部
 cover: /covers/image-segmentation.png?v=1
+draft: true
 ---
 
 目标检测可以告诉你“图里有一只猫”，并画一个矩形框；但如果要精确选中猫的轮廓、把背景换掉、测量肿瘤面积，矩形远远不够。**图像分割（Image Segmentation）**让 AI 为图像中的每个像素或像素区域分配类别或对象身份。

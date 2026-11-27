@@ -5,6 +5,7 @@ pubDate: 2026-10-13
 tags: ['自然语言推理', '自然语言处理', '事实核查', 'AI原理']
 author: 编辑部
 cover: /covers/natural-language-inference.png?v=1
+draft: true
 ---
 
 自然语言推理（Natural Language Inference）判断一句「前提」能否推出另一句「假设」。结果通常分三类：能推出、互相矛盾、信息不足所以无法判断。它也常被叫作文本蕴含。

@@ -5,6 +5,7 @@ pubDate: 2026-10-27
 tags: ['学习排序', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/learning-to-rank.png?v=1
+draft: true
 ---
 
 学习排序（Learning to Rank）用「哪篇更相关」的标注，训练一个给文档排顺序的模型。同一个问题下，人工或历史点击可以标出第一篇比第三篇更能回答问题。模型要学会把这种偏好变成新查询上的排序。

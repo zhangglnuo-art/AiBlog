@@ -5,6 +5,7 @@ pubDate: 2026-09-28
 tags: ['关键词提取', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/keyword-extraction.png?v=1
+draft: true
 ---
 
 关键词提取（Keyword Extraction）是从一段文本中选出最能代表主题的词或短语，例如产品名称、问题类型、技术概念和行动事项。它常用于文档归档、搜索索引、内容标签和信息浏览。

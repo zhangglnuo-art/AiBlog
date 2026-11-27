@@ -5,6 +5,7 @@ pubDate: 2026-10-26
 tags: ['篇章关系', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/discourse-relation.png?v=1
+draft: true
 ---
 
 篇章关系（Discourse Relation）判断相邻句子或分句是怎样连起来的，例如因为所以、虽然但是、例如、然后。单句都能读懂，仍可能看不出后一句是在解释、反驳，还是换了一个话题。

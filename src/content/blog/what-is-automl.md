@@ -5,6 +5,7 @@ pubDate: 2026-09-22
 tags: ['AutoML', '机器学习', '模型训练', 'AI工具']
 author: 编辑部
 cover: /covers/automl.png?v=1
+draft: true
 ---
 
 AutoML（Automated Machine Learning，自动化机器学习）是一类将数据预处理、模型选择、超参数优化和评估流程自动化的工具与方法。它的目标是减少重复试验，让团队更快建立可比较的基线模型。

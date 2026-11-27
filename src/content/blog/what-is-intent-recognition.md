@@ -5,6 +5,7 @@ pubDate: 2026-10-08
 tags: ['意图识别', '自然语言处理', 'AI原理', '客服AI']
 author: 编辑部
 cover: /covers/intent-recognition.png?v=1
+draft: true
 ---
 
 意图识别（Intent Recognition）是判断一句话背后“用户想完成什么”的技术。客服里的“怎么退款”“订单能取消吗”，虽然表达不同，可能都属于退款或取消订单的意图。

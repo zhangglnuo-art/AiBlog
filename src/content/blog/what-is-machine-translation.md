@@ -5,6 +5,7 @@ pubDate: 2026-09-29
 tags: ['机器翻译', '自然语言处理', 'AI工具', '文本处理']
 author: 编辑部
 cover: /covers/machine-translation.png?v=1
+draft: true
 ---
 
 机器翻译（Machine Translation）是将一种语言的文本或语音转换成另一种语言的技术。现代神经机器翻译会结合整句甚至更长上下文，生成更自然的译文，而不只是逐词替换。

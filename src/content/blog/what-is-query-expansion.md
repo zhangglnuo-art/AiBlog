@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 tags: ['查询扩展', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/query-expansion.png?v=1
+draft: true
 ---
 
 查询扩展（Query Expansion）是在检索之前，给原来的问题补上相关的词，让更多可能有用的文档能被找到。用户说「退钱」，文档里写的是「退款」或「原路退回」。只拿原词去搜，这些文档可能进不了候选。

@@ -5,6 +5,7 @@ pubDate: 2026-09-18
 tags: ['多任务学习', '机器学习', '模型训练', 'AI原理']
 author: 编辑部
 cover: /covers/multitask-learning.png?v=1
+draft: true
 ---
 
 多任务学习（Multi-task Learning）让一个模型同时学习多个相关目标。与为每项工作分别训练独立模型相比，它会共享一部分表示，再为不同任务保留各自的输出部分。

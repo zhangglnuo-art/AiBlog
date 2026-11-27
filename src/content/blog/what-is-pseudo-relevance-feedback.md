@@ -5,6 +5,7 @@ pubDate: 2026-11-20
 tags: ['假相关性反馈', '信息检索', 'RAG', 'AI原理']
 author: 编辑部
 cover: /covers/pseudo-relevance-feedback.png?v=1
+draft: true
 ---
 
 假相关性反馈（Pseudo-Relevance Feedback，简称 PRF）是一种在搜索时不打扰用户、自动借第一轮结果改进查询的方法。系统先按原始问题搜出第一批文档，默认假设排在最前面的几篇是相关的，再从这些文档里提取高频或有代表性的词，拼进原问题做第二轮检索。

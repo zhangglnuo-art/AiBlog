@@ -5,6 +5,7 @@ pubDate: 2026-08-31
 tags: ['对比学习', 'Embedding', 'AI原理', '机器学习']
 author: 编辑部
 cover: /covers/contrastive-learning.png?v=1
+draft: true
 ---
 
 要让 AI 知道“这句话和哪段资料意思最接近”，只教它分类标签往往不够。**对比学习（Contrastive Learning）**用另一种方式训练：把相似的样本拉近，把不相似的样本推远，让数据在向量空间中形成有意义的距离。

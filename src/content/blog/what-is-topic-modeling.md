@@ -5,6 +5,7 @@ pubDate: 2026-10-19
 tags: ['主题模型', '自然语言处理', '文本处理', 'AI原理']
 author: 编辑部
 cover: /covers/topic-modeling.png?v=1
+draft: true
 ---
 
 主题模型（Topic Modeling）从大量文档里找出反复一起出现的词，并把这些词组看成若干话题。一篇文档通常不只属于一个话题，而是多个话题按不同比例混在一起。
