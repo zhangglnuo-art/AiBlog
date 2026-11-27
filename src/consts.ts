@@ -5,15 +5,16 @@
 // 博客正式域名。
 export const SITE_URL = 'https://ibve.org';
 
-export const SITE_TITLE = 'ibve · AI 笔记';
+export const SITE_TITLE = 'ibve · AI 前沿';
 export const SITE_DESCRIPTION =
-  '一个关于 AI 的学习笔记与技术分享博客。提示词工程、大模型原理、AI 工具实测与海外 AI 使用经验，持续更新。';
+  '追踪全球 AI 实时热点与大模型前沿动态，提供国内外 AI 大模型排行榜、API 价格参数对比、按场景选型指南及深度技术实战教程。';
 
 // 品牌实体信息，用于全站 Organization / WebSite 结构化数据。
-export const SITE_NAME = 'ibve';
+export const SITE_NAME = 'ibve · AI 前沿';
 export const SITE_LOGO = '/logo.png';
 // 首页专用标题：吃到核心关键词，避免首页只有品牌词。
-export const HOME_TITLE = 'AI 学习笔记 — 大模型原理 · 提示词工程 · RAG · AI 工具实测 | ibve';
+export const HOME_TITLE =
+  'ibve · AI 前沿 — 2026 AI大模型排行榜 · AI热点新闻 · 模型对比选型与实战指南';
 // 有官方 X / Twitter 账号时填 @handle，留空则不输出 twitter:site。
 export const TWITTER_HANDLE = '';
 
